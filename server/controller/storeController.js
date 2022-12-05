@@ -3,7 +3,7 @@ const store = require('../models/storeModel')
 
 // get all store in localhost:8000
 
-const getStores = async (res,req)=>{
+const getStores = async (req,res)=>{
     let data = await  store.find({})
     return res.json(data)
 }
