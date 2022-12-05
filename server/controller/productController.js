@@ -1,5 +1,5 @@
 const product = require('../models/productModel')
-
+const {addProducts} =require("../methods/productsMethod")
 
 // get all store in localhost:8000
 
@@ -13,19 +13,13 @@ const getProduct = async (req,res)=>{
 const createProduct = async(req,res)=>{
 
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
-    create = await new product({
-        name:req.body.name ,
-        img: req.body.img,
-        quantity:req.body.quantity ,
-        price:req.body.price ,
-        storeName:req.body.storeName ,
-        productType:req.body.productType ,
-        storeId:req.body.storeId ,
-    })
- await   create.save(err =>{
-        if(!err) return res.json(create);
-        return res.status(400).json({message : `Error while creating product ${err}`})
-    })
+   try {
+    const arr=req.body
+    const data=await addProducts(arr)
+    res.status(200).json(data)
+ } catch (err) {
+    return res.status(400).json({message : `Error while creating product ${err}`})
+ }
     
 }
 module.exports = {

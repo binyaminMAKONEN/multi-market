@@ -13,7 +13,7 @@ const getStores = async (req,res)=>{
 const createStore = async(req,res)=>{
 
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
-    create =await new store({
+   create =  new store({
         name:req.body.name,
           img: req.body.img,
           ownerName:req.body.ownerName,
