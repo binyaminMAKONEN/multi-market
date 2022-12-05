@@ -28,8 +28,8 @@ const storeModel = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+})
 
- module.exports= mongoose.model("stores", storeModel);
+ module.exports = mongoose.model("stores", storeModel);
 
  
