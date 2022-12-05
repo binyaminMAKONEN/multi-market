@@ -29,8 +29,14 @@ const storeModel = new mongoose.Schema({
       type: String,
       required: true,
     },
-    address: String,
-    area: String,
+    address: {
+      type: String,
+      required: true,
+    },
+    area: {
+      type: String,
+      required: false,
+    },
   },
   storeType: {
     type: String,
