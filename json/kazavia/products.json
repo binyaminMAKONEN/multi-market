@@ -1,0 +1,208 @@
+[
+    
+    {
+    "name": "חזה עוף טרי" ,
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/XSU36_L_P_9806571_1.png",
+    "quantity":0,
+    "price": 31.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":"חזה עוף טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": "כרעי עוף טרי ארוז",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RHM24_Z_P_9802221_1.png",
+    "quantity":0,
+    "price": 27.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":"כרעי עוף טרי ארוז-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": "עוף שלם טרי ארוז",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RGI30_Z_P_9802191_1.png",
+    "quantity":0,
+    "price": 18.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":" עוף שלם טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": "שניצל עוף טרי ארוז",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EZZ32_Z_P_9811490_1.png",
+    "quantity":0,
+    "price": 34.90,
+    "storeName": "קצבייה",
+    "productType":["מוצרי בשר ועוף"],
+    "description":"שניצל עוף טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": " שוקי עוף טרי",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EFW40_Z_P_9810967_1.png",
+    "quantity":0,
+    "price": 32.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":"שוקי עוף טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": "  פרגיות עוף טרי",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RLZ24_Z_P_9011418_1.png",
+    "quantity":0,
+    "price": 59.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":"פרגיות עוף טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+    {
+    "name": "  כנפי עוף טרי",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/UUQ36_L_P_9804591_1.png",
+    "quantity":0,
+    "price": 11.90,
+    "storeName": "קצבייה",
+    "productType":["עוף"],
+    "description":"כנפי עוף טרי פרמיום-שופרסל",
+    "storeId":"638e259ed18dfaf7050b0c77"
+    },
+ 
+        {
+            "name": "אמנון שלם טרי " ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/XSU36_L_P_9806571_1.png",
+            "quantity":0,
+            "price": 29.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"אמנון שלם  טרי פרמיום-שופרסל",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "פילה אמנון קפוא" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/CMB50_L_P_7296073211624_1.png",
+            "quantity":0,
+            "price": 29.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"פילה אמנון קפוא -שופרסל ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "קוביות סלמון קפוא" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RYE24_Z_P_663135_1.png",
+            "quantity":0,
+            "price": 29.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"קוביות  סלמון קפוא -דגי תנובה ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "רצועות פילה נילוס קפוא" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/LOQ42_L_P_9956535_1.png",
+            "quantity":0,
+            "price": 69.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"רצועות  פילה  נילוס קפוא -דגי תנובה ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "פילה דניס טרי" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/HCI34_M_P_919447_1.png",
+            "quantity":0,
+            "price": 59.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"  פילה  דניס טרי ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "פילה סלמון טרי" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/UDM32_M_P_928265_1.png",
+            "quantity":0,
+            "price": 69.90,
+            "storeName": "קצבייה",
+            "productType":["  דגים "],
+            "description":"פילה סלמון טרי -שופרסל ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+  
+        {
+            "name": "סטייק דנוור טרי" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/LOF36_M_P_9394092_1.png",
+            "quantity":0,
+            "price": 119.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"סטייק דנוור טרי  ",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": " בשר טחון טרי" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/CGB26_M_P_933740_1.png",
+            "quantity":0,
+            "price": 49.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"  בשר טחון טרי פריומיום",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "בשר אסאדו טרי " ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/CGB26_M_P_933740_1.png",
+            "quantity":0,
+            "price": 69.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"בשר אסאדו טרי פריומיום",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "צלי כתף מס'5 קפוא" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/ZSE40_M_P_3796915_1.png",
+            "quantity":0,
+            "price": 31.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"  צלי כתף קפוא",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "  המבורגר טרי " ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_medium/HNY34_M_P_9391381_1.png",
+            "quantity":0,
+            "price": 59.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"  המבורגר  טרי פריומיום",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "   אנטריקוט טרי חלק ארוז " ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/SOQ22_L_P_9012163_1.png",
+            "quantity":0,
+            "price": 139.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"  אנטרויקוט חלק טרי פריומיום",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            },
+        {
+            "name": "סינטה טרי" ,
+            "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/UNS28_L_P_928531_1.png",
+            "quantity":0,
+            "price": 149.90,
+            "storeName": "קצבייה",
+            "productType":[" בשר "],
+            "description":"  סינטה  טרי פריומיום",
+            "storeId":"638e259ed18dfaf7050b0c77"
+            }
+    
+    
+
+        ]
