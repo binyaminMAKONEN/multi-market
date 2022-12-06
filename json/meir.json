@@ -1,0 +1,183 @@
+[
+    {
+        "storeName":"החנות של מאיר",
+        "name":"חולצה שחורה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/C90184s.jpg",
+        "quantity":0,
+        "description":"חולצת טי בייסיק עם שרוולים קצרים בצבע שחור",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"חולצה לבנה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/C83639s.jpg",
+        "quantity":0,
+        "description":"חולצת טי בייסיק עם שרוולים קצרים בצבע לבן",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"חולצה צהובה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/C09597s.jpg",
+        "quantity":0,
+        "description":"חולצת טי בייסיק עם שרוולים קצרים בצבע צהוב",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"חולצה כחולה",
+        "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U88494s.jpg",
+        "quantity":0,
+        "description":" חולצת טי בייסיק עם שרוולים קצרים בצבע כחןל",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"חולצה אפורה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/C99779s.jpg",
+        "quantity":0,
+        "description":" חולצת טי בייסיק עם שרוולים קצרים בצבע אפור",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"חולצה אדומה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/U88491s.jpg",
+        "quantity":0,
+        "description":" חולצת טי בייסיק עם שרוולים קצרים בצבע אדום",
+        "price":55,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["חולצה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מכנס שחור",
+        "img":"https://xcdn.next.co.uk/common/Items/Default/Default/Publications/G55/shotview-315x472/4007/527-220s.jpg",
+        "quantity":0,
+        "description":"מכנס טרניג בצבע שחור",
+        "price":60,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"ג'ינס",
+        "img":"https://xcdn.next.co.uk/common/Items/Default/Default/Publications/G70/shotview-315x472/2013/933-227s.jpg",
+        "quantity":0,
+        "description":"גינס בצבע כחול כהה",
+        "price":100,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מכנס כחול",
+        "img":"https://xcdn.next.co.uk/common/Items/Default/Default/Publications/G70/shotview-315x472/4005/224-993s.jpg",
+        "quantity":0,
+        "description":"מכנס טרניג בצבע כחוך בהיר",
+        "price":60,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"דגמח ירוק",
+        "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G97/shotview/4806/M52-719s.jpg",
+        "quantity":0,
+        "description":" מכנס ירוק אופנתי בעל כיסים צעדדים",
+        "price":130,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"דגמח בז'",
+        "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U60490s.jpg",
+        "quantity":0,
+        "description":"מכנס בז אופנתי בעל כיסים צעדדים",
+        "price":130,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מכנס אלגנט שחור",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/235242s.jpg",
+        "quantity":0,
+        "description":" מכנס מחיוט אלגנטי",
+        "price":200,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מכנס"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מעיל שחור",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/L83389s.jpg",
+        "quantity":0,
+        "description":"מעיל חורף בצבע שחור",
+        "price":250,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מעיל"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מעיל כחול",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/P26803s.jpg",
+        "quantity":0,
+        "description":"מעיל חורף בצבע כחול",
+        "price":250,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מעיל"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"מעיל אפור",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/L18122s.jpg",
+        "quantity":0,
+        "description":"מעיל חורף בצבע אפור",
+        "price":250,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["מעיל"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"שמלה שחורה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/Q31761s.jpg",
+        "quantity":0,
+        "description":" שמלה שחורה מנוקדת",
+        "price":300,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["שמלה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"שמלה אדומה",
+        "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U60631s5.jpg",
+        "quantity":200,
+        "description":"שמלה אדומה עם מחשוף קדמי",
+        "price":0,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["שמלה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"שמלה כחולה",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/P26752s.jpg",
+        "quantity":100,
+        "description":" שמלה כחולה עם נגיעות של פסים לבנים",
+        "price":0,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["שמלה"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"נעלי ספורט",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/223708s.jpg",
+        "quantity":0,
+        "description":"נעל אדדיס בצבע שחור",
+        "price":500,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["נעליים"]
+    },{
+        "storeName":"החנות של מאיר",
+        "name":"נעלי עקב",
+        "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/T28288s.jpg",
+        "quantity":0,
+        "description":"נעל עקב גבוהה בצבע כחול",
+        "price":300,
+        "storeId":"638e308046873fb99b1b8895",
+        "productType":["נעליים"]
+    }
+]

@@ -1,0 +1,282 @@
+[
+
+
+
+{
+    "name":"שמפו",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/CKT66_Z_P_7296073281894_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 14.99,
+    "storeName": "סופר זול",
+    "productType":["הייגינה"],
+    "storeId":""
+},
+{
+    "name":"קרם ידיים דר פישר",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/QHA54_Z_P_7290010748853_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 10.9,
+    "storeName": "סופר זול",
+    "productType":["קרמים","הייגינה"],
+    "storeId":""
+},
+{
+    "name":"קרם יום למניעת קמטים",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RPA38_Z_P_4005900525017_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 99.99,
+    "storeName": "סופר זול",
+    "productType":["קרמים","הייגינה"],
+    "storeId":""
+},
+{
+    "name":"כורכום קרם לחות",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/BPK58_Z_P_3574661525563_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 66,
+    "storeName": "סופר זול",
+    "productType":["קרמים","הייגינה"],
+    "storeId":""
+},
+{
+    "name":"קרם פנים לילה גינגר כורכום",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NTV32_Z_P_5012251013246_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 49.9,
+    "storeName": "סופר זול",
+    "productType":["קרמים","הייגינה"],
+    "storeId":""
+},
+
+
+
+
+{
+    "name":"בננות",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/ALP40_Z_P_967684_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 7.00,
+    "storeName": "סופר זול",
+    "productType":["פירות"],
+    "storeId":""
+},
+{
+    "name":"תפוחים",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/DEZ52_Z_P_7296073440604_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 10.90,
+    "storeName": "סופר זול",
+    "productType":["פירות"],
+    "storeId":""
+},
+{
+    "name":"תפוזים",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/VNH34_Z_P_964348_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 5.99,
+    "storeName": "סופר זול",
+    "productType":["פירות"],
+    "storeId":""
+},
+{
+    "name":"רימון אורגני",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/XXD40_Z_P_965956_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 11.90,
+    "storeName": "סופר זול",
+    "productType":["פירות"],
+    "storeId":""
+},
+{
+    "name":"קיווי במארז",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/KKM38_Z_P_8268455_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 16.90,
+    "storeName": "סופר זול",
+    "productType":["פירות"],
+    "storeId":""
+},
+
+
+
+{
+    "name":"לחם שיפון קל",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/HCQ44_Z_P_7290013027535_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 7.99,
+    "storeName": "סופר זול",
+    "productType":["לחמים"],
+    "storeId":""
+},
+{
+    "name":"לחם לבן אחיד פרוס",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NXC60_Z_P_7296073219347_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 5.99,
+    "storeName": "סופר זול",
+    "productType":["לחמים"],
+    "storeId":""
+},
+{
+    "name":"לחמניות מקמח מלא",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/GQA26_Z_P_497303_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 10.99,
+    "storeName": "סופר זול",
+    "productType":["לחמים"],
+    "storeId":""
+},
+{
+    "name":"לחם דגנים פלוס",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/HAH32_Z_P_497570_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 14.50,
+    "storeName": "סופר זול",
+    "productType":["לחמים"],
+    "storeId":""
+},
+{
+    "name":"לחם דני קל",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/JPA24_Z_P_2661153_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 17.20,
+    "storeName": "סופר זול",
+    "productType":["לחמים"],
+    "storeId":""
+},
+
+
+
+
+
+
+{
+    "name":"קוקה קולה דיאט מארז",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EEE38_Z_P_7290110115371_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 46.90,
+    "storeName": "סופר זול",
+    "productType":["משקאות קלים","משקאות"],
+    "storeId":""
+},
+{
+    "name":"פפסי מקס מארז שישיה",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/THP30_Z_P_136776_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 37.50,
+    "storeName": "סופר זול",
+    "productType":["משקאות קלים","משקאות"],
+    "storeId":""
+},
+{
+    "name":"פפסי מקס דובדבן",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/ROE28_Z_P_135595_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 7.60,
+    "storeName": "סופר זול",
+    "productType":["משקאות קלים","משקאות"],
+    "storeId":""
+},
+{
+    "name":"פפסי מקס ליים",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RDG14_Z_P_135311_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 7.60,
+    "storeName": "סופר זול",
+    "productType":["משקאות קלים","משקאות"],
+    "storeId":""
+},
+{
+    "name":"נסטי בטעם אפרסק",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EWA48_Z_P_8005200256587_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 8.90,
+    "storeName": "סופר זול",
+    "productType":["משקאות קלים","משקאות"],
+    "storeId":""
+}
+,
+
+
+
+
+
+
+
+{
+    "name":"דיור סבאג'",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/BDJ46_Z_P_3348901250146_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 420,
+    "storeName": "סופר זול",
+    "productType":["בשמים"],
+    "storeId":""
+}
+,
+{
+    "name":"רובורטו קבאלי",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/YFL56_Z_P_3607347733508_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 99,
+    "storeName": "סופר זול",
+    "productType":["בשמים"],
+    "storeId":""
+}
+,
+{
+    "name":"אחד מיליון",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NPY56_Z_P_3349666007921_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 189,
+    "storeName": "סופר זול",
+    "productType":["בשמים"],
+    "storeId":""
+}
+,
+{
+    "name":"212",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/YWB50_Z_P_8411061043868_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 179,
+    "storeName": "סופר זול",
+    "productType":["בשמים"],
+    "storeId":""
+}
+,
+{
+    "name":"סקנדל",
+    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/SWK54_Z_P_8435415030885_1.png",
+    "quantity":0,
+    "description":"",
+    "price": 400,
+    "storeName": "סופר זול",
+    "productType":["בשמים"],
+    "storeId":""
+}
+]
+
+
