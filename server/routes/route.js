@@ -1,12 +1,26 @@
 const routes = require('express').Router();
-const controller = require('../controller/storeController');
-
+const storesController = require('../controller/storeController');
+const productController = require('../controller/productController')
+const userController = require('../controller/usercontroller')
 
 routes.route('/api/stores')
-     .post(controller.createStore)
-     .get(controller.getStores)
+     .post(storesController.createStore)
+     .get(storesController.getStores)
+
+
+routes.route('/api/products')
+     .get(productController.getProduct)
+     .post(productController.createProduct)
+
+
+routes.route('/api/users/register')
+     .post(userController.createUser)
+
+routes.route('/api/users/login')
+     .post(userController.login)
 
 
 
+ 
 
 module.exports = routes
