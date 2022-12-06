@@ -5,6 +5,6 @@ const deliveryDetailsModel = new mongoose.Schema({
   streetTwo: { type: String, required: false },
   companyName: { type: String, required: true },
   zip: { type: Number, required: true }
-});
+}); 
 
 module.exports = mongoose.model("deliveryDetail", deliveryDetailsModel);
