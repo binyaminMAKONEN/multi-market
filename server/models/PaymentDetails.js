@@ -5,4 +5,4 @@ const PaymentDetailsModel = new mongoose.Schema({
   cardDate: { type: Number, required: true }
 });
 
-module.exports = mongoose.model("product", PaymentDetailsModel);
+module.exports = mongoose.model("paymentDeatils", PaymentDetailsModel);
