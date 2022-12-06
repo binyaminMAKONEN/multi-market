@@ -9,7 +9,7 @@ const getProduct = async (req,res)=>{
 }
 
 // create store in localhost:8000
-
+//get Array
 const createProduct = async(req,res)=>{
 
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
