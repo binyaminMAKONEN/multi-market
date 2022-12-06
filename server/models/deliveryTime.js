@@ -4,4 +4,4 @@ const deliveryTimeModel = new mongoose.Schema({
   orderTime: { type: Date, required: true }
 });
 
-module.exports = mongoose.model("product", deliveryTimeModel);
+module.exports = mongoose.model("deliveryTime", deliveryTimeModel);

@@ -7,4 +7,4 @@ const deliveryDetailsModel = new mongoose.Schema({
   zip: { type: Number, required: true }
 });
 
-module.exports = mongoose.model("product", deliveryDetailsModel);
+module.exports = mongoose.model("deliveryDetails", deliveryDetailsModel);
