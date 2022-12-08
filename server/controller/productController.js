@@ -10,19 +10,38 @@ const getProduct = async (req,res)=>{
 
 // create store in localhost:8000
 
-const createProduct = async(req,res)=>{
+const addProducts = async (req,res) => {
+  if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
+  try {
+    const arr=req.bod
+    let products = arr.map(async (obj) => {
+      const product = new Product(obj);
+      const productId = product.id;
+      const storeId = obj.storeId;
+      await updateStoreProducts(storeId,productId)
+      await product.save();
+      return product;
+    });
 
-    if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
-   try {
-    const arr=req.body
-    const data=await addProducts(arr)
-    res.status(200).json(data)
- } catch (err) {
-    return res.status(400).json({message : `Error while creating product ${err}`})
- }
-    
+    products = Promise.all(products);
+
+    return products;
+  } catch (err) {
+    throw `Err : ${err}`;
+  }
+};
+
+const updateStoreProducts = async (storeId, productId) =>{
+try {
+    console.log(storeId, productId);
+    await Store.findByIdAndUpdate(storeId,{$push:{products:{productId}}})
+} catch (err) {
+    throw `Err : ${err}`;
 }
+};
+
 module.exports = {
-    getProduct,
-  createProduct
+  getProduct,
+  addProducts,
+  // updateStoreProducts
 }
