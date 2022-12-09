@@ -5,7 +5,7 @@ const userModel = new mongoose.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
   },
-  img: { type: String, required: true },
+  img: { type: String, required: false },
   username: {
     type: String,
     required: true,
@@ -27,6 +27,7 @@ const userModel = new mongoose.Schema({
   },
   phone: { type: String, required: true, min: 9, max: 12 },
   owner:{type:Boolean,default:false},
-});
+  Permissions:{type: String,required:true,default:"customer"},
+},{ versionKey: false });
 
 module.exports = mongoose.model("User", userModel);

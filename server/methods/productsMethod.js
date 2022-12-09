@@ -28,3 +28,7 @@ try {
     throw `Err : ${err}`;
 }
 };
+
+exports.productsStore=async(storeId)=>{
+
+}
