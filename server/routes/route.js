@@ -5,8 +5,9 @@ const userController = require('../controller/usercontroller')
 const orderController = require('../controller/orderController')
 
 routes.route('/api/stores')
-     .post(storesController.createStore)
-     .get(storesController.getStores)
+.post(storesController.createStore)
+.get(storesController.getStores)
+
 
 routes.route('/api/orders')
      // .post(storesController.createStore)
@@ -17,6 +18,15 @@ routes.route('/api/orders')
 // routes.route('/api/products')
 //      .get(productController.getProduct)
 //      .post(productController.createProduct)
+
+routes.route('/api/stores/:id')
+.delete(storesController.deleteStore)
+.put(storesController.updateStore)
+.get(storesController.getStoreById)
+
+// routes.route('/api/stores/:id')
+
+
 
 
 routes.route('/api/users/register')
