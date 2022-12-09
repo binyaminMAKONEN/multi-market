@@ -15,7 +15,7 @@ const getStores = async (req,res)=>{
 const createStore = async(req,res)=>{
 
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
-   create =  new storeModel({
+  const create =  new storeModel({
         name:req.body.name,
           img: req.body.img,
           ownerName:req.body.ownerName,
@@ -23,10 +23,7 @@ const createStore = async(req,res)=>{
           location: req.body.location,
           storeType:req.body.storeType,
     })
- await   create.save(err =>{
-        if(!err) return res.json(create);
-        return res.status(400).json({message : `Error while creating store ${err}`})
-    })
+await create.save()
     
 }
 
