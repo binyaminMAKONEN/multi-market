@@ -10,7 +10,7 @@ routes.route('/api/stores')
 
 routes.route('/api/products')
      .get(productController.getProduct)
-     .post(productController.createProduct)
+     .post(productController.createProducts)
 
 
 routes.route('/api/users/register')

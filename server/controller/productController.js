@@ -1,16 +1,15 @@
-const product = require('../models/productModel')
-const {addProducts} =require("../methods/productsMethod")
-
+const Product = require('../models/productModel')
+const Store = require('../models/storeModel')
 // get all store in localhost:8000
 
 const getProduct = async (req,res)=>{
-    let data = await  product.find({})
+    let data = await  Product.find({})
     return res.json(data)
 }
 
 // create store in localhost:8000
 
-const addProducts = async (req,res) => {
+const createProducts = async (req,res) => {
   if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
   try {
     const arr=req.bod
@@ -31,6 +30,7 @@ const addProducts = async (req,res) => {
   }
 };
 
+  // this function is update the store when add product
 const updateStoreProducts = async (storeId, productId) =>{
 try {
     console.log(storeId, productId);
@@ -42,6 +42,5 @@ try {
 
 module.exports = {
   getProduct,
-  addProducts,
-  // updateStoreProducts
+  createProducts,
 }
