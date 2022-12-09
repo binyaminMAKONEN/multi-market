@@ -4,9 +4,15 @@ const productController = require('../controller/productController')
 const userController = require('../controller/usercontroller')
 
 routes.route('/api/stores')
-     .post(storesController.createStore)
-     .get(storesController.getStores)
+.post(storesController.createStore)
+.get(storesController.getStores)
 
+routes.route('/api/stores/:id')
+.delete(storesController.deleteStore)
+.put(storesController.updateStore)
+.get(storesController.getStoreById)
+
+// routes.route('/api/stores/:id')
 
 routes.route('/api/products')
      .get(productController.getProduct)
