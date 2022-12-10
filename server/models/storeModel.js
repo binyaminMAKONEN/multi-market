@@ -9,7 +9,7 @@ const product = new mongoose.Schema(
 
 const storeModel = new mongoose.Schema(
   {
-    name: {
+    storeName: {
       type: String,
       required: true,
       unique: true,
