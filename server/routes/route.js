@@ -12,7 +12,6 @@ routes.route('/api/stores/:id')
 .put(storesController.updateStore)
 .get(storesController.getStoreById)
 
-// routes.route('/api/stores/:id')
 
 routes.route('/api/products')
      .get(productController.getProduct)
