@@ -1,16 +1,19 @@
 const mongoose = require("mongoose");
 
-const orderModel = new mongoose.Schema({
-  street: { type: String,  required: true },
-  streetTwo: { type: String,  required: false },
-  companyName: { type: String,  required: true },
-  zip: { type: Number,  required: true },
-  orderTime: { type: Date,  required: true,default:Date() },
-  cardNumber: { type: Number,  required: true },
-  cardDate: { type: Number,  required: true },
-  updateQuantity:[{productId:{ type:String },quantity:{type:Number}}]
-
-
-},  { versionKey: false }); 
+const orderModel = new mongoose.Schema(
+  {
+    stores: [
+      {
+        storId: { type: mongoose.SchemaTypes.ObjectId, ref: "store" },
+        productsDetails: [{ productId:  { type: mongoose.SchemaTypes.ObjectId, ref: "product" }, quantity: Number }],
+      },
+    ],
+    address: String,
+    date: { type: String, default: Date.now },
+    price: Number,
+    clientId: { type: mongoose.SchemaTypes.ObjectId, ref: "user" },
+  },
+  { versionKey: false }
+);
 
 module.exports = mongoose.model("order", orderModel);
