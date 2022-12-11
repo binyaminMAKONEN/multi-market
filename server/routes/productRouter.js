@@ -1,10 +1,10 @@
 
-const {getProduct,createProduct, updateProduct, deleteProduct} =require('../controller/productController') 
+const {getProduct,createProducts, updateProduct, deleteProduct} =require('../controller/productController') 
 const router = require('express').Router()
 
 
      router.get('/',getProduct)
-     router.post('/',createProduct)
+     router.post('/',createProducts)
      router.put('/:id',updateProduct)
      router.delete('/:id',deleteProduct)
 
