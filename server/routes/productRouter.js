@@ -1,5 +1,6 @@
 
 const {getProduct,createProducts, updateProduct, deleteProduct} =require('../controller/productController') 
+const {tokenMiddleware} =require('../controller/authenticateToken')
 const router = require('express').Router()
 
 
