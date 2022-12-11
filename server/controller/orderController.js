@@ -1,6 +1,5 @@
 const order = require('../models/orderModel')
 
-
 const createOrders = async (req,res)=>{
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
     create =await new order({...req.body,date:new Date()})
