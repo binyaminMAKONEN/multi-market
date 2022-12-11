@@ -22,7 +22,7 @@ const userModel = new mongoose.Schema({
 
   password: {
     type: String,
-    required: true,
+    required: false,
     min: 6,
   },
   phone: { type: String, required: true, min: 9, max: 12 },
