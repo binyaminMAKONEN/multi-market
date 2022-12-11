@@ -11,11 +11,7 @@ const createOrders = async (req,res)=>{
 
 const getOrders = async (req,res)=>{
     let data = await  order.find({})
-    let filterData = data.map(obg =>{
-        return obg.clientId
-       
-     })
-    return res.json(filterData)
+    return res.json(data)
 }
 const getStoreOrCustomerOrderById = async(req,res)=>{
     const {id} = req.params
