@@ -82,8 +82,8 @@ const updateProduct = async (req,res)=>{
 
 module.exports = {
     getProduct,
-  createProduct,
+  createProducts,
   updateProduct,
   deleteProduct
 
-};
+}
