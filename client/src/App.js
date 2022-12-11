@@ -5,10 +5,12 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="App">
-      <Routes>  
-       
-      <Route path='/' element={<Navbar/>} />
+      <Routes>
         
+        
+      <Routes/>  
+       
+       
       </Routes>
         {/* <Navbar/> */}
         {/* <Header/> */}
