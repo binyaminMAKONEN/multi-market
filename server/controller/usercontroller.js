@@ -1,5 +1,7 @@
 const userModel = require('../models/userModels')
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken')
+const {generateAccessToken} =require('../controller/authenticateToken')
 
 const createUser = async (req,res)=>{
     try {
@@ -32,16 +34,21 @@ const login =async (req,res)=>{
     const user = await userModel.findOne({username:req.body.username});
     !user && res.status(400).json('Wrong username or password')
     
-    const validPassword = await bcrypt.compare(
+    const validPassword =  await bcrypt.compare(
         req.body.password,
         user.password
     )
+    console.log(validPassword);
     !validPassword && res.status(400).json('Wrong username or password')
+    const refreshToken=jwt.sign({role:user.Permissions,userId:user._id},process.env.REFRESH_TOKEN_SECRET)
+    console.log(refreshToken);
+    const token =generateAccessToken({role:user.Permissions,userId:user._id})
 
-    res.status(200).json({_id:user._id,username:user.username})
-
-  } catch (error) {
-    res.status(500).json(error)
+    res.status(200).json({token,refreshToken})
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({err:err.massage})
     
   }
 }

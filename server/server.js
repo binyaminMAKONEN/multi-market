@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const productRouter =require('./routes/productRouter')
 
-require('dotenv').config({path:'./config.env'})
+require('dotenv').config()
 const port = process.env.PORT || 5000
 
 app.use(cors())
@@ -14,6 +14,7 @@ const connect =require('./db/connection')
 app.use(require('./routes/route'))
 
 app.use('/api/products',productRouter)
+
 
 connect.then(db =>{
     if(!db)return process.exit(1)
