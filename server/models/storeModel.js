@@ -9,20 +9,12 @@ const product = new mongoose.Schema(
 
 const storeModel = new mongoose.Schema(
   {
-    storeName: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    userId: {
-      type: String,
-      required: true,
-    },
-    img: String,
-    ownerName: {
-      type: String,
-      required: true,
-    },
+    storeName: { type: String,required: true, unique: true,},
+    userId: {type: String,required: true,},
+    image: {logo:{type:String,required:false},
+    background:{type:String,required:false}
+  },
+    ownerName:{type: String,required: true,},
     products: [product],
     description: {
       type: String,
