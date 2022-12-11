@@ -1,12 +1,15 @@
 // import './App.css';
-import MainPage from "./Components/MainPage/MainPage";
 import {Route,Routes} from 'react-router-dom'
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         
+      <Routes>  
+       
+       
       </Routes>
         {/* <Navbar/> */}
         {/* <Header/> */}
