@@ -7,7 +7,8 @@ function App() {
     <div className="App">
       <Routes>  
        
-       
+      <Routes>
+        
       </Routes>
         {/* <Navbar/> */}
         {/* <Header/> */}
