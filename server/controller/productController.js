@@ -42,7 +42,7 @@ try {
 } catch (err) {
     throw `Err : ${err}`;
 }
-
+  }
 const updateProduct = async (req,res)=>{
   try {
     const obj = {
