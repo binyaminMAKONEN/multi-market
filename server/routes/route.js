@@ -4,15 +4,18 @@ const storesController = require('../controller/storeController');
 const userController = require('../controller/usercontroller')
 const orderController = require('../controller/orderController')
 
+
 routes.route('/api/stores')
 .post(storesController.createStore)
 .get(storesController.getStores)
 
 
 routes.route('/api/orders')
-     // .post(storesController.createStore)
      .get(orderController.getOrders)
      .post(orderController.createOrders)
+
+routes.route('/api/orders/:id')
+     .get(orderController.getStoreOrCustomerOrderById)
 
 
 // routes.route('/api/products')
