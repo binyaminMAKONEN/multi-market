@@ -11,6 +11,7 @@ const getProduct = async (req,res)=>{
     return res.json(data)
 }
 
+// create store in localhost:8000
 
 const createProducts = async (req,res) => {
   if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
@@ -27,7 +28,6 @@ const createProducts = async (req,res) => {
 
     products = Promise.all(products);
 
-
     return products;
   } catch (err) {
     throw `Err : ${err}`;
@@ -42,7 +42,7 @@ try {
 } catch (err) {
     throw `Err : ${err}`;
 }
-
+}
 const updateProduct = async (req,res)=>{
   try {
     const obj = {
@@ -86,4 +86,4 @@ module.exports = {
   updateProduct,
   deleteProduct
 
-}
+};
