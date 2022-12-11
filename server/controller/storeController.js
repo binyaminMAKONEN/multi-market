@@ -15,16 +15,24 @@ const getStores = async (req,res)=>{
 const createStore = async(req,res)=>{
 
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
-  const create =  new storeModel({
-        name:req.body.name,
-          img: req.body.img,
+    try {
+      const create =  new storeModel({
+        storeName:req.body.storeName,
+        userId:req.body.userId,
+        image:{
+          logo:req.body.logo,
+          background:req.body.background},
           ownerName:req.body.ownerName,
           description: req.body.description,
           location: req.body.location,
           storeType:req.body.storeType,
-    })
-await create.save()
-    
+        })
+        await create.save()
+         res.status(200).json('create store')
+    } catch (err) {
+     console.log(err.message); 
+    }
+  
 }
 
 // delete store
@@ -37,21 +45,22 @@ const deleteStore = async (req,res)=>{
   await storeModel.findByIdAndDelete(id);
    await productModel.deleteMany({storeId:id});
   res.json({message:'store deleted succesfully'})
-}
+} 
 
 // update store 
 const updateStore = async (req,res)=>{
-  const {id: _id} = req.params;
+  const {id} = req.params;
   const store = req.body;
-  if (!mongoose.Types.ObjectId.isValid(_id)){
+  if (!mongoose.Types.ObjectId.isValid(id)){
     return res.status(404).send('no post with that id')
   } 
-    const updatedStore = await storeModel.findByIdAndUpdate(_id,store,{new:true});
+    const updatedStore = await storeModel.findByIdAndUpdate(id,store,{new:true});
+    await productModel.updateMany({storeId:id},{$set:{storeName:store.storeName}});
     res.json(updatedStore)
 }
 
 // get store by id
-const getStoreById = async (req,res)=>{
+const getProductsStoreById = async (req,res)=>{
   const id = req.params.id;
   if (!mongoose.Types.ObjectId.isValid(id)) {  
     return res.status(404).send('no post with that id')
@@ -66,5 +75,5 @@ module.exports = {
   createStore,
   deleteStore,
   updateStore,
-  getStoreById
+  getProductsStoreById
 }
