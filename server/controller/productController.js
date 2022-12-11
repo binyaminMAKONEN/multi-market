@@ -43,10 +43,7 @@ try {
     throw `Err : ${err}`;
 }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> meir
 const updateProduct = async (req,res)=>{
   try {
     const obj = {
