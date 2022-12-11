@@ -1,7 +1,7 @@
 
 const Product = require('../models/productModel');
 const Store =require('../models/storeModel');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 
 
 // get all store in localhost:8000
@@ -41,6 +41,7 @@ try {
     await Store.findByIdAndUpdate(storeId,{$push:{products:{productId}}})
 } catch (err) {
     throw `Err : ${err}`;
+}
 }
 
 const updateProduct = async (req,res)=>{
