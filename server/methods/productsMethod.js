@@ -7,6 +7,9 @@ exports.addProducts = async (arr) => {
       const product = new Product(obj);
       const productId = product.id;
       const storeId = obj.storeId;
+      if (!mongoose.Types.ObjectId.isValid(storeId)){
+        return res.status(404).send("not exist in database")
+      }
       await updateStoreProducts(storeId,productId)
       await product.save();
       return product;
