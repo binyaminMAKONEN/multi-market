@@ -22,7 +22,7 @@ routes.route('/api/orders')
 routes.route('/api/stores/:id')
 .delete(storesController.deleteStore)
 .put(storesController.updateStore)
-.get(storesController.getStoreById)
+.get(storesController.getProductsStoreById)
 
 
 

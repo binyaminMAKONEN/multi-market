@@ -11,7 +11,8 @@ const storeModel = new mongoose.Schema(
   {
     storeName: { type: String,required: true, unique: true,},
     userId: {type: String,required: true,},
-    image: {logo:{type:String,required:false},
+    image: {
+    logo:{type:String,required:false},
     background:{type:String,required:false}
   },
     ownerName:{type: String,required: true,},
