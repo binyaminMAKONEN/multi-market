@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Routes>
         
-      <Routes>  
+      <Routes/>  
        
        
       </Routes>
