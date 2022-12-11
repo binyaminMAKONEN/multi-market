@@ -1,7 +1,7 @@
 
 const Product = require('../models/productModel');
 const Store =require('../models/storeModel');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 
 
 // get all store in localhost:8000
@@ -43,6 +43,7 @@ try {
     throw `Err : ${err}`;
 }
 }
+
 const updateProduct = async (req,res)=>{
   try {
     const obj = {
