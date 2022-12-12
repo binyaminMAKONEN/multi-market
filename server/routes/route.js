@@ -25,7 +25,7 @@ routes.route('/api/orders/:id')
 routes.route('/api/stores/:id')
 .delete(storesController.deleteStore)
 .put(storesController.updateStore)
-.get(storesController.getStoreById)
+.get(storesController.getProductsStoreById)
 
 
 
