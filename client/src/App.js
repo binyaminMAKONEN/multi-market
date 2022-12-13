@@ -4,6 +4,9 @@ import FirstNavbarLogin from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
 import SecondNavBar from './components/secondNavBar';
 import MainPage from './Pages/mainPage';
+
+import ToolBar from "./Features/Toolbar"
+import StoreList from './Pages/StoreList';
 function App() {
   return (
     <div className="App">
@@ -13,6 +16,8 @@ function App() {
      <FirstNavbarLogin/>
       {/* <ThirdNavbar/> */}
       {/* <SecondNavBar/> */}
+     {/* <ToolBar/> */}
+     {/* <StoreList/> */}
        <MainPage/>
        
   
