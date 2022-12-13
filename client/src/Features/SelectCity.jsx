@@ -14,10 +14,11 @@ function SelectCity() {
         setCites(values);
       })
     }, [])
-    console.log(cites);
     
   return (
-    <div>SelectCity</div>
+    <div>
+        
+    </div>
   )
 }
 
