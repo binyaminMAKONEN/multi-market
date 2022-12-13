@@ -6,15 +6,16 @@ import { RxTextAlignRight } from 'react-icons/rx';
 
 function ThirdNavbar() {
   return (
-    <div>
+    <div >
         <Navbar
+        className='border-red-900 border-3'
   fluid={true}
   rounded={true}
 >
   <Navbar.Brand href="#">
     <img
-      src="https://i.postimg.cc/D0skf82c/2022-12-08-210836-preview-rev-1.png"
-      className="mr-3 h-6 sm:h-9 "
+      src="https://i.postimg.cc/3N22WDJz/Multi-Market-Logo-preview-rev-1.png"
+      className="mr-3 h-9 sm:h-16 "
       alt="Flowbite Logo"
     />
     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
@@ -60,7 +61,7 @@ function ThirdNavbar() {
   <Navbar.Collapse>
     
     <div>
-    <div className="mb-2 block">
+    <div className=" block">
       <Label
         htmlFor="small"
        

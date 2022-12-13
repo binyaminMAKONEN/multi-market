@@ -1,9 +1,8 @@
 import React from 'react'
 import { Navbar,Dropdown,Avatar ,Label,TextInput} from 'flowbite-react'
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im';
-import { RxTextAlignRight } from 'react-icons/rx';
-function secondNavBar() {
+
+function SecondNavBar() {
   return (
     <div>
          <Navbar
@@ -82,4 +81,4 @@ function secondNavBar() {
   )
 }
 
-export default secondNavBar
+export default SecondNavBar
