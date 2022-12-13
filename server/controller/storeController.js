@@ -44,7 +44,7 @@ const deleteStore = async (req,res)=>{
   } 
   await storeModel.findByIdAndDelete(id);
    await productModel.deleteMany({storeId:id});
-  res.json({message:'store deleted succesfully'})
+  res.json({message:'store deleted successfully'})
 } 
 
 // update store 
