@@ -1,8 +1,10 @@
 // import './App.css';
 // import {Route,Routes} from 'react-router-dom'
-import FirstNavbarLogin from '../src/components/firstnavbarLogin';
+// import FirstNavbarLogin from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
-import SecondNavBar from './components/secondNavBar';
+import Footer from './components/Footer';
+// import SecondNavBar from './components/SecondNavBar';
+// import Toolbar from './Features/Toolbar';
 import MainPage from './Pages/mainPage';
 
 import ToolBar from "./Features/Toolbar"
@@ -13,12 +15,14 @@ function App() {
       
         
         
-     <FirstNavbarLogin/>
-      {/* <ThirdNavbar/> */}
+      {/* <FirstNavbarLogin/> */}
       {/* <SecondNavBar/> */}
-     {/* <ToolBar/> */}
-     {/* <StoreList/> */}
+
+      <ThirdNavbar/>
+      {/* <Toolbar/> */}
        <MainPage/>
+       <Footer/>
+       
        
   
     </div>
