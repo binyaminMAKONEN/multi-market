@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 // import SecondNavBar from './components/SecondNavBar';
 // import Toolbar from './Features/Toolbar';
 import MainPage from './Pages/mainPage';
+
+import ToolBar from "./Features/Toolbar"
+import StoreList from './Pages/StoreList';
 function App() {
   return (
     <div className="App">
@@ -14,6 +17,7 @@ function App() {
         
       {/* <FirstNavbarLogin/> */}
       {/* <SecondNavBar/> */}
+
       <ThirdNavbar/>
       {/* <Toolbar/> */}
        <MainPage/>
