@@ -16,7 +16,7 @@ const getProduct = async (req,res)=>{
 const createProducts = async (req,res) => {
   if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
   try {
-    const arr=req.bod
+    const arr=req.body
     let products = arr.map(async (obj) => {
       const product = new Product(obj);
       const productId = product.id;
