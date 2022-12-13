@@ -1,17 +1,20 @@
-import React from 'react'
-import SelectCity from '../Features/SelectCity'
+import React from "react";
+import SelectCity from "../Features/SelectCity";
 
 function Location() {
   return (
-    <div>
+    <div className="flex-col">
+      <div className="col-end">
         <button>X</button>
-
+      </div>
+      <div>
         <img src="" alt="" />
-        <h4>אנא ידע אותנו במיקומך</h4>
-        <SelectCity/>
+        <p>אנא ידע אותנו במיקומך</p>
+        <SelectCity />
         <button>התחל בקניה</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Location
+export default Location;
