@@ -16,7 +16,7 @@ const connect =require('./db/connection')
 app.use(require('./routes/route'))
 
 app.use('/api/products',productRouter)
-app.use('/auth',userAuthRouret)
+app.use('/',userAuthRouret)
 
 
 connect.then(db =>{
