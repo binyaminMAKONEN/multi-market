@@ -5,7 +5,7 @@ const userModel = new mongoose.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
   },
-  img: { type: String, required: false },
+  img: { type: String, required: false ,default:'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png'},
   username: {
     type: String,
     required: true,
