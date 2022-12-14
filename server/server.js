@@ -5,12 +5,14 @@ const productRouter =require('./routes/productRouter')
 const storeRouter =require('./routes/storeRouter')
 const orderRouter =require('./routes/orderRouter')
 const userRouter =require('./routes/userRouter')
+const userAuthRouret =require('./routes/userAuthRouret')
 
 require('dotenv').config()
 const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
+
 
 const connect =require('./db/connection')
 
@@ -20,6 +22,7 @@ app.use('/api/products',productRouter)
 app.use('/api/stores',storeRouter)
 app.use('/api/orders',orderRouter)
 app.use('/api/users',userRouter)
+app.use('/',userAuthRouret)
 
 
 connect.then(db =>{
