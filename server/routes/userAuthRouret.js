@@ -21,28 +21,29 @@ passport.use(new GoogleStrategy({
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: '/google'
 },(accessToken,refreshToken,profile,done)=>{
-    process.nextTick(()=>{
-        userAuthModle.findOne({'uid':profile.id},(err,user)=>{
-            if(err)
-            return done(err)
-            if(user){
-                console.log('user found');
-                console.log(user );
-                return done(null,user)
-            }else{
-                let newUser = new userAuthModle()
-                newUser.uid = profile.id
-                newUser.name = profile.name.givenName + " " +profile.name.familyName
-                newUser.email = profile.email[0].value
-                newUser.pic = profile.photos[0].value
-                newUser.save(err=>{
-                    if(err)
-                    throw err ;
-                    return done(null,newUser);
-                })
-            }
-        })
-      })
+    // process.nextTick(()=>{
+    //     userAuthModle.findOne({'uid':profile.id},(err,user)=>{
+    //         if(err)
+    //         return done(err)
+    //         if(user){
+    //             console.log('user found');
+    //             console.log(user );
+    //             return done(null,user)
+    //         }else{
+    //             let newUser = new userAuthModle()
+    //             newUser.uid = profile.id
+    //             newUser.name = profile.name.givenName + " " +profile.name.familyName
+    //             newUser.email = profile.email[0].value
+    //             newUser.pic = profile.photos[0].value
+    //             newUser.save(err=>{
+    //                 if(err)
+    //                 throw err ;
+    //                 return done(null,newUser);
+    //             })
+    //         }
+    //     })
+    //   })
+    console.log(profile);
 }))
 
 passport.serializeUser((user,callback)=>{
