@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const productRouter =require('./routes/productRouter')
+const storeRouter =require('./routes/storeRouter')
+const orderRouter =require('./routes/orderRouter')
+const userRouter =require('./routes/userRouter')
 
 require('dotenv').config()
 const port = process.env.PORT || 5000
@@ -11,9 +14,12 @@ app.use(express.json())
 
 const connect =require('./db/connection')
 
-app.use(require('./routes/route'))
+// app.use(require('./routes/route'))
 
 app.use('/api/products',productRouter)
+app.use('/api/stores',storeRouter)
+app.use('/api/orders',orderRouter)
+app.use('/api/users',userRouter)
 
 
 connect.then(db =>{
