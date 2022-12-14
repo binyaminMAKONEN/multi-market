@@ -9,15 +9,9 @@ function App() {
       
         
         
-      {/* <FirstNavbarLogin/> */}
-      {/* <SecondNavBar/> */}
-      <ThirdNavbar/>
-      {/* <Toolbar/> */}
-       <MainPage/>
-       <Footer/>
-       
-       
-  
+    <div>Start code</div>
+
+
     </div>
   );
 }
