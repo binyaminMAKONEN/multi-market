@@ -1,6 +1,6 @@
 // import './App.css';
 // import {Route,Routes} from 'react-router-dom'
-// import FirstNavbarLogin from '../src/components/firstnavbarLogin';
+// import FirstNavbar from '../src/components/FirstNavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
 import Footer from './components/Footer';
 // import SecondNavBar from './components/SecondNavBar';
@@ -12,7 +12,7 @@ function App() {
       
         
         
-      {/* <FirstNavbarLogin/> */}
+      {/* <FirstNavbar/> */}
       {/* <SecondNavBar/> */}
       <ThirdNavbar/>
       {/* <Toolbar/> */}
