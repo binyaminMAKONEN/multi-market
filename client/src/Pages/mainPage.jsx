@@ -1,12 +1,20 @@
 import React from 'react'
 // import { TextInput} from 'flowbite-react'
+import axios from 'axios'
+import GoogleButton from 'react-google-button'
 
 function mainPage() {
+  const loginGoogle = async()=>{
+  const data =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
+  console.log(data);
+  data?console.log(data):console.log("you need to login");
+
+  }
   return (
-    <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0ICAgNCA0ICAgHBw8ICQcNFREWFhURExMYHSggGBolGxMTITEhMSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg0NDjcZFRkrLS03Ky0tKysrKy0tLSsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAGxABAQEAAgMAAAAAAAAAAAAAAAERAqFRcYH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A7LyiStciRyaXFiwAxmxtmgyshIsAIuAM2LFIAEawGUWwgIooJWa3iYDMawxYDK4tiAYuABYmKIAChiKACoggAGCmKEAAMFBmwaqYCaaEgAshICLq4UEtAAEIDSBAFKAgpQEMEADAFAEUAQUwEUAAFEwUBFhpgAUATFAAACgCYoAgLgIKWAmgYCgAGAgAAGBKBhQAAAFAQBQAAVACgAVFAIKAgFBNXEWARUAA0AAAAACgACAioCgAAAogAJSKKBQCIoKJqaDQigMtMgpgaAAAACKGAGCggoCCoCooggqAAAqAAoAgqKEBMBSqmAnjtQAwAAVASxcAAEBRFAVABUAKQIAABoCAQAAAFQAVAAQUUNNBUQBRFAIJoKS/PaKAqAKhUBpKqAAAqAgiqigGGIGmgAipgKAAGAGAKARKCxMUUEUQRQASLUxQVFQBFAABUoAQAABANSrIoRUEAC0AUBBUAIpgIoAyqVNUaEWAFSmgoRQBFoIABBKAoACCwAAAUBAoAACoCCggCoAogCiKDIDQRRKgUwkUAAAACUtEoKIoAAJVgAKIBBFAAAFSgAIAGAAAAAoAMiaVoXRIsBRF1BFZagBRKAUAIAAqAKBAJ0UAAAAQFBAUoACCCgAAoIAozFxRRBRBEsAFkAA0qgIAoAIAABFAAAAASgAAAAAAAKAACAAD/9k=)'}}>
-        <div className='text-center mb-4'>
-        <h1 className=' text-6xl'>ברוך הבא לעולם החנויות<br/> שלך</h1>
-        <input className='mt-12 w-3/5 rounded-md h-12'  type="text" />
+    <div>
+        <div className='border border-4 text-center mb-4'>
+        <h1 className=' text-6xl mt-16'>בוא נתחיל לחפש מוצרים</h1>
+        <input className='mt-12 w-3/5 rounded-md'  type="text" />
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
     </div>
     {/* categories section */}

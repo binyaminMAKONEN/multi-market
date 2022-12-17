@@ -6,15 +6,35 @@ const storeRouter =require('./routes/storeRouter')
 const orderRouter =require('./routes/orderRouter')
 const userRouter =require('./routes/userRouter')
 const userAuthRouret =require('./routes/userAuthRouret')
+const expressSession = require("express-session");
+const passport = require("passport");
+const cookieSession = require('cookie-session');
+
 
 require('dotenv').config()
 const port = process.env.PORT || 5000
 
-app.use(cors())
+require("./config/authenticateGoogle")(passport)
+
+app.use(
+    expressSession({
+      secret: "jayantpatilapp",
+      resave: true,
+      saveUninitialized: true,
+      cookie:{secure:true}
+    })
+  );
+  
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+
+app.use(cors({origin: "http://localhost:3000",credentials: true,}))
 app.use(express.json())
 
 
-const connect =require('./db/connection')
+
+const connect =require('./config/connection');
 
 // app.use(require('./routes/route'))
 
@@ -22,7 +42,7 @@ app.use('/api/products',productRouter)
 app.use('/api/stores',storeRouter)
 app.use('/api/orders',orderRouter)
 app.use('/api/users',userRouter)
-app.use('/',userAuthRouret)
+app.use('/auth',userAuthRouret)
 
 
 connect.then(db =>{

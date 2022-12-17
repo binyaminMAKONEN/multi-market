@@ -1,4 +1,8 @@
+// import './App.css';
+import {Route,Routes} from 'react-router-dom'
+import FirstNavbarLogin from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
+import LoginComp from './components/LoginComp';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import ToolBar from "./Features/Toolbar"
