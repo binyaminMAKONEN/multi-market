@@ -1,7 +1,7 @@
 const userModel = require('../models/userModels')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
-const {generateAccessToken} =require('../controller/authenticateToken')
+const {generateAccessToken} =require('../config/authenticateToken')
 
 const createUser = async (req,res)=>{
     try {
