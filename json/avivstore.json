@@ -1,0 +1,13 @@
+{
+    "name":"אביב כלבו",
+    "img":"https://cdn.britannica.com/34/212134-050-A7289400/Lionel-Messi-2018.jpg",
+    "ownerName":"אביב אדגה",
+    "producst":[],
+    "description":"החנות של אדגה",
+    "location":{
+        "city":"פתח תקווה",
+        "address":"צפת 35",
+        "area":"מרכז"
+    },
+    "storeType":"הכל לבית"
+}

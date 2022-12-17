@@ -1,9 +1,21 @@
 import React from 'react'
 import { TextInput} from 'flowbite-react'
+import axios from 'axios'
+import GoogleButton from 'react-google-button'
 
 function mainPage() {
+  const loginGoogle = async()=>{
+  const data =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
+  console.log(data);
+  data?console.log(data):console.log("you need to login");
+
+  }
   return (
     <div>
+      {/* <button className='border-2' onClick={()=>login()}> show data</button><br /> */}
+      <GoogleButton onClick={loginGoogle} />
+      <a href='http://localhost:8080/auth/login/google' className='w-25'> Login</a><br />
+      <a href='http://localhost:8080/auth/logout' className='w-25'> logout</a><br />
         <div className='border border-4 text-center mb-4'>
         <h1 className=' text-6xl mt-16'>בוא נתחיל לחפש מוצרים</h1>
         <input className='mt-12 w-3/5 rounded-md'  type="text" />
