@@ -19,7 +19,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: '/google'
+    callbackURL: 'http://localhost:8080/google'
 },(accessToken,refreshToken,profile,done)=>{
     // process.nextTick(()=>{
     //     userAuthModle.findOne({'uid':profile.id},(err,user)=>{
