@@ -3,6 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const {generateAccessToken} =require('../config/authenticateToken')
 
+const getUsers = async (req,res)=>{
+  let user = await  userModel.find({})
+  return res.json(user)
+}
+
 const createUser = async (req,res)=>{
     try {
         //generate new password
@@ -17,7 +22,6 @@ const createUser = async (req,res)=>{
               email:req.body.email,
               password:hashedPassword,
               phone:req.body.phone,
-              owner:req.body.owner,
         });  
     
         //save user and respond
@@ -40,9 +44,9 @@ const login =async (req,res)=>{
     )
     console.log(validPassword);
     !validPassword && res.status(400).json('Wrong username or password')
-    const refreshToken=jwt.sign({role:user.Permissions,userId:user._id},process.env.REFRESH_TOKEN_SECRET)
+    const refreshToken=jwt.sign({role:user.permissions,userId:user._id},process.env.REFRESH_TOKEN_SECRET)
     console.log(refreshToken);
-    const token =generateAccessToken({role:user.Permissions,userId:user._id})
+    const token =generateAccessToken({role:user.permissions,userId:user._id})
 
     res.status(200).json({token,refreshToken})
     
@@ -55,5 +59,6 @@ const login =async (req,res)=>{
 
 module.exports = {
     createUser,
-    login
+    login,
+    getUsers
 }
