@@ -19,14 +19,13 @@ const userModel = new mongoose.Schema({
     max: 50,
     unique: true,
   },
-
   password: {
     type: String,
     required: false,
     min: 6,
   },
-  phone: { type: String, required: true, min: 9, max: 12 },
-  permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
+  phone : { type: String, required: true, min: 9, max: 12 },
+  Permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
 },{ versionKey: false });
 
 module.exports = mongoose.model("User", userModel);
