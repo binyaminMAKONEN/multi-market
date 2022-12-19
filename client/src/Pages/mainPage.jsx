@@ -1,15 +1,28 @@
-import React from 'react'
 // import { TextInput} from 'flowbite-react'
 import axios from 'axios'
 import GoogleButton from 'react-google-button'
+import { useEffect } from 'react'
+import {useCookies} from 'react-cookies';
 
-function mainPage() {
-  const loginGoogle = async()=>{
-  const data =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
-  console.log(data);
-  data?console.log(data):console.log("you need to login");
 
+ function MainPage() {
+  
+  const dataUser =async ()=>{
+    try {
+      const {data} =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
+      console.log(data);
+      
+    } catch (err) {
+      if(err.response.status==401)console.log("you need log in");
+    }
   }
+  
+  const loginGoogle = ()=>{
+  window.location.href = 'http://localhost:8080/auth/login/google'
+  }
+  useEffect(()=>{
+    dataUser()
+  },[])
   return (
 
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
@@ -19,6 +32,9 @@ function mainPage() {
 
    
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
+      <GoogleButton onClick={()=>loginGoogle()
+      
+      }/>
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
@@ -152,4 +168,4 @@ function mainPage() {
   )
 }
 
-export default mainPage
+export default MainPage
