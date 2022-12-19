@@ -3,7 +3,7 @@ import React from 'react'
 
 function mainPage() {
   return (
-    <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0ICAgNCA0ICAgHBw8ICQcNFREWFhURExMYHSggGBolGxMTITEhMSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg0NDjcZFRkrLS03Ky0tKysrKy0tLSsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAGxABAQEAAgMAAAAAAAAAAAAAAAERAqFRcYH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A7LyiStciRyaXFiwAxmxtmgyshIsAIuAM2LFIAEawGUWwgIooJWa3iYDMawxYDK4tiAYuABYmKIAChiKACoggAGCmKEAAMFBmwaqYCaaEgAshICLq4UEtAAEIDSBAFKAgpQEMEADAFAEUAQUwEUAAFEwUBFhpgAUATFAAACgCYoAgLgIKWAmgYCgAGAgAAGBKBhQAAAFAQBQAAVACgAVFAIKAgFBNXEWARUAA0AAAAACgACAioCgAAAogAJSKKBQCIoKJqaDQigMtMgpgaAAAACKGAGCggoCCoCooggqAAAqAAoAgqKEBMBSqmAnjtQAwAAVASxcAAEBRFAVABUAKQIAABoCAQAAAFQAVAAQUUNNBUQBRFAIJoKS/PaKAqAKhUBpKqAAAqAgiqigGGIGmgAipgKAAGAGAKARKCxMUUEUQRQASLUxQVFQBFAABUoAQAABANSrIoRUEAC0AUBBUAIpgIoAyqVNUaEWAFSmgoRQBFoIABBKAoACCwAAAUBAoAACoCCggCoAogCiKDIDQRRKgUwkUAAAACUtEoKIoAAJVgAKIBBFAAAFSgAIAGAAAAAoAMiaVoXRIsBRF1BFZagBRKAUAIAAqAKBAJ0UAAAAQFBAUoACCCgAAoIAozFxRRBRBEsAFkAA0qgIAoAIAABFAAAAASgAAAAAAAKAACAAD/9k=)'}}>
+    <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
         <div className='text-center mb-4'>
         <h1 className=' text-6xl'>ברוך הבא לעולם החנויות<br/> שלך</h1>
         <input className='mt-12 w-3/5 rounded-md h-12'  type="text" />
@@ -46,10 +46,10 @@ function mainPage() {
       <div className="flex justify-center">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/5486163/pexels-photo-5486163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+            <img className="rounded-t-lg" src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" />
           </a>
           <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">כולבו</h5>
+            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">גיימינג</h5>
           
           </div>
         </div>
