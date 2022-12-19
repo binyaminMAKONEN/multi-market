@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Navbar } from 'flowbite-react'
-export default function Navbars() {
+export default function FirstNavbar() {
   return (
     <div>                          
 

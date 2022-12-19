@@ -2,13 +2,10 @@ const router = require("express").Router();
 const passport = require("passport");
 
 
-
 function isLoggedIn(req, res, next) {
+  console.log("log",req.user);
   req.user ? next() : res.sendStatus(401);
 }
-
-
-
 //routes
 router.get("/login/google",passport.authenticate("google", { scope: ["email", "profile"] }));
 router.get("/google/callback",passport.authenticate("google", {
@@ -17,7 +14,6 @@ router.get("/google/callback",passport.authenticate("google", {
   })
 );
 router.get("/protected", isLoggedIn, (req, res) => {
-    console.log(req.user);
     if(req.user) res.json(req.user);
     else res.redirect("/auth");
 });
@@ -31,9 +27,8 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
-router.get('/data',(req,res)=>{
-    console.log(req.user);
-   return res.json({user:req.user})
+router.get('/data',isLoggedIn,(req,res)=>{
+   return res.json(req.user)
 })
 
 router.get("/auth/google/failure", (req, res) => {
@@ -42,7 +37,6 @@ router.get("/auth/google/failure", (req, res) => {
 
 router.get("/", (req, res) => {
   res.send(req.user ? req.user : "Not logged in,login with Google or facebook");
-  console.log(req.user);
 });
 
 module.exports = router;
