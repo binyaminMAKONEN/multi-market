@@ -1,7 +1,7 @@
 const userModel = require('../models/userModels')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
-const {generateAccessToken} =require('../controller/authenticateToken')
+const {generateAccessToken} =require('../config/authenticateToken')
 
 const getUsers = async (req,res)=>{
   let user = await  userModel.find({})
