@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import ToolBar from "./Features/Toolbar"
 import StoreList from './Pages/StoreList';
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import CheckOut from "./Pages/CheckOut"
 import InfoPage from './Pages/InfoPage'
