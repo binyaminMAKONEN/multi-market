@@ -1,21 +1,37 @@
-import React from 'react'
 // import { TextInput} from 'flowbite-react'
 import axios from 'axios'
 import GoogleButton from 'react-google-button'
+import { useEffect } from 'react'
+import {useCookies} from 'react-cookies';
 
-function mainPage() {
-  const loginGoogle = async()=>{
-  const data =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
-  console.log(data);
-  data?console.log(data):console.log("you need to login");
 
+ function MainPage() {
+  
+  const dataUser =async ()=>{
+    try {
+      const {data} =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
+      console.log(data);
+      
+    } catch (err) {
+      if(err.response.status==401)console.log("you need log in");
+    }
   }
+  
+  const loginGoogle = ()=>{
+  window.location.href = 'http://localhost:8080/auth/login/google'
+  }
+  useEffect(()=>{
+    dataUser()
+  },[])
   return (
     <div>
         <div className='border border-4 text-center mb-4'>
         <h1 className=' text-6xl mt-16'>בוא נתחיל לחפש מוצרים</h1>
         <input className='mt-12 w-3/5 rounded-md'  type="text" />
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
+      <GoogleButton onClick={()=>loginGoogle()
+      
+      }/>
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
@@ -149,4 +165,4 @@ function mainPage() {
   )
 }
 
-export default mainPage
+export default MainPage
