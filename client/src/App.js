@@ -1,8 +1,11 @@
+// import './App.css';
+import {Route,Routes} from 'react-router-dom'
+import FirstNavbarLogin from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
+import LoginComp from './components/LoginComp';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
-import { Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import AboutInfo from './components/InfoPageToolBar/AboutInfo';
 import Questions from './components/InfoPageToolBar/Questions';

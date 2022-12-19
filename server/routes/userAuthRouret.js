@@ -1,79 +1,42 @@
-const app = require('express').Router()
-const passport =require ('passport')
-require('dotenv').config()
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const expressSession = require ('express-session')
-const userAuthModle = require('../models/authUsers')
-const GOOGLE_CLIENT_ID =process.env.GOOGLE_CLIENT_ID
-const GOOGLE_CLIENT_SECRET =process.env.GOOGLE_CLIENT_SECRET
+const router = require("express").Router();
+const passport = require("passport");
 
-app.use(expressSession({
-    secret: 'jayantpatilapp',
-    resave: true,
-    saveUninitialized: true
-}))
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: '/google'
-},(accessToken,refreshToken,profile,done)=>{
-    // process.nextTick(()=>{
-    //     userAuthModle.findOne({'uid':profile.id},(err,user)=>{
-    //         if(err)
-    //         return done(err)
-    //         if(user){
-    //             console.log('user found');
-    //             console.log(user );
-    //             return done(null,user)
-    //         }else{
-    //             let newUser = new userAuthModle()
-    //             newUser.uid = profile.id
-    //             newUser.name = profile.name.givenName + " " +profile.name.familyName
-    //             newUser.email = profile.email[0].value
-    //             newUser.pic = profile.photos[0].value
-    //             newUser.save(err=>{
-    //                 if(err)
-    //                 throw err ;
-    //                 return done(null,newUser);
-    //             })
-    //         }
-    //     })
-    //   })
-    console.log(profile);
-}))
-
-passport.serializeUser((user,callback)=>{
-    callback(null, user);
-})
-
-passport.deserializeUser((user, callback)=>{
-    callback(null, user);
-})
-
+function isLoggedIn(req, res, next) {
+  console.log("log",req.user);
+  req.user ? next() : res.sendStatus(401);
+}
 //routes
-app.get('/login/google', passport.authenticate('google', {scope:['profile email']}));
-app.get('/google', passport.authenticate('google'),(req,res)=>{
-    res.redirect('/auth');
-})
+router.get("/login/google",passport.authenticate("google", { scope: ["email", "profile"] }));
+router.get("/google/callback",passport.authenticate("google", {
+    successRedirect: "http://localhost:3000", //hare we need the route of after login
+    failureRedirect: "/auth/google/failure",
+  })
+);
+router.get("/protected", isLoggedIn, (req, res) => {
+    if(req.user) res.json(req.user);
+    else res.redirect("/auth");
+});
 
-
-app.get('/logout', function(req, res, next) {
-    req.logout(function(err) {
-      if (err) {
-        console.log(err);
-        return next(err); }
-      res.redirect('/auth');
-    });
+router.get("/logout", (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect("/auth");
   });
+});
 
-app.get('/',(req,res)=>{
-    res.send(req.user?req.user: 'Not logged in,login with Google or facebook');
-    console.log(req.user);
+router.get('/data',isLoggedIn,(req,res)=>{
+   return res.json(req.user)
 })
 
+router.get("/auth/google/failure", (req, res) => {
+  res.send("Failed to authenticate..");
+});
 
-module.exports = app
+router.get("/", (req, res) => {
+  res.send(req.user ? req.user : "Not logged in,login with Google or facebook");
+});
+
+module.exports = router;
