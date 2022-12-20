@@ -8,8 +8,7 @@ function BottomBar() {
     const pathname = window.location.pathname
     useEffect(() => {
         setSearch(pathname)
-    console.log(pathname);
-    console.log(serach);
+
     }, [pathname])
     
   return (

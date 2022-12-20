@@ -11,7 +11,7 @@ const ShoppingCard = () => {
     ]
   return (
     <>
-        <div class="pointer-events-auto w-['30%']">
+        <div class="pointer-events-auto w-0 md:w-4/12 invisible md:visible">
           <div class="flex grow h-7/12 flex-col overflow-y-scroll bg-white shadow-xl">
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div class="border-b-2 py-2">
