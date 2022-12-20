@@ -6,7 +6,6 @@ import LoginComp from './components/LoginComp';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
-import { Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import AboutInfo from './components/InfoPageToolBar/AboutInfo';
 import Questions from './components/InfoPageToolBar/Questions';
@@ -17,6 +16,7 @@ import PersonalArea from './Pages/PersonalArea'
 import Toolbar from './Features/Toolbar'
 import StoreHeader from './Features/StoreHeader';
 import BottomBar from './components/BottomBar';
+import Login from './components/Login';
 function App() {
   return (
     <>
@@ -32,6 +32,7 @@ function App() {
       <Route index path='AboutInfo' element={<AboutInfo />}/>
       <Route  path='Questions' element={<Questions />}/>
     </Route>
+    <Route path='/Login' element={<Login/>} />
     <Route path='/PersonalArea' element={<PersonalArea />}/>
     <Route path='/About' element={<About />}/>
   </Routes>
