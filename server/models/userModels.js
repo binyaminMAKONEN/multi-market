@@ -28,7 +28,7 @@ const userModel = new mongoose.Schema({
     min: 6,
   },
   phone : { type: String, required: false, min: 9, max: 12 },
-  Permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
+  permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
 },{ versionKey: false });
 
 module.exports = mongoose.model("User", userModel);

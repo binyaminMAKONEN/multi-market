@@ -2,7 +2,6 @@
 import axios from 'axios'
 import GoogleButton from 'react-google-button'
 import { useEffect } from 'react'
-import {useCookies} from 'react-cookies';
 
 
  function MainPage() {
@@ -13,7 +12,7 @@ import {useCookies} from 'react-cookies';
       console.log(data);
       
     } catch (err) {
-      if(err.response.status==401)console.log("you need log in");
+      if(err.response.status===401)console.log("you need log in");
     }
   }
   
@@ -32,9 +31,7 @@ import {useCookies} from 'react-cookies';
 
    
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
-      {/* <GoogleButton onClick={()=>loginGoogle()
       
-      }/> */}
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
