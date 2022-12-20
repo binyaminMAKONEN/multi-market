@@ -12,7 +12,7 @@ module.exports = {
         'clear': 'rgba(0, 0, 0, 0.5)',
       },
       backgroundImage: {
-        "radish-img": "url('https://www.seedsavers.org/site/img/seo-images/0151-pink-lady-slipper-radish.jpg')"
+        "radish-img": "url('https://cdn.britannica.com/12/187212-050-F076FE9C/beets-beetroot-table-beet-Root-vegetable.jpg')"
       }
 
     },
