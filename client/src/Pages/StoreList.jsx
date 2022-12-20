@@ -4,9 +4,11 @@ import { useState } from 'react';
 import ShoppingCard from '../components/ShoppingCard'
 import Stores from '../components/Stores';
 import SortOptions from '../components/SortOptions';
+import {useGetProductsQuery} from '../store/apiSlice'
 const StoreList = () => {
     const [windowSize, setWindowSize] = useState(getWindowSize());
-
+    const { data, isFetching , isSuccess, isError } = useGetProductsQuery()
+console.log(data, isFetching , isSuccess, isError);
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
