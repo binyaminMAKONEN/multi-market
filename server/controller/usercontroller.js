@@ -1,7 +1,7 @@
 const userModel = require('../models/userModels')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
-const {generateAccessToken} =require('../controller/authenticateToken')
+const {generateAccessToken} =require('../config/authenticateToken')
 
 const getUsers = async (req,res)=>{
   let user = await  userModel.find({})
@@ -35,24 +35,22 @@ const createUser = async (req,res)=>{
 const login =async (req,res)=>{
  try {
     
-    const user = await userModel.findOne({username:req.body.username});
-    !user && res.status(400).json('Wrong username or password')
+    const user = await userModel.findOne({email:req.body.email});
+    if(!user) return res.status(400).json('Wrong username or password')
     
     const validPassword =  await bcrypt.compare(
         req.body.password,
         user.password
     )
-    console.log(validPassword);
-    !validPassword && res.status(400).json('Wrong username or password')
+    if(!validPassword) return res.status(400).json('Wrong username or password')
     const refreshToken=jwt.sign({role:user.permissions,userId:user._id},process.env.REFRESH_TOKEN_SECRET)
-    console.log(refreshToken);
+    
     const token =generateAccessToken({role:user.permissions,userId:user._id})
 
     res.status(200).json({token,refreshToken})
     
   } catch (err) {
-    console.log(err);
-    res.status(500).json({err:err.massage})
+    res.status(500).json({err})
     
   }
 }

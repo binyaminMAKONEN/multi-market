@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Navbar } from 'flowbite-react'
-export default function Navbars() {
+import Login from '../components/Login';
+export default function FirstNavbar() {
   return (
     <div>                          
 
@@ -42,6 +43,7 @@ export default function Navbars() {
     </Navbar.Link>
   </Navbar.Collapse>
 </Navbar>
+<Login x={true} />
     </div>
   )
 }
