@@ -31,7 +31,13 @@ import { useEffect } from 'react'
 
    
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
+<<<<<<< HEAD
       
+=======
+      {/* <GoogleButton onClick={()=>loginGoogle()
+      
+      }/> */}
+>>>>>>> e863850f78d85d7d5676970008390cf745f12ce2
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>

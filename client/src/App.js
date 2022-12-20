@@ -1,8 +1,6 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import FirstNavbarLogin from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
-import LoginComp from './components/LoginComp';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -13,16 +11,15 @@ import CheckOut from "./Pages/CheckOut"
 import InfoPage from './Pages/InfoPage'
 import InStore from './Pages/InStore'
 import PersonalArea from './Pages/PersonalArea'
-import Toolbar from './Features/Toolbar'
-import StoreHeader from './Features/StoreHeader';
 import BottomBar from './components/BottomBar';
 import Login from './components/Login';
+import PopUpProduct from './components/PopUpProduct';
 function App() {
   return (
     <>
     <ThirdNavbar/>
 {/* <StoreHeader/> */}
-
+<PopUpProduct/>
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
