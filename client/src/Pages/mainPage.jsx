@@ -32,9 +32,9 @@ import {useCookies} from 'react-cookies';
 
    
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
-      <GoogleButton onClick={()=>loginGoogle()
+      {/* <GoogleButton onClick={()=>loginGoogle()
       
-      }/>
+      }/> */}
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
