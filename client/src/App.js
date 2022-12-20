@@ -1,31 +1,40 @@
 // import './App.css';
-// import {Route,Routes} from 'react-router-dom'
-// import FirstNavbarLogin from '../src/components/firstnavbarLogin';
+import {Route,Routes} from 'react-router-dom'
 import ThirdNavbar from '../src/components/ThirdNavbar';
 import Footer from './components/Footer';
-// import SecondNavBar from './components/SecondNavBar';
-// import Toolbar from './Features/Toolbar';
 import MainPage from './Pages/mainPage';
-
-import ToolBar from "./Features/Toolbar"
 import StoreList from './Pages/StoreList';
+import About from "./Pages/About";
+import AboutInfo from './components/InfoPageToolBar/AboutInfo';
+import Questions from './components/InfoPageToolBar/Questions';
+import CheckOut from "./Pages/CheckOut"
+import InfoPage from './Pages/InfoPage'
+import InStore from './Pages/InStore'
+import PersonalArea from './Pages/PersonalArea'
+import BottomBar from './components/BottomBar';
+import PopUpProduct from './components/PopUpProduct';
 function App() {
   return (
-    <div className="App">
-      
-        
-        
-      {/* <FirstNavbarLogin/> */}
-      {/* <SecondNavBar/> */}
-
-      <ThirdNavbar/>
-      {/* <Toolbar/> */}
-       <MainPage/>
-       <Footer/>
-       
-       
-  
-    </div>
+    <>
+    <ThirdNavbar/>
+{/* <StoreHeader/> */}
+<PopUpProduct/>
+    <Routes>
+    <Route path='/' element={<MainPage/>}/>
+    <Route path='/StoreList' element={<StoreList />}/>
+    <Route path='/InStore' element={<InStore />}/>
+    <Route path='/CheckOut' element={<CheckOut />}/>
+    <Route path='/InfoPage' element={<InfoPage />}>
+      <Route index path='AboutInfo' element={<AboutInfo />}/>
+      <Route  path='Questions' element={<Questions />}/>
+    </Route>
+    <Route path='/PersonalArea' element={<PersonalArea />}/>
+    <Route path='/About' element={<About />}/>
+  </Routes>
+  <BottomBar/>
+  <Footer/>
+    </>
+   
   );
 }
 
