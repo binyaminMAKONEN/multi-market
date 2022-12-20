@@ -14,10 +14,12 @@ import PersonalArea from './Pages/PersonalArea'
 import BottomBar from './components/BottomBar';
 import Login from './components/Login';
 import PopUpProduct from './components/PopUpProduct';
+import FirstNavbar from './components/firstnavbarLogin';
 function App() {
   return (
     <>
-    <ThirdNavbar/>
+    <FirstNavbar/>
+    {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
 <PopUpProduct/>
     <Routes>
@@ -29,7 +31,6 @@ function App() {
       <Route index path='AboutInfo' element={<AboutInfo />}/>
       <Route  path='Questions' element={<Questions />}/>
     </Route>
-    <Route path='/Login' element={<Login/>} />
     <Route path='/PersonalArea' element={<PersonalArea />}/>
     <Route path='/About' element={<About />}/>
   </Routes>
