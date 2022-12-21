@@ -4,15 +4,31 @@ import Stores from '../components/Stores';
 import SortOptions from '../components/SortOptions';
 import {
   useGetProductsQuery,
+  useCreateUserMutation,
+  useGetStoreQuery
+
 } from '../store/apiSlice'
-import { useEffect } from 'react';
 const StoreList = () => {
-    const { data,response, isFetching,isLoading , isSuccess, isError } = useGetProductsQuery()
-    console.log(data);
+    const { data, isFetching,isLoading , isSuccess, isError } = useGetStoreQuery()
+    const [createUser,response] =useCreateUserMutation()
+    console.log(data,response);
+    const newUser = {
+            name: {
+              firstName:"testUser",
+              lastName: "testUserLastName",
+            },
+                  img:"testImg",
+                  username:"testUserName",
+                  email:"testMail",
+                  password:"123456",
+                  phone:"123456789",
+    }
+
     return(
     <div>
         <div className='border border-4 text-center mb-4  py-20 shadow-2xl'>
         <h1 className=' text-6xl mt-16'>קטגרויות</h1>
+        <button onClick={()=>createUser(newUser)}>create user</button>
     </div>
         <p className='text-2xl mb-12 text-center '>קטגרויות שונות</p>
 
