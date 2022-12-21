@@ -1,128 +1,20 @@
 // import { TextInput} from 'flowbite-react'
-import axios from 'axios'
-import GoogleButton from 'react-google-button'
-import { useEffect } from 'react'
-
+import CategoryCard from '../components/CategoryCard'
+import { useGetStoreQuery} from '../store/apiSlice'
 
  function MainPage() {
-  
-  const dataUser =async ()=>{
-    try {
-      const {data} =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
-      console.log(data);
-      
-    } catch (err) {
-      if(err.response.status===401)console.log("you need log in");
-    }
-  }
-  
-  const loginGoogle = ()=>{
-  window.location.href = 'http://localhost:8080/auth/login/google'
-  }
-  useEffect(()=>{
-    dataUser()
-  },[])
-  return (
+  const { data } = useGetStoreQuery();
 
+  return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
         <div className='text-center mb-4'>
         <h1 className=' text-6xl'>ברוך הבא לעולם החנויות<br/> שלך</h1>
         <input className='mt-12 w-3/5 rounded-md h-12'  type="text" />
-
-   
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
-      
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
- 
-        {/* <div className="flex flex-wrap justify-center">
-        <img src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div>
-      <div className="flex flex-wrap justify-center">
-        <img src="https://images.pexels.com/photos/13068566/pexels-photo-13068566.jpeg?auto=compress&cs=tinysrgb&w=600" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div>
-      <div className="flex flex-wrap justify-center ">
-        <img src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=600" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div>
- 
-        <div className="flex flex-wrap justify-center">
-        <img src="https://images.pexels.com/photos/833052/pexels-photo-833052.jpeg?auto=compress&cs=tinysrgb&w=600" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div>
-      <div className="flex flex-wrap justify-center">
-        <img src="https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div>
-      <div className="flex flex-wrap justify-center ">
-        <img src="c" className="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl" alt="" />
-      </div> */}
- 
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">ביגוד ספורט</h5>
-          
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">גיימינג</h5>
-          
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">משקאות חריפים</h5>
-          
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/833052/pexels-photo-833052.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">ביגוד סטייל</h5>
-          
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/13068566/pexels-photo-13068566.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">קצבייה</h5>
-          
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-          </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">סופר</h5>
-          
-          </div>
-        </div>
-      </div>
-
+          {data.map((category)=>( <CategoryCard data={category}/>))}
         </div>
 {/* brand section  */}
     <div className='brandSection gap-x-4  items-center flex flex-wrap mt-9  justify-center'>   
