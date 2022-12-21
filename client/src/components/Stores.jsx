@@ -3,7 +3,7 @@ import React from 'react'
 const Stores = () => {
   return ( 
     <>
-    <div  class="flex  bg-white border-2 rounded-lg  grow w-12/12 h-1/6 sm:j-3/6 mt-2 hover:bg-gray-100 ">
+    <div  class="flex  bg-white border-2 rounded-lg  w-full h-[105px] mt-2 hover:bg-gray-100 ">
         <div className='text-right   grow w-7/12 md:mx-4' >
           <h5 className='text-xl font-semibold'>חוות הבית</h5>
           <p>תיאור חנות אמור להיות כתוב פה</p>

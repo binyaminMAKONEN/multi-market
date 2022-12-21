@@ -15,6 +15,7 @@ passport.use(
       scope: ["email", "profile"],
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log(profile);
       try {
         const ifUserExiest = await UserModels.findOne({
           google_id: profile.id,
@@ -24,13 +25,14 @@ passport.use(
         } else {
           let newUser = new UserModels({
             google_id: profile.id,
-            // username: profile.displayName,
+            username: profile.displayName,
             name: {
               firstName: profile.name.givenName,
               lastName: profile.name.familyName,
             },
             email: profile.emails[0].value,
-          });
+            img: profile.photos[0].value,
+          });  
           await newUser.save();
           return done(null, newUser);
         }
@@ -42,8 +44,8 @@ passport.use(
 )}
 
 passport.serializeUser((user, callback) => {
+  console.log(user,'serializeUser');
   callback(null, user);
-  console.log(user);
 });
 
 passport.deserializeUser((user, callback) => {

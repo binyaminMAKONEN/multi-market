@@ -15,7 +15,6 @@ const userModel = new mongoose.Schema({
     required: false,
     min: 3,
     max: 20,
-    unique: true,
   },
   email: {
     type: String,
@@ -29,7 +28,7 @@ const userModel = new mongoose.Schema({
     min: 6,
   },
   phone : { type: String, required: false, min: 9, max: 12 },
-  Permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
+  permissions:{type: String,formType:"select",enum:["customer","ownerStore","admin"],required:true,default:"customer"},
 },{ versionKey: false });
 
 module.exports = mongoose.model("User", userModel);

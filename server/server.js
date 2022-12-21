@@ -9,8 +9,6 @@ const userAuthRouret =require('./routes/userAuthRouret')
 const stripe =require('./routes/stripe')
 const expressSession = require("express-session");
 const passport = require("passport");
-const cookieSession = require('cookie-session');
-
 
 require('dotenv').config()
 const port = process.env.PORT || 5000
@@ -22,21 +20,24 @@ app.use(
       secret: "jayantpatilapp",
       resave: true,
       saveUninitialized: true,
-      cookie:{secure:true}
     })
   );
-  
+
+// app.use(
+//   cookieSession({
+//     maxAge:24*60*60*1000,
+//     keys:'cookie'
+//   })
+// )
   app.use(passport.initialize());
   app.use(passport.session());
 
 
-app.use(cors({origin: "http://localhost:3000",credentials: true,}))
+app.use(cors({origin:"http://localhost:3000",credentials: true,}))
 app.use(express.json())
 
 
-
 const connect =require('./config/connection');
-
 // app.use(require('./routes/route'))
 
 app.use('/api/products',productRouter)
