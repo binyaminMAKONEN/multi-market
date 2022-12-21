@@ -33,10 +33,10 @@ const StoreList = () => {
         <p className='text-2xl mb-12 text-center '>קטגרויות שונות</p>
 
      <div className='flex justify-center gap-3 mx-6 mb-10 sm:mx-2 md:w-["80%"]'>
-     <ShoppingCard/> 
+     <ShoppingCard/>
      <div className='flex flex-col grow w-8/12'>
         <div className='h-[30%]'><SortOptions/></div>
-        <div >
+        <div className='h-full'>
             <Stores/>
             <Stores/>
             <Stores/>
