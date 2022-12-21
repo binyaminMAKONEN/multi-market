@@ -5,6 +5,7 @@ export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
   endpoints: (builder) => ({
+    //productCRUD
     getProducts: builder.query({
       query: () => "/api/products",
       providesTags: ["products"],
@@ -33,6 +34,29 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["products"],
     }),
+    //createUser
+    createUser:builder.mutation({query:(newUser)=>({
+        url: "/api/users/register",
+        method: "POST",
+        body: newUser,
+    }),
+    invalidatesTags: ["user"],
+}),
+   //logUser
+   loginUser:builder.mutation({query:(logDetails)=>({
+    url: "/api/users/login",
+    method: "POST",
+    body: logDetails,
+   }),
+   invalidatesTags: ["user"],
+}),
+
+   getStore: builder.query({
+    query: () => "/api/stores",
+    providesTags: ["stores"],
+  }),
+
+
   }),
 });
 
@@ -41,4 +65,7 @@ export const {
   useCreateProductsMutation,
 //   useUpdateProductMutation,
   useDeleteProductMutation,
+  useCreateUserMutation,
+  useLoginUserMutation,
+  useGetStoreQuery
 } = apiSlice;
