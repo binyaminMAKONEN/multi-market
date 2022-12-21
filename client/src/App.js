@@ -12,11 +12,14 @@ import InfoPage from './Pages/InfoPage'
 import InStore from './Pages/InStore'
 import PersonalArea from './Pages/PersonalArea'
 import BottomBar from './components/BottomBar';
+import Login from './components/Login';
 import PopUpProduct from './components/PopUpProduct';
+import FirstNavbar from './components/firstnavbarLogin';
 function App() {
   return (
     <>
-    <ThirdNavbar/>
+    <FirstNavbar/>
+    {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
 {/* <PopUpProduct/> */}
 {/* <CheckOut/> */}

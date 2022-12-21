@@ -29,15 +29,15 @@ function ThirdNavbar() {
     <Dropdown
       arrowIcon={false}
       inline={true}
-      label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
+      label={<Avatar alt="User settings" img=""/*user image*/ rounded={true}/>}
     >
         
       <Dropdown.Header>
         <span className="block text-sm">
-        שלום דנה
-        </span>
+       
+        </span>{/*user name*/ }
         <span className="block truncate text-sm font-medium">
-          dana@gmail.com
+          @email.com {/*user name*/ }
         </span>
       </Dropdown.Header>
       <Dropdown.Item>
@@ -50,7 +50,7 @@ function ThirdNavbar() {
         Earnings
       </Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item>
+      <Dropdown.Item >{/*function log out*/}
         Sign out
       </Dropdown.Item>
     </Dropdown>
@@ -62,7 +62,6 @@ function ThirdNavbar() {
     <div className=" block">
       <Label
         htmlFor="small"
-       
       />
     </div>
     
@@ -70,9 +69,7 @@ function ThirdNavbar() {
       id="small"
       type="text"
       sizing="sm"
-      className='w-64 '
-
-      
+      className='w-64'
     />
     
   </div>
