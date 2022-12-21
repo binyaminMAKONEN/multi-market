@@ -50,12 +50,47 @@ export const apiSlice = createApi({
    }),
    invalidatesTags: ["user"],
 }),
-
+//storeCRAD
    getStore: builder.query({
     query: () => "/api/stores",
     providesTags: ["stores"],
   }),
+     //createStore
+     createStore:builder.mutation({query:(newStore)=>({
+        url: "/api/stores",
+        method: "POST",
+        body: newStore,
+       }),
+       invalidatesTags: ["stores"],
+    }),
+    deleteStore: builder.mutation({
+        query: (id) => ({
+          url: `/api/stores/${id}`,
+          method: "DELETE",
+        }),
+        invalidatesTags: ["stores"],
+      }),
+      getProductsStoreById: builder.query({
+        query: (id) => `/api/stores/${id}`,
+        providesTags: ["stores"],
+      }),
+    //orderCRUD
+    getOrders: builder.query({
+        query: (id) => `/api/orders`,
+        providesTags: ["order"],
+      }),
 
+      createOrders:builder.mutation({query:(newOrder)=>({
+        url: "/api/orders",
+        method: "POST",
+        body: newOrder,
+       }),
+       invalidatesTags: ["order"],
+    }),
+    getStoreOrCustomerOrderById: builder.query({
+        query: (id) => `/api/orders/${id}`,
+        providesTags: ["stores"],
+      }),
 
   }),
 });
@@ -67,5 +102,12 @@ export const {
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,
-  useGetStoreQuery
+  useGetStoreQuery,
+  useCreateStoreMutation,
+  useDeleteStoreMutation,
+  useGetProductsStoreByIdQuery,
+  useGetOrdersQuery,
+  useCreateOrdersMutation,
+  useGetStoreOrCustomerOrderByIdQuery
+
 } = apiSlice;
