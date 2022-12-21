@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
 function CategoryCard({data}) {
   return (
+    
     <div>
+      <Link to='/storelist'>
          <div className="flex justify-center">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -13,7 +15,9 @@ function CategoryCard({data}) {
           </div>
         </div>
       </div>
+      </Link>
     </div>
+    
   )
 }
 

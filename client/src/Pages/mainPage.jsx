@@ -1,7 +1,7 @@
 // import { TextInput} from 'flowbite-react'
-import { useEffect } from 'react'
 import CategoryCard from '../components/CategoryCard'
 import { useGetStoreQuery} from '../store/apiSlice'
+
  function MainPage() {
   const { data } = useGetStoreQuery();
 
