@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {  useGetStoreQuery } from '../store/apiSlice'
 const Stores = () => {
   return ( 
     <>
