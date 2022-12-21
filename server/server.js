@@ -6,6 +6,7 @@ const storeRouter =require('./routes/storeRouter')
 const orderRouter =require('./routes/orderRouter')
 const userRouter =require('./routes/userRouter')
 const userAuthRouret =require('./routes/userAuthRouret')
+const stripe =require('./routes/stripe')
 const expressSession = require("express-session");
 const passport = require("passport");
 const cookieSession = require('cookie-session');
@@ -43,6 +44,7 @@ app.use('/api/stores',storeRouter)
 app.use('/api/orders',orderRouter)
 app.use('/api/users',userRouter)
 app.use('/auth',userAuthRouret)
+app.use('/api/stripe',stripe)
 
 
 connect.then(db =>{
