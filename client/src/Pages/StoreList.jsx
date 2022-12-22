@@ -8,10 +8,20 @@ import {
   useGetStoreQuery
 
 } from '../store/apiSlice'
+import { useState, useEffect } from 'react';
+
 const StoreList = () => {
-    const { data, isFetching,isLoading , isSuccess, isError } = useGetStoreQuery()
+    const { data  } = useGetStoreQuery()
     const [createUser,response] =useCreateUserMutation()
-    console.log(data,response);
+    const [store,setStore]=useState([])
+console.log(data);
+  useEffect(() => {
+    setStore(data)
+
+
+  }, [JSON.stringify(data)])
+  
+    
     const newUser = {
             name: {
               firstName:"testUser",
@@ -23,23 +33,21 @@ const StoreList = () => {
                   password:"123456",
                   phone:"123456789",
     }
-
+    
     return(
     <div>
         <div className='border border-4 text-center mb-4  py-20 shadow-2xl'>
         <h1 className=' text-6xl mt-16'>קטגרויות</h1>
         <button onClick={()=>createUser(newUser)}>create user</button>
     </div>
-        <p className='text-2xl mb-12 text-center'>קטגרויות שונות</p>
 
      <div className='flex justify-center gap-3 mx-6 mb-10 sm:mx-2 md:w-["80%"]'>
      <ShoppingCard/>
      <div className='flex flex-col grow w-8/12'>
         <div className='h-[30%]'><SortOptions/></div>
         <div className='h-full'>
-            <Stores/>
-            <Stores/>
-            <Stores/>
+        {store.map((store)=>( <Stores store={store}/>))}
+
             </div>
      </div>
      </div>
