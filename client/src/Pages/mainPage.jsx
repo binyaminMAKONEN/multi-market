@@ -6,6 +6,8 @@ import { useGetStoreQuery} from '../store/apiSlice'
 
  function MainPage() {
  const [stores,setStores]=useState([])
+ const [fiterData , setFilterData] = useState([])
+
 
  const { data } = useGetStoreQuery();
  

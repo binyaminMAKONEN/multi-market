@@ -4,7 +4,7 @@ function CategoryCard({data}) {
   return (
     
     <div>
-      <Link to='/storelist'>
+      <Link to={`/storeli`}>
          <div className="flex justify-center">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
