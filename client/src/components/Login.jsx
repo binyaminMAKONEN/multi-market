@@ -8,6 +8,24 @@ function Login(props) {
   const [seePass, setSeePass] = useState(false);
   const [error, setError] = useState("");
   const [active, setActive] = useState(false);
+  const [signUp, setSingUP] = useState(false);
+  const [newUser, setNewUser] = useState({
+    name: { firstName: "", lastName: "" },
+    email: "",
+    userName: "",
+    phone: "",
+    password: "",
+    passwordConfirm:""
+  });
+
+  const handleInput = (e) => {
+    if (e.target.name === "firstName" || e.target.name === "lastName") {
+      const x = { ...newUser.name, [e.target.name]: e.target.value };
+      setNewUser({ ...newUser, name: x });
+    } else {
+      setNewUser({...newUser, [e.target.name]: e.target.value });
+    }
+  };
 
   const dataUser = async () => {
     try {
@@ -48,7 +66,78 @@ function Login(props) {
         <div className="md:flex md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
           <div className="fixed md:relative inset-0   h-screen  w-screen  flex justify-center flex-col md:flex-row  md:h-5/6">
             <div className="bg-cover bg-center bg-artichoke-img  md:bg-radish-img  md:h-full md:w-4/12 h-1/6" />
-            <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
+            {signUp ? (
+              <div className="bg-white w-96 text-center p-2">
+                <input
+                  onChange={handleInput}
+                  name="firstName"
+                  type="text"
+                  placeholder="שם פרטי"
+                  className="m-3"
+                  required={"reqaiede"}
+                />
+                <br />
+                <input
+                  onChange={handleInput}
+                  name="lastName"
+                  type="text"
+                  placeholder="שם משפחה"
+                  className="m-3"
+                  required
+                />
+                <br />
+                <input
+                  onChange={handleInput}
+                  name="email"
+                  type="email"
+                  placeholder='הזן כתובת דוא"ל'
+                  className="m-3"
+                  required
+                />
+                <br />
+                <input
+                  onChange={handleInput}
+                  name="userName"
+                  type="text"
+                  placeholder="שם משתמש"
+                  className="m-3"
+                />
+                <br/>
+                <input
+                  onChange={handleInput}
+                  name="phone"
+                  type="tel"
+                  placeholder="טלפון "
+                  className="m-3"
+                />
+                <br />
+                <input
+                  onChange={handleInput}
+                  name="password"
+                  type="text"
+                  placeholder="הזן סיסמא"
+                  className="m-3"
+                />
+                <br />
+                <input
+                  onChange={handleInput}
+                  name="passwordConfirm"
+                  type="text"
+                  placeholder="אימות סיסמא"
+                  className="m-3"
+                />
+                <br />
+                <p className="text-red-600">{error}</p>
+                <button
+                  // onClick={()=>register(newUser)}
+                  className="border-teal-200 border-2 w-3/5 h-10"
+                >
+                  submit
+                </button>
+              </div>
+              
+            ) :
+           ( <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
                 onClick={() => {setActive(false)}}
@@ -105,7 +194,15 @@ function Login(props) {
               >
                 התחבר
               </button>
-            </div>
+              <p
+                  onClick={() => {
+                    setSingUP(true);
+                  }}
+                  className="cursor-pointer text-blue-300"
+                >
+                  no have account?
+                </p>
+            </div>)}
           </div>
         </div>
       </>
