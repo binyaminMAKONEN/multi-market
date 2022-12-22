@@ -1,14 +1,14 @@
-    {
-    "name":" קצביית הזהב",
-    "img":"https://medias.timeout.co.il/www/uploads/2017/03/shutterstock_259621163_T-750x500.jpg",
-    "ownerName":"chen wassi",
-    "description":"הקצבייה הכי טובה באזור ",
-    "products":[],
- 
+{
   "location": {
-    "city": "lod",
-    "address": "mazrich",
-    "area": "center"
+      "city": "לוד",
+      "address": " מזריץ 40",
+      "area": "מרכז"
   },
-  "storeType":"קצבייה"
-   }
+  "storeName": "קצביית הזהב",
+  "userId": "639b4de30a259f18bdf36edf",
+  "logo": "https://medias.timeout.co.il/www/uploads/2017/03/shutterstock_259621163_T-750x500.jpg",
+  "ownerName": "chen wassi",
+  "description": " הקצבייה הכי טובה באיזור",
+  "storeType": " קצבייה",
+  "products": []
+}

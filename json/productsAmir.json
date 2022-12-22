@@ -1,282 +1,205 @@
 [
-
-
-
-{
-    "name":"שמפו",
+  {
+    "name": "מרכך",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/CKT66_Z_P_7296073281894_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 14.99,
+    "quantity": 1,
+    "price": 200,
     "storeName": "סופר זול",
-    "productType":["הייגינה"],
-    "storeId":""
-},
-{
-    "name":"קרם ידיים דר פישר",
+    "productType": ["הגיינה"],
+    "description": "מרכך לשיער מוחלק",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "קרם ידיים דר פישר",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/QHA54_Z_P_7290010748853_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 10.9,
     "storeName": "סופר זול",
-    "productType":["קרמים","הייגינה"],
-    "storeId":""
-},
-{
-    "name":"קרם יום למניעת קמטים",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RPA38_Z_P_4005900525017_1.png",
-    "quantity":0,
-    "description":"",
+    "productType": ["קרמים", "הייגינה"],
+    "description": "קרם ידיים לעור צעיר",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "קרם למניעת קמטים",
+    "img": "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/him/him60023/v/45.jpg",
+    "quantity": 0,
     "price": 99.99,
     "storeName": "סופר זול",
-    "productType":["קרמים","הייגינה"],
-    "storeId":""
-},
-{
-    "name":"כורכום קרם לחות",
+    "productType": ["קרמים", "הייגינה"],
+    "description": "לעור רגיל עד יבש",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "כורכום קרם לחות",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/BPK58_Z_P_3574661525563_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 66,
     "storeName": "סופר זול",
-    "productType":["קרמים","הייגינה"],
-    "storeId":""
-},
-{
-    "name":"קרם פנים לילה גינגר כורכום",
+    "productType": ["קרמים", "הייגינה"],
+    "description": "קרם לחות המעניק לחות מיידית לעור הפנים",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "קרם פנים לילה גינגר כורכום",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NTV32_Z_P_5012251013246_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 49.9,
     "storeName": "סופר זול",
-    "productType":["קרמים","הייגינה"],
-    "storeId":""
-},
+    "productType": ["קרמים", "הייגינה"],
+    "description": "מעניק לחות עמוקה ותחושת עור רך ועדין",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
 
-
-
-
-{
-    "name":"בננות",
+  {
+    "name": "בננות",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/ALP40_Z_P_967684_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 7.00,
+    "quantity": 0,
+    "price": 7.0,
     "storeName": "סופר זול",
-    "productType":["פירות"],
-    "storeId":""
-},
-{
-    "name":"תפוחים",
+    "productType": ["פירות"],
+    "description": "C עשיר בויטמין, עשיר בסיבים תזונתיים, ",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "תפוחים",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/DEZ52_Z_P_7296073440604_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 10.90,
+    "quantity": 0,
+    "price": 10.9,
     "storeName": "סופר זול",
-    "productType":["פירות"],
-    "storeId":""
-},
-{
-    "name":"תפוזים",
+    "productType": ["פירות"],
+    "description": "C עשיר בויטמין, עשיר בסיבים תזונתיים, ",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "תפוזים",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/VNH34_Z_P_964348_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 5.99,
     "storeName": "סופר זול",
-    "productType":["פירות"],
-    "storeId":""
-},
-{
-    "name":"רימון אורגני",
+    "productType": ["פירות"],
+    "description": "C עשיר בויטמין, עשיר בסיבים תזונתיים, ",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "רימון אורגני",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/XXD40_Z_P_965956_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 11.90,
+    "quantity": 0,
+    "price": 11.9,
     "storeName": "סופר זול",
-    "productType":["פירות"],
-    "storeId":""
-},
-{
-    "name":"קיווי במארז",
+    "productType": ["פירות"],
+    "description": "C עשיר בויטמין, עשיר בסיבים תזונתיים, ",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "קיווי במארז",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/KKM38_Z_P_8268455_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 16.90,
+    "quantity": 0,
+    "price": 16.9,
     "storeName": "סופר זול",
-    "productType":["פירות"],
-    "storeId":""
-},
+    "productType": ["פירות"],
+    "description": "C עשיר בויטמין, עשיר בסיבים תזונתיים, ",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
 
-
-
-{
-    "name":"לחם שיפון קל",
+  {
+    "name": "לחם שיפון קל",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/HCQ44_Z_P_7290013027535_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 7.99,
     "storeName": "סופר זול",
-    "productType":["לחמים"],
-    "storeId":""
-},
-{
-    "name":"לחם לבן אחיד פרוס",
+    "productType": ["לחמים"],
+    "description": "גלוטן חיטה, גלוטן שעורה, גלוטן שיפון",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "לחם לבן אחיד פרוס",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NXC60_Z_P_7296073219347_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 5.99,
     "storeName": "סופר זול",
-    "productType":["לחמים"],
-    "storeId":""
-},
-{
-    "name":"לחמניות מקמח מלא",
+    "productType": ["לחמים"],
+    "description": "סויה, גלוטן חיטה",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "לחמניות מקמח מלא",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/GQA26_Z_P_497303_1.png",
-    "quantity":0,
-    "description":"",
+    "quantity": 0,
     "price": 10.99,
     "storeName": "סופר זול",
-    "productType":["לחמים"],
-    "storeId":""
-},
-{
-    "name":"לחם דגנים פלוס",
+    "productType": ["לחמים"],
+    "description": "סויה, גלוטן חיטה",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "לחם דגנים פלוס",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/HAH32_Z_P_497570_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 14.50,
+    "quantity": 0,
+    "price": 14.5,
     "storeName": "סופר זול",
-    "productType":["לחמים"],
-    "storeId":""
-},
-{
-    "name":"לחם דני קל",
+    "productType": ["לחמים"],
+    "description": "גלוטן חיטה, גלוטן שיבולת שועל, סויה, שומשום",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "לחם דני קל",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/JPA24_Z_P_2661153_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 17.20,
+    "quantity": 0,
+    "price": 17.2,
     "storeName": "סופר זול",
-    "productType":["לחמים"],
-    "storeId":""
-},
+    "productType": ["לחמים"],
+    "description": "מכיל דגנים מלאים, תו האגודה הישראלית לסוכרת",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
 
-
-
-
-
-
-{
-    "name":"קוקה קולה דיאט מארז",
+  {
+    "name": "קוקה קולה דיאט מארז",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EEE38_Z_P_7290110115371_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 46.90,
+    "quantity": 0,
+    "price": 46.9,
     "storeName": "סופר זול",
-    "productType":["משקאות קלים","משקאות"],
-    "storeId":""
-},
-{
-    "name":"פפסי מקס מארז שישיה",
+    "productType": ["משקאות קלים", "משקאות"],
+    "description": "שישיית קוקה קולה",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "פפסי מקס מארז ",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/THP30_Z_P_136776_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 37.50,
+    "quantity": 0,
+    "price": 37.5,
     "storeName": "סופר זול",
-    "productType":["משקאות קלים","משקאות"],
-    "storeId":""
-},
-{
-    "name":"פפסי מקס דובדבן",
+    "productType": ["משקאות קלים", "משקאות"],
+    "description": "פפסי מקס מארז שישייה",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "פפסי מקס דובדבן",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/ROE28_Z_P_135595_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 7.60,
+    "quantity": 0,
+    "price": 7.6,
     "storeName": "סופר זול",
-    "productType":["משקאות קלים","משקאות"],
-    "storeId":""
-},
-{
-    "name":"פפסי מקס ליים",
+    "productType": ["משקאות קלים", "משקאות"],
+    "description": "בקבוק פפסי מקס דובדבן",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "פפסי מקס ליים",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/RDG14_Z_P_135311_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 7.60,
+    "quantity": 0,
+    "price": 7.6,
     "storeName": "סופר זול",
-    "productType":["משקאות קלים","משקאות"],
-    "storeId":""
-},
-{
-    "name":"נסטי בטעם אפרסק",
+    "productType": ["משקאות קלים", "משקאות"],
+    "description": "בקבוק פפסי מקס ליים",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  },
+  {
+    "name": "נסטי בטעם אפרסק",
     "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/EWA48_Z_P_8005200256587_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 8.90,
+    "quantity": 0,
+    "price": 8.9,
     "storeName": "סופר זול",
-    "productType":["משקאות קלים","משקאות"],
-    "storeId":""
-}
-,
-
-
-
-
-
-
-
-{
-    "name":"דיור סבאג'",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/BDJ46_Z_P_3348901250146_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 420,
-    "storeName": "סופר זול",
-    "productType":["בשמים"],
-    "storeId":""
-}
-,
-{
-    "name":"רובורטו קבאלי",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/YFL56_Z_P_3607347733508_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 99,
-    "storeName": "סופר זול",
-    "productType":["בשמים"],
-    "storeId":""
-}
-,
-{
-    "name":"אחד מיליון",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/NPY56_Z_P_3349666007921_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 189,
-    "storeName": "סופר זול",
-    "productType":["בשמים"],
-    "storeId":""
-}
-,
-{
-    "name":"212",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/YWB50_Z_P_8411061043868_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 179,
-    "storeName": "סופר זול",
-    "productType":["בשמים"],
-    "storeId":""
-}
-,
-{
-    "name":"סקנדל",
-    "img": "https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/SWK54_Z_P_8435415030885_1.png",
-    "quantity":0,
-    "description":"",
-    "price": 400,
-    "storeName": "סופר זול",
-    "productType":["בשמים"],
-    "storeId":""
-}
+    "productType": ["משקאות קלים", "משקאות"],
+    "description": "בקבוק נסטי בטעם אפרסק",
+    "storeId": "639a1b7e5ae00e9c850df486"
+  }
 ]
-
-
