@@ -1,10 +1,22 @@
 // import { TextInput} from 'flowbite-react'
+import { useState } from 'react';
+import { useEffect } from 'react'
 import CategoryCard from '../components/CategoryCard'
 import { useGetStoreQuery} from '../store/apiSlice'
 
  function MainPage() {
-  const { data } = useGetStoreQuery();
+ const [stores,setStores]=useState([])
 
+ const { data } = useGetStoreQuery();
+ 
+
+
+
+useEffect(() => {
+    if (data) setStores(data)
+
+  }, [JSON.stringify(data)])
+  
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
         <div className='text-center mb-4'>
@@ -14,7 +26,7 @@ import { useGetStoreQuery} from '../store/apiSlice'
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
-          {data.map((category)=>( <CategoryCard data={category}/>))}
+          {stores.map((category)=>( <CategoryCard data={category}/>))}
         </div>
 {/* brand section  */}
     <div className='brandSection gap-x-4  items-center flex flex-wrap mt-9  justify-center'>   
