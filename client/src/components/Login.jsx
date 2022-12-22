@@ -2,13 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
-import Register from "./Register";
 
 function Login(props) {
   const [user, setUser] = useState({ email: "", password: "" });
   const [seePass, setSeePass] = useState(false);
   const [error, setError] = useState("");
-  const [x, setX] = useState(false);
+  const [active, setActive] = useState(false);
+  const [signUp, setSingUP] = useState(false);
   const [newUser, setNewUser] = useState({
     name: { firstName: "", lastName: "" },
     email: "",
@@ -17,10 +17,15 @@ function Login(props) {
     password: "",
     passwordConfirm:""
   });
-  const [signup, setSingUP] = useState(false);
-  const navigate = useNavigate();
 
-  const [active, setActive] = useState(false);
+  const handleInput = (e) => {
+    if (e.target.name === "firstName" || e.target.name === "lastName") {
+      const x = { ...newUser.name, [e.target.name]: e.target.value };
+      setNewUser({ ...newUser, name: x });
+    } else {
+      setNewUser({...newUser, [e.target.name]: e.target.value });
+    }
+  };
 
   const dataUser = async () => {
     try {
@@ -52,44 +57,19 @@ function Login(props) {
   };
   useEffect(() => {
     dataUser();
-    setX(props.x);
-  }, []);
-
-  const handleInput = (e) => {
-    if (e.target.name === "firstName" || e.target.name === "lastName") {
-      const x = { ...newUser.name, [e.target.name]: e.target.value };
-      setNewUser({ ...newUser, name: x });
-    } else {
-      setNewUser({...newUser, [e.target.name]: e.target.value });
-    }
-  };
-  const register = async (obj) => {
-    try {
-      console.log(obj);
-      const data = await axios.get(
-        `http://localhost:8080/api/users/${obj.email}`,
-      );
-      if (data) throw data
-      if(newUser.password != newUser.passwordConfirm)setError("סיסמאות לא תואמות");
-      else if( 9 > newUser.phone.length)setError("מספר הטלפון לא תקין");
-     else if (newUser.password.length < 6)setError("הסיסמה צריכה להכיל 6 תווים לפחות");
-    
-    } catch (err) {
-      console.log(err);
-      if (err.status === 500 ||  9 > newUser.phone.length)setError("מספר הטלפון לא תקין");
-      if (err.status === 500)setError("אימייל קיים במערכת");
-    }
-  };
+    setActive(props.active);
+  }, [props.active]);
+  console.log(active);
   return (
-    x && (
+    active && (
       <>
-        <div className="flex justify-center items-center border-collapse fixed h-screen w-screen bg-clear ">
-          <div className="flex flex-col md:flex-row justify-center w-4/5">
-            <div className="bg-cover bg-radish-img h-2/12 md:w-3/12"></div>
-            {signup ? (
-              <div className="bg-white w-96 text-center p-2">
+        <div className="md:flex md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
+          <div className="fixed md:relative inset-0   h-screen  w-screen  flex justify-center flex-col md:flex-row  md:h-5/6">
+            <div className="bg-cover bg-center bg-artichoke-img  md:bg-radish-img  md:h-full md:w-4/12 h-1/6" />
+            {signUp ? (
+              <div className="bg-white w-96 text-center p-2 h-fit">
                 <input
-                  onChange={handleInput}
+                  onChange={handleInput} 
                   name="firstName"
                   type="text"
                   placeholder="שם פרטי"
@@ -149,92 +129,15 @@ function Login(props) {
                 <br />
                 <p className="text-red-600">{error}</p>
                 <button
-                  onClick={()=>register(newUser)}
+                  // onClick={()=>register(newUser)}
                   className="border-teal-200 border-2 w-3/5 h-10"
                 >
                   submit
                 </button>
               </div>
-            ) : (
-              <div className="conte bg-white w-fit text-center">
-                <p
-                  className="text-end m-1 cursor-pointer font-semibold"
-                  onClick={() => {
-                    setX(false);
-                  }}
-                >
-                  X
-                </p>
-                <h1>
-                  <b>כניסה</b>
-                </h1>
-                <p>התחבר באמצעות דוא"ל שלך וסיסמא</p>
-                <button className="text-blue-500 hover:bg-blue-500 hover:text-white border border-5 border-blue-500 font-bold py-2 px-4 rounded">
-                  facebook
-                </button>
-                <br />
-                <div className="flex justify-center items-center">
-                  <GoogleButton onClick={() => loginGoogle()} />
-                </div>
-                <br />
-                <p className="flex justify-around items-center">
-                  <span className=" bg-slate-400 h-0.5 inline-block w-2/5"></span>
-                  או
-                  <span className=" bg-slate-400 h-0.5 inline-block w-2/5"></span>
-                </p>
-                <input
-                  name="email"
-                  onChange={(e) => setUser({ ...user, email: e.target.value })}
-                  type="email"
-                  placeholder='הזן כתובת דוא"ל'
-                  className="m-3"
-                />
-                <br />
-                <input
-                  name="password"
-                  onChange={(e) =>
-                    setUser({ ...user,password:e.target.value })
-                  }
-                  type={seePass ? "text" : "password"}
-                  placeholder="הזן סיסמא"
-                />
-                <br />
-                <input
-                  type="checkbox"
-                  onChange={(e) => {
-                    setSeePass(e.target.checked);
-                  }}
-                />
-                <label>הצג סיסמא </label>
-                <br />
-                <br />
-                <p className="text-red-600">{error}</p>
-                <button
-                  className="border-teal-200 border-2 w-3/5 h-10"
-                  onClick={login}
-                >
-                  התחבר
-                </button>
-                <p
-                  onClick={() => {
-                    setSingUP(true);
-                  }}
-                  className="cursor-pointer text-blue-300"
-                >
-                  no have account?
-                </p>
-              </div>
-            )}
-    setActive(props.active);
-  }, [props.active]);
-  console.log(active);
-  return (
-    active && (
-      <>
-        <div className="md:flex md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
-          <div className="fixed md:relative inset-0   h-screen  w-screen  flex justify-center flex-col md:flex-row  md:h-5/6">
-            <div className="bg-cover bg-center bg-artichoke-img  md:bg-radish-img  md:h-full md:w-4/12 h-1/6" />
-            <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
+              
+            ) :
+           ( <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
                 onClick={() => {setActive(false)}}
@@ -291,7 +194,15 @@ function Login(props) {
               >
                 התחבר
               </button>
-            </div>
+              <p
+                  onClick={() => {
+                    setSingUP(true);
+                  }}
+                  className="cursor-pointer text-blue-300"
+                >
+                  no have account?
+                </p>
+            </div>)}
           </div>
         </div>
       </>
