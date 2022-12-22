@@ -21,7 +21,7 @@ const Stores = ({store}) => {
             <p>{store.location.city},{store.location.address},{store.location.area}</p>
           </div>
         </div>
-     <img class="object-cover  rounded-t-lg   md:rounded-none md:rounded-l-lg" src={store.image.logo} alt=""/> 
+     <img class="object-cover  rounded-t-lg   md:rounded-none md:rounded-l-lg" src={store?.image?.logo} alt=""/> 
 </div></>
   )
 }
