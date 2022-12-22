@@ -61,24 +61,21 @@ function Login(props) {
       setNewUser({...newUser, [e.target.name]: e.target.value });
     }
   };
-  console.log(newUser);
   const register = async (obj) => {
     try {
-      console.log(newUser.phone.length);
+      console.log(obj);
+      const data = await axios.get(
+        `http://localhost:8080/api/users/${obj.email}`,
+      );
+      if (data) throw data
       if(newUser.password != newUser.passwordConfirm)setError("סיסמאות לא תואמות");
-      // if( 9 > newUser.phone.length )setError("מספר הטלפון לא תקין");
-      if (newUser.password.length < 6)setError("הסיסמה צריכה להכיל 6 תווים לפחות");
-      else{
-        const data = await axios.post(
-          "http://localhost:8080/api/users/register",
-          obj
-        );
-        console.log(data);
-      }
+      else if( 9 > newUser.phone.length)setError("מספר הטלפון לא תקין");
+     else if (newUser.password.length < 6)setError("הסיסמה צריכה להכיל 6 תווים לפחות");
+    
     } catch (err) {
       console.log(err);
-      if (err.response.status === 500 ||  9 > newUser.phone.length )setError("מספר הטלפון לא תקין");
-      if (err.response.status === 500)setError("אימייל קיים במערכת");
+      if (err.status === 500 ||  9 > newUser.phone.length)setError("מספר הטלפון לא תקין");
+      if (err.status === 500)setError("אימייל קיים במערכת");
     }
   };
   return (
@@ -135,7 +132,7 @@ function Login(props) {
                 <input
                   onChange={handleInput}
                   name="password"
-                  type="password"
+                  type="text"
                   placeholder="הזן סיסמא"
                   className="m-3"
                 />
@@ -143,7 +140,7 @@ function Login(props) {
                 <input
                   onChange={handleInput}
                   name="passwordConfirm"
-                  type="password"
+                  type="text"
                   placeholder="אימות סיסמא"
                   className="m-3"
                 />
