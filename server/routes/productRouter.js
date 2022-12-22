@@ -4,7 +4,7 @@ const {tokenMiddleware} =require('../config/authenticateToken')
 const router = require('express').Router()
 
 
-     router.get('/',getProduct)
+     router.get('/',tokenMiddleware,getProduct)
      router.post('/',createProducts)
      router.put('/:id',updateProduct)
      router.delete('/:id',deleteProduct)
