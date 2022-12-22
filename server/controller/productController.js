@@ -28,9 +28,9 @@ const createProducts = async (req,res) => {
 
     products = Promise.all(products);
 
-    return products;
+    res.status(200).json('product add')
   } catch (err) {
-    throw `Err : ${err}`;
+    res.status(500).json(r.message);
   }
 };
 
@@ -82,7 +82,7 @@ const updateProduct = async (req,res)=>{
   }
 
 module.exports = {
-    getProduct,
+  getProduct,
   createProducts,
   updateProduct,
   deleteProduct
