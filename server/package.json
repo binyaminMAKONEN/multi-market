@@ -20,12 +20,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
     "nodemon": "^2.0.20",
-<<<<<<< HEAD
-    "stripe": "^11.4.0"
-=======
+    "stripe": "^11.4.0",
     "passport": "^0.6.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-google-oauth20": "^2.0.0"
->>>>>>> e863850f78d85d7d5676970008390cf745f12ce2
   }
 }
