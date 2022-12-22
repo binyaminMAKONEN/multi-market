@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react'
 import CategoryCard from '../components/CategoryCard'
 import { useGetStoreQuery} from '../store/apiSlice'
+
  function MainPage() {
  const [stores,setStores]=useState([])
 
