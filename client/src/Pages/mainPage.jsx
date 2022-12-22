@@ -1,37 +1,28 @@
 // import { TextInput} from 'flowbite-react'
-import axios from 'axios'
-import GoogleButton from 'react-google-button'
+import { useState } from 'react';
 import { useEffect } from 'react'
-
+import CategoryCard from '../components/CategoryCard'
+import { useGetStoreQuery} from '../store/apiSlice'
 
  function MainPage() {
-  
-  const dataUser =async ()=>{
-    try {
-      const {data} =await axios.get('http://localhost:8080/auth/data',{withCredentials:true})
-      console.log(data);
-      
-    } catch (err) {
-      if(err.response.status===401)console.log("you need log in");
-    }
-  }
-  
-  const loginGoogle = ()=>{
-  window.location.href = 'http://localhost:8080/auth/login/google'
-  }
-  useEffect(()=>{
-    dataUser()
-  },[])
-  return (
+ const [stores,setStores]=useState([])
 
+ const { data } = useGetStoreQuery();
+ 
+
+
+
+useEffect(() => {
+    if (data) setStores(data)
+
+  }, [JSON.stringify(data)])
+  
+  return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
         <div className='text-center mb-4'>
         <h1 className=' text-6xl'>ברוך הבא לעולם החנויות<br/> שלך</h1>
         <input className='mt-12 w-3/5 rounded-md h-12'  type="text" />
-
-   
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
-      
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
@@ -124,6 +115,8 @@ import { useEffect } from 'react'
         </div>
       </div>
 
+
+          {stores.map((category)=>( <CategoryCard data={category}/>))}
         </div>
 {/* brand section  */}
     <div className='brandSection gap-x-4  items-center flex flex-wrap mt-9  justify-center'>   

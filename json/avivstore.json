@@ -1,13 +1,23 @@
 {
-    "name":"אביב כלבו",
-    "img":"https://cdn.britannica.com/34/212134-050-A7289400/Lionel-Messi-2018.jpg",
-    "ownerName":"אביב אדגה",
-    "producst":[],
-    "description":"החנות של אדגה",
-    "location":{
-        "city":"פתח תקווה",
-        "address":"צפת 35",
-        "area":"מרכז"
+    "image": {
+      "logo": "https://img.freepik.com/premium-vector/gamer-purple-logo_7737-1549.jpg?w=2000",
+      "background": ""
     },
-    "storeType":"הכל לבית"
-}
+    "location": {
+      "city": "לוד",
+      "address": " גרינבויים 26",
+      "area": "מרכז"
+    },
+    "_id": "6398bb71614bd39c21e810c4",
+    "storeName": " Ptc Gamer ",
+    "userId": "6398ba40614bd39c21e810c1",
+    "ownerName": " aviv adga",
+    "description": " חנות משחקים לסוני ולמחשב",
+    "storeType": " גיימינג",
+    "products": [
+      {
+        "productId": "6398c08d460f72cf54429512"
+      }
+    ]
+  }
+  

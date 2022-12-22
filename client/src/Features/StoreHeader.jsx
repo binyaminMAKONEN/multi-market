@@ -2,7 +2,7 @@ import React from 'react'
 
 function StoreHeader(props) {
   return (
-    <div className="">
+    <div className="h-96 mb-12">
 <div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(https://cdn.shopify.com/s/files/1/0563/2003/2900/collections/best-sellers_460x@2x.jpg?v=1666256305})`}}>05</div>
 <div class="z-50 bg-white-600 border-2 border-white relative 	 left-60 bottom-40 h-36 w-36 sm:left-3/4  ">
   <img src="https://i.postimg.cc/nr5dShNf/2022-12-17-001341.png" alt="storeLogo" />
