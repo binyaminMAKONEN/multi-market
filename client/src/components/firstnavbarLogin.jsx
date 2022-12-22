@@ -1,11 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Navbar } from 'flowbite-react'
+import Login from '../components/Login';
+import { useState } from 'react';
+
 export default function FirstNavbar() {
+
+  const [clickLogIn, setClickLogIn] = useState(false)
+console.log({clickLogIn});
   return (
-    <div>                          
-
-
+    <div>    
 <Navbar
   fluid={true}
   rounded={true}
@@ -37,11 +41,12 @@ export default function FirstNavbar() {
       <Link to="/signup"> הרשמה</Link>
    
     </Navbar.Link>
-    <Navbar.Link href="/login">
+    <Navbar.Link className='cursor-pointer' onClick={()=>setClickLogIn(!clickLogIn)}>
       כניסת משתמש
     </Navbar.Link>
   </Navbar.Collapse>
 </Navbar>
+<Login x={clickLogIn} />
     </div>
   )
 }

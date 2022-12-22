@@ -25,7 +25,7 @@ const getStoreOrCustomerOrderById = async(req,res)=>{
             return obg
         }
         else{
-            return res.status(400).json('We Not find any order for you')
+            return  'We Not find any order for you'
         }
  
      })

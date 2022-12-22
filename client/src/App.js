@@ -12,27 +12,31 @@ import InfoPage from './Pages/InfoPage'
 import InStore from './Pages/InStore'
 import PersonalArea from './Pages/PersonalArea'
 import BottomBar from './components/BottomBar';
+import Login from './components/Login';
 import PopUpProduct from './components/PopUpProduct';
+import FirstNavbar from './components/firstnavbarLogin';
 function App() {
   return (
     <>
-    <ThirdNavbar/>
+    <FirstNavbar/>
+    {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
-<PopUpProduct/>
+{/* <PopUpProduct/> */}
+{/* <CheckOut/> */}
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
-    <Route path='/InStore' element={<InStore />}/>
+    <Route path='/InStore' element={<InStore />}/> 
     <Route path='/CheckOut' element={<CheckOut />}/>
     <Route path='/InfoPage' element={<InfoPage />}>
       <Route index path='AboutInfo' element={<AboutInfo />}/>
       <Route  path='Questions' element={<Questions />}/>
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}/>
-    <Route path='/About' element={<About />}/>
+    <Route path='/About' element={<About />}/> 
   </Routes>
-  <BottomBar/>
-  <Footer/>
+  {/* <BottomBar/> */}
+  <Footer/> 
     </>
    
   );
