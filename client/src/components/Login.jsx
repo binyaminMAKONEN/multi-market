@@ -7,7 +7,7 @@ function Login(props) {
   const [user, setUser] = useState({ email: "", password: "" });
   const [seePass, setSeePass] = useState(false);
   const [error, setError] = useState("");
-  const [x, setX] = useState(false);
+  const [active, setActive] = useState(false);
 
   const dataUser = async () => {
     try {
@@ -39,11 +39,11 @@ function Login(props) {
   };
   useEffect(() => {
     dataUser();
-    setX(props.x);
-  }, [props.x]);
-  console.log(x);
+    setActive(props.active);
+  }, [props.active]);
+  console.log(active);
   return (
-    x && (
+    active && (
       <>
         <div className="md:flex md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
           <div className="fixed md:relative inset-0   h-screen  w-screen  flex justify-center flex-col md:flex-row  md:h-5/6">
@@ -51,7 +51,7 @@ function Login(props) {
             <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
-                onClick={() => {setX(false)}}
+                onClick={() => {setActive(false)}}
               >
                 X
               </p>
