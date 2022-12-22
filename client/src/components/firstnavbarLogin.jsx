@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function FirstNavbar() {
 
   const [clickLogIn, setClickLogIn] = useState(false)
-console.log({clickLogIn});
+
   return (
     <div>    
 <Navbar
@@ -46,7 +46,7 @@ console.log({clickLogIn});
     </Navbar.Link>
   </Navbar.Collapse>
 </Navbar>
-<Login x={clickLogIn} />
+<Login active={clickLogIn} />
     </div>
   )
 }
