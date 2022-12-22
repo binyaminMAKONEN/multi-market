@@ -7,7 +7,7 @@ function ProductCard(props) {
 
 
   return (
-    <div class="flex justify-center">
+    <div class="flex justify-center h-52">
   <div class="rounded-lg shadow-lg  border-red  border bg-white max-w-sm ">
     <a href="#!">
       <img class="rounded-t-lg" src={props.img} alt=""/>
