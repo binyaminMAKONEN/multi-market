@@ -9,6 +9,7 @@ import { useGetStoreQuery} from '../store/apiSlice'
 
  const { data } = useGetStoreQuery();
  
+ console.log('hey');
 
 
 
