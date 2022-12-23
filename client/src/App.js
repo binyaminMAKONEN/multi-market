@@ -13,9 +13,13 @@ import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
 
+
 function App() {
+  
+
   return (
     <>
+    
     <ThirdNavbar/>
     <Routes>
     <Route path='/' element={<MainPage/>}/>
