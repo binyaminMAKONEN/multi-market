@@ -7,6 +7,12 @@ const getUsers = async (req,res)=>{
   let user = await  userModel.find({})
   return res.json(user)
 }
+const getByEmail = async (req,res)=>{
+  const{email}=req.params
+  let user = await  userModel.findOne({email})
+  return res.json(user).status(500)
+}
+
 
 const createUser = async (req,res)=>{
     try {
@@ -58,5 +64,6 @@ const login =async (req,res)=>{
 module.exports = {
     createUser,
     login,
-    getUsers
+    getUsers,
+    getByEmail
 }

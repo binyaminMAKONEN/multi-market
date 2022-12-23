@@ -1,30 +1,44 @@
 import { useState } from "react"
+import PopUpProduct from "./PopUpProduct"
 
 
-function ProductCard(props) {
+function ProductCard({data}) {
   const [productToCart,setProductToCart]=useState()
+  const [open,setOpen]=useState(false)
+
   const [qty, setQty] = useState(0)
 
-
+const sendBoolian = ()=>{
+  setOpen(!open)
+}
   return (
+  <>
     <div class="flex justify-center">
   <div class="rounded-lg shadow-lg  border-red  border bg-white max-w-sm ">
-    <a href="#!">
-      <img class="rounded-t-lg w-fit"  src={props.data.img} alt=""/>
-    </a>
+    <div>
+
+      <img class="rounded-t-lg object-fill h-70 w-96 ..." src={data?.img} alt=""/>
+    </div>
+    
     <div class="p-6">
-      <h5 class="text-gray-900 text-xl font-medium mb-2 text-right">{props.data.name}</h5>
+      <h5 class="text-gray-900 text-xl font-medium mb-2 text-right">{data?.name}</h5>
       <p class="text-gray-700 text-base mb-4 text-right">
-      {props.data.description}
+      {data?.description}
       </p>
-      {props.data.quantity==0?<p className="text-right ">אזל במלאי</p>:
-        <div className="flex justify-around ">
-          <button className=" rounded-full w-6 text-lime-500 hover:text-white hover:bg-lime-500 " onClick={()=>{if(qty<10&&qty<props.data.quantity )setQty(qty+1)}}>+</button><span>{qty}</span><button className=" rounded-full text-lime-500 hover:text-white hover:bg-lime-500 w-6" onClick={()=>{if(qty>0)setQty(qty-1)}}>-</button>
+      {data?.quantity==0?<p className="text-right">אזל במלאי</p>:
+        <div className="text-center">
+          <button className=" rounded border-2 border-lime-600  w-7 h-7 text-lime-500 hover:text-white hover:bg-lime-500 " onClick={()=>{if(qty<10&&qty<data?.quantity )setQty(qty+1)}}>+</button>
+          <span className="mx-3">{qty}</span>
+          <button className="rounded border-2 border-lime-600 w-7 h-7 text-center" onClick={()=>{if(qty>0)setQty(qty-1)}}>-</button>
         </div>}
-      <button className=" " type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+        <p className="text-right ">סה"כ <span className="italic"> {data?.price} </span></p>
+      <button onClick={()=>setOpen(!open)} type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+
     </div>
   </div>
 </div>
+{open && <PopUpProduct data={data} setOpen={setOpen}/>}
+</>
   )
 }
 
