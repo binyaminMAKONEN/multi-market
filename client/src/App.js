@@ -12,11 +12,12 @@ import InfoPage from './Pages/InfoPage';
 import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
-
+import { useSelector } from 'react-redux';
 
 function App() {
+  const selector = useSelector(state =>state.cart.cartItem)
+  console.log(selector);
   
-
   return (
     <>
     

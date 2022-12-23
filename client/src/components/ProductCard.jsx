@@ -5,10 +5,13 @@ import PopUpProduct from "./PopUpProduct"
 
 
 function ProductCard({data}) {
+  
   const dispatch = useDispatch()
 
-  const addProductToCart = (product)=>{
-      dispatch(addToCart(product))
+  const addProductToCart = ()=>{
+      dispatch(addToCart(data))
+      console.log("hhhhhh");
+
   }
   const [productToCart,setProductToCart]=useState()
   const [open,setOpen]=useState(false)
