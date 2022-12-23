@@ -63,9 +63,16 @@ function Login(props) {
   return (
     active && (
       <>
-        <div className="md:flex md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
+        <div className="md:flex z-[999] md:justify-center md:items-center md:border-collapse md:fixed md:inset-0 md:h-screen md:w-screen bg-clear ">
           <div className="fixed md:relative inset-0   h-screen  w-screen  flex justify-center flex-col md:flex-row  md:h-5/6">
             <div className="bg-cover bg-center bg-artichoke-img  md:bg-radish-img  md:h-full md:w-4/12 h-1/6" />
+            <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
+              <p
+                className="text-end m-1 cursor-pointer font-semibold hidden md:block"
+                onClick={() => {setActive(false)}}
+              >
+                X
+              </p>
             {signUp ? (
               <div className="bg-white w-96 text-center p-2 h-fit">
                 <input
@@ -136,14 +143,10 @@ function Login(props) {
                 </button>
               </div>
               
+              
             ) :
-           ( <div className="bg-white h-5/6 md:h-full  md:w-5/12 text-center overflow-auto p-3">
-              <p
-                className="text-end m-1 cursor-pointer font-semibold hidden md:block"
-                onClick={() => {setActive(false)}}
-              >
-                X
-              </p>
+           ( 
+            <>
               <h1>
                 <b>כניסה</b>
               </h1>
@@ -202,7 +205,9 @@ function Login(props) {
                 >
                   no have account?
                 </p>
-            </div>)}
+              </>
+            )}
+            </div>
           </div>
         </div>
       </>
