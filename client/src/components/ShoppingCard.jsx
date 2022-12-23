@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
 
 const ShoppingCard = () => {
-  const [cart, setCart] = useState([]);
-
-  const selector = useSelector((state) => state.cart.cartItem);
   
+  const dispatch = useDispatch()
+  const [cart, setCart] = useState([]);
+console.log(dispatch(getTotal()));
+  const selector = useSelector((state) => state.cart);
+  console.log(selector.cartItem);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
     currency: 'ILS',
@@ -14,8 +17,8 @@ const ShoppingCard = () => {
 
   const sortCartSelector = () => {
     const sortCart = [];
-    for (let i = 0; i < selector.length; i++) {
-      const obj = selector[i];
+    for (let i = 0; i < selector.cartItem.length; i++) {
+      const obj = selector.cartItem[i];
       let storesNames = sortCart.map((n) => n.storeName);
 
       const iProduct = sortCart.findIndex(
@@ -28,14 +31,14 @@ const ShoppingCard = () => {
       if (!storesNames.includes(obj.storeName)) {
         sortCart.push({ storeName: obj.storeName, products: [obj] });
       }
-      console.log({ iProduct });
     }
     setCart(sortCart);
   };
 
   useEffect(() => {
+    console.log(selector.cartTotalAmount);
     sortCartSelector();
-  }, []);
+  }, [JSON.stringify(selector.cartItem)]);
 
   return (
     <>
@@ -78,10 +81,10 @@ const ShoppingCard = () => {
                               <p class="mt-1 text-sm text-gray-500">{product.description}</p>
                             </div>
                             <div class="flex flex-1 items-end justify-between text-sm">
-                              <p class="text-gray-500">Qty {product.cartQuantity}</p>
+                              <p class="text-gray-500"> Qty   <span className="text-red-400 cursor-pointer " onClick={()=>{dispatch(decreaseCart(product))}}>-</span>  {product.cartQuantity} <span className="text-lime-400 cursor-pointer " onClick={()=>{dispatch(addToCart(product))}}>+</span> </p>
 
                               <div class="flex">
-                                <button
+                                <button onClick={()=>{dispatch(removeFromCart(product))}}
                                   type="button"
                                   class="font-medium text-indigo-600 hover:text-indigo-500"
                                 >
@@ -101,7 +104,7 @@ const ShoppingCard = () => {
           <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
             <div class="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>$262.00</p>
+              <p>{formatter.format(selector.cartTotalAmount)}</p>
               {/*total price*/}
             </div>
             <p class="mt-0.5 text-sm text-gray-500">
