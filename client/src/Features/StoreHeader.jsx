@@ -3,7 +3,7 @@ import React from 'react'
 function StoreHeader({data}) {
   return (
     <div className="h-96 mb-12">
-<div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(${data?.image?.logo})`}}>05</div>
+<div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(${data?.image?.logo})`}}/>
 <div class="z-50 bg-white-600 border-2 border-white relative 	 left-60 bottom-40 h-36 w-36 sm:left-3/4  ">
   <img src={data?.image?.logo} alt="storeLogo" />
 </div>
