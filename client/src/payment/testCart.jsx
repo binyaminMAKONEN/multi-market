@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import { addToCart,removeFromCart,decreaseCart } from '../store/cartSlice'
+import { addToCart,removeFromCart,decreaseCart, clearCart } from '../store/cartSlice'
 
  
 
@@ -16,6 +16,9 @@ export default function TestCart() {
     const minus = (cartItem)=>{
         dispatch(decreaseCart(cartItem))
     }
+    const clear = ()=>{
+        dispatch(clearCart())
+    }
     const dispatch = useDispatch()
     const selector = useSelector(state => state.cart.cartItem)
    
@@ -29,6 +32,7 @@ export default function TestCart() {
                 <li>{item.name}</li>
             <button onClick={()=>{removeFromCarts(item._id)}}>remove</button>
             <button  onClick={()=>{minus(item)}}>-</button>
+            <button  onClick={()=>{clear()}}>clear cart</button>
             </div>
       )  })}  
         </ul>
