@@ -7,7 +7,7 @@ import ShoppingCard from '../components/ShoppingCard';
 import SortOptions from '../components/SortOptions';
 import ProductCard from '../components/ProductCard';
 import PopUpProduct from '../components/PopUpProduct';
-
+import Spinner from '../Features/Spinner';
 const InStore = () => {
   const myStorage = window.localStorage;
   const id =JSON.parse(myStorage.getItem('storeId'));
@@ -20,7 +20,7 @@ console.log(store);
 let list;
 
 if(isFetching){
-  list = <div>Fetching</div>;
+  list = <Spinner/>
 }else if(isSuccess){
 
   list =  data.map((product)=>( <ProductCard data={product.productId}/>))
@@ -31,7 +31,7 @@ if(isFetching){
 
     return (
     <div>
-      <StoreHeader data={store[0]}  />
+    { store && <StoreHeader data={store[0]}  />}
       <div className='flex justify-center gap-3 mx-6 mb-10 sm:mx-2 md:w-["80%"]'>
      <ShoppingCard/>
      <div className='flex flex-col grow w-8/12'>
@@ -40,7 +40,6 @@ if(isFetching){
 {list}
             </div>
      </div>
-     {/* <PopUpProduct/> */}
      </div>
    
     </div>
