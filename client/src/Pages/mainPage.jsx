@@ -6,7 +6,7 @@ import { useGetStoreQuery} from '../store/apiSlice'
  function MainPage() {
  const [stores,setStores]=useState([])
  const { data } = useGetStoreQuery();
- console.log(data);
+
 useEffect(() => {
     if (data) setStores(data)
   }, [JSON.stringify(data)])

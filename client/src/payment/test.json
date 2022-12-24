@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "639a14865ae00e9c850df447",
+        "name": " קונסולת סוני 4 כולל 2 בקרים ",
+        "img": "https://www.dominator.co.il/images/itempics/833_25082020164009_large.jpg",
+        "quantity": 1,
+        "price": 200,
+        "storeName": "Ptc Gamer",
+        "productType": [
+            "קונסולה,PS4"
+        ],
+        "description": " סוני 4 הכולל 2 בקרים",
+        "storeId": "639a13ba81192968d0c97fea"
+    },
+    {
+        "_id": "639a14865ae00e9c850df446",
+        "name": " קונסולת סוני 5 כולל 2 בקרים ",
+        "img": "https://d3m9l0v76dty0.cloudfront.net/system/photos/6107089/original/320e281b0ff98af7fa3143d9f45a93ae.jpg",
+        "quantity": 1,
+        "price": 200,
+        "storeName": "Ptc Gamer",
+        "productType": [
+            "קונסולה,PS5"
+        ],
+        "description": " סוני 5 הכולל 2 בקרים",
+        "storeId": "639a13ba81192968d0c97fea"
+    }]
