@@ -30,7 +30,7 @@ export default function TestCart() {
             
             return(<div>
                 <li>{item.name}</li>
-            <button onClick={()=>{removeFromCarts(item._id)}}>remove</button>
+            <button onClick={()=>{removeFromCarts(item)}}>remove</button>
             <button  onClick={()=>{minus(item)}}>-</button>
             <button  onClick={()=>{clear()}}>clear cart</button>
             </div>
