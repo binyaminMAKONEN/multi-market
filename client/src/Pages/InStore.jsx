@@ -6,25 +6,27 @@ import StoreHeader from "../Features/StoreHeader"
 import ShoppingCard from '../components/ShoppingCard';
 import SortOptions from '../components/SortOptions';
 import ProductCard from '../components/ProductCard';
-import PopUpProduct from '../components/PopUpProduct';
 import Spinner from '../Features/Spinner';
+import PlusBtn from "../Features/PlusBtn"
+import { useState } from 'react';
 const InStore = () => {
+  const [load,setLoad]=useState(5)
   const myStorage = window.localStorage;
   const id =JSON.parse(myStorage.getItem('storeId'));
   const {data:storData}=useGetStoreQuery()
   const store = storData?.filter(val=>val._id ===id)
 
 const {data,isFetching,isSuccess,isError}=useGetProductsStoreByIdQuery(id)
-console.log(data);
-console.log(store);
+
 let list;
 
 if(isFetching){
   list = <Spinner/>
 }else if(isSuccess){
 
-  list =  data.map((product)=>( <ProductCard data={product.productId}/>))
-  
+  list =  data.slice(0, load).map((product)=>( <ProductCard data={product.productId}/>))
+  console.log(data.length);
+  console.log(load);
 }else if(isError){
   list = <div>Error</div>
 }
@@ -39,6 +41,7 @@ if(isFetching){
         <div className='h-full flex flex-wrap justify-evenly'>
 {list}
             </div>
+{data && data.length > load && <PlusBtn setLoad={setLoad} load={load}/>}
      </div>
      </div>
    
