@@ -18,7 +18,7 @@ export default function FirstNavbar() {
 >
   <Navbar.Brand href="#">
     <img
-      src="https://i.postimg.cc/D0skf82c/2022-12-08-210836-preview-rev-1.png"
+      src="https://i.postimg.cc/3N22WDJz/Multi-Market-Logo-preview-rev-1.png"
       className="mr-3 h-6 sm:h-9"
       alt="MultiMarket Logo"
     />
