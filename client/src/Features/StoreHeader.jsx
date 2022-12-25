@@ -1,15 +1,15 @@
 import React from 'react'
 
-function StoreHeader(props) {
+function StoreHeader({data}) {
   return (
     <div className="h-96 mb-12">
-<div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(https://cdn.shopify.com/s/files/1/0563/2003/2900/collections/best-sellers_460x@2x.jpg?v=1666256305})`}}>05</div>
+<div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(${data?.image?.logo})`}}/>
 <div class="z-50 bg-white-600 border-2 border-white relative 	 left-60 bottom-40 h-36 w-36 sm:left-3/4  ">
-  <img src="https://i.postimg.cc/nr5dShNf/2022-12-17-001341.png" alt="storeLogo" />
+  <img src={data?.image?.logo} alt="storeLogo" />
 </div>
 <div class="z-40    backdrop-blur-sm bg-white/80  h-28 relative bottom-64 " >
   <div className="invisible  sm:visible text-center  ">
-  <h4 className="font-extralight relative  not-italic visible text-2xl  right-6 sm:visible   ">פלה דה תה</h4>
+  <h4 className="font-extralight relative  not-italic visible text-2xl  right-6 sm:visible   ">{data?.storeName}</h4>
   <div className="-ml-1 flex justify-center  items-center justify-self-start relative ">
     <p className="text-right">(38 חוות דעת)</p>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
@@ -29,11 +29,11 @@ function StoreHeader(props) {
                 </svg>
                 
               </div>
-  <span className="text-lg relative left-2">חנות הירקות הזולה ביותר במשלוחים לכל הארץ  
+  <span className="text-lg relative left-2">{data?.description}
               
             
           </span>
-  <p className="text-lg mr-2 w-44 text-right relative bottom-14  left-14  not-italic visible  sm:visible sm:left-56"> עמק זבולון 3, מודייעין <br/>08-2123431</p>
+  <p className="text-lg mr-2 w-44 text-right relative bottom-14  left-14  not-italic visible  sm:visible sm:left-56"> {data?.location?.city}{data?.location?.address}{data?.location?.area} <br/>08-2123431</p>
   </div>
   
 </div>

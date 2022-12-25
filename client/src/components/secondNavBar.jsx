@@ -2,7 +2,10 @@ import React from 'react'
 import { Navbar,Dropdown,Avatar ,Label,TextInput} from 'flowbite-react'
 import { ImLocation } from 'react-icons/im';
 
+
 function SecondNavBar() {
+  
+  
   return (
     <div>
          <Navbar
