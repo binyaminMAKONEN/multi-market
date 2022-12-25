@@ -6,7 +6,6 @@ import {
   useGetStoreQuery
 } from '../store/apiSlice'
 
-
 const StoreList = () => {
     const { data ,isFetching,isSuccess,isError } = useGetStoreQuery()
     const myStorage = window.localStorage;
@@ -19,7 +18,6 @@ const StoreList = () => {
   }else if(isSuccess){
 
       list =  storeData.map((store)=>( <Stores store={store}/>))
-      
   }else if(isError){
       list = <div>Error</div>
   }
