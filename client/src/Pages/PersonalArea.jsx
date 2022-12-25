@@ -1,8 +1,52 @@
 import React from 'react'
-
+import { Sidebar, Avatar } from "flowbite-react";
+import { HiInbox, HiArrowSmRight } from "react-icons/hi";
+import { BsFillHouseFill, BsFillCameraFill } from "react-icons/bs";
+import { FaAddressCard } from "react-icons/fa";
+import { AiFillLock } from "react-icons/ai";
+import { Outlet, Link } from "react-router-dom";
 const PersonalArea = () => {
+  const orders = [1,2,3];
   return (
-    <div>PersonalArea</div>
+    <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen my-3 p-5 shadow-xl">
+    <div className="w-3/4 flex justify-center">
+<Outlet />
+      
+    </div>
+    <div className="">
+      <Sidebar className="text-right" aria-label="Default sidebar example">
+        <Sidebar.Items>
+          <Sidebar.ItemGroup>
+            <div className="w-full ">
+              <Avatar size="xl" rounded={true} />
+              <label htmlFor="upload-profile" className="p-0">
+                <input id="upload-profile" type="file" className="hidden" />
+                <BsFillCameraFill className="text-2xl" />
+              </label>
+            </div>
+          </Sidebar.ItemGroup>
+          <Sidebar.ItemGroup>
+            <Link to="orders">
+              <Sidebar.Item icon={HiInbox} label={orders.length}>
+                ההזמנות שלי
+              </Sidebar.Item>
+            </Link>
+            <Link to="details">
+              <Sidebar.Item icon={FaAddressCard}>מידע אישי</Sidebar.Item>
+            </Link>
+            <Link to="Address">
+              <Sidebar.Item icon={BsFillHouseFill}>כתובת שלי</Sidebar.Item>
+            </Link>
+            <Link to="Password">
+              <Sidebar.Item icon={AiFillLock}>החלפת סיסמא</Sidebar.Item>
+            </Link>
+
+            <Sidebar.Item icon={HiArrowSmRight}>התנתקות</Sidebar.Item>
+          </Sidebar.ItemGroup>
+        </Sidebar.Items>
+      </Sidebar>
+    </div>
+  </div>
   )
 }
 
