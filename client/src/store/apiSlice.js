@@ -1,9 +1,23 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { setCredentials,logOut } from "./userSlice";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = fetchBaseQuery({ 
+  baseUrl:process.env.REACT_APP_SERVER_URL,
+  credentials: "include" ,
+  prepareHeaders: (headers,{getState})=>{
+    const token =getState().auth.token
+    // const user =getState().auth.user 
+    console.log(token);
+    if( token){
+      headers.set('authorization',`Rocet ${token}`)
+    }
+    return headers
+  }
+});
+
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
-  baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+  baseQuery:baseUrl ,
   endpoints: (builder) => ({
     //productCRUD
     getProducts: builder.query({
@@ -49,6 +63,7 @@ export const apiSlice = createApi({
       providesTags: ["stores"],
     }),
     //createStore
+    //add permission
     createStore: builder.mutation({
       query: (newStore) => ({
         url: "/api/stores",
@@ -57,6 +72,7 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["stores"],
     }),
+    //add permission
     deleteStore: builder.mutation({
       query: (id) => ({
         url: `/api/stores/${id}`,
@@ -64,16 +80,18 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["stores"],
     }),
+    //add permission
     getProductsStoreById: builder.query({
       query: (id) => `/api/stores/${id}`,
       providesTags: ["stores"],
     }),
+    //add permission
     //orderCRUD
     getOrders: builder.query({
       query: (id) => `/api/orders`,
       providesTags: ["order"],
     }),
-
+//add permission
     createOrders: builder.mutation({
       query: (newOrder) => ({
         url: "/api/orders",
@@ -82,6 +100,7 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["order"],
     }),
+    
     getStoreOrCustomerOrderById: builder.query({
       query: (id) => `/api/orders/${id}`,
       providesTags: ["stores"],
