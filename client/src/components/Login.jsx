@@ -188,14 +188,7 @@ function Login(props) {
                     className="m-3"
                   />
                   <br />
-                  {/* <input
-                    onChange={handleInput}
-                    name="phone"
-                    type="tel"
-                    placeholder="טלפון "
-                    className="m-3"
-                  />
-                  <br /> */}
+         
                   <input
                     onChange={handleInput}
                     name="password"
@@ -221,7 +214,15 @@ function Login(props) {
                   </button>
                 </div>
               ):(verifiUser?(
-              <div>fghj</div>
+              <div>       
+              <input
+              onChange={handleInput}
+              name="phone"
+              type="tel"
+              placeholder="טלפון "
+              className="m-3"
+            />
+            <br /></div>
               ):(
                 <>
                   <h1>
@@ -270,7 +271,7 @@ function Login(props) {
                   <div className="flex justify-center items-center">
                     <GoogleButton onClick={() => loginGoogle()} />
                   </div>
-                  <br />
+                  <br/>
                   <p className="text-red-600">{error}</p>
                   <button
                     className="border-teal-200 border-2 w-3/5 h-10"
