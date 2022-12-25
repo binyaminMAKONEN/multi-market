@@ -1,13 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import { Navbar } from 'flowbite-react'
 import Login from '../components/Login';
 import { useState } from 'react';
 import {useSelector} from 'react-redux'
-
 export default function FirstNavbar() {
   const {cartTotalQuantity} =useSelector(state => state.cart)
-
+const navigate = useNavigate()
   const [clickLogIn, setClickLogIn] = useState(false)
 
   return (
@@ -17,12 +16,17 @@ export default function FirstNavbar() {
   rounded={true}
   className='shadow-md'
 >
-  <Navbar.Brand href="/">
+
+  <Navbar.Brand href="#">
+    <button onClick={()=>navigate("/")}>
     <img
       src="https://i.postimg.cc/3N22WDJz/Multi-Market-Logo-preview-rev-1.png"
       className="mr-3 h-6 sm:h-9"
       alt="MultiMarket Logo"
+
     />
+    </button>
+
       <div className="font-sans  block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
       <div  className="relative flex">
         <svg className="flex-1 w-8 h-8 fill-current" viewBox="0 0 24 24">
@@ -32,6 +36,7 @@ export default function FirstNavbar() {
         </span>
       </div>
 </div>
+
   </Navbar.Brand>
   <Navbar.Toggle />
   <Navbar.Collapse>
@@ -40,7 +45,9 @@ export default function FirstNavbar() {
       active={true}
       
     >
+
        <Link to="/contact"> צור קשר </Link>
+
 
     </Navbar.Link>
     <Navbar.Link href="/navbars">
