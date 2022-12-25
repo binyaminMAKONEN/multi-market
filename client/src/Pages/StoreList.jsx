@@ -7,6 +7,7 @@ import { useGetStoreQuery } from '../store/apiSlice';
 import Header from '../Features/Header';
 const StoreList = () => {
     const { data ,isFetching,isSuccess,isError } = useGetStoreQuery()
+  
     const myStorage = window.localStorage;
     const storeData = data?.filter(val=>val.storeType === myStorage.getItem('category'))
     console.log(storeData);
