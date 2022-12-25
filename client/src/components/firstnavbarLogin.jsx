@@ -15,6 +15,7 @@ export default function FirstNavbar() {
 <Navbar
   fluid={true}
   rounded={true}
+  className='shadow-md'
 >
   <Navbar.Brand href="#">
     <img
