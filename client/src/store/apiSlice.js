@@ -15,7 +15,7 @@ export const apiSlice = createApi({
         url: "/api/products",
         method: "POST",
         body: newProducts,
-      }),
+      }), 
       invalidatesTags: ["products"],
     }),
     deleteProduct: builder.mutation({

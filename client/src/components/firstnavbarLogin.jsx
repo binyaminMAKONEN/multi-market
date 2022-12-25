@@ -39,7 +39,7 @@ export default function FirstNavbar() {
     </span></Link>
   </a>
 </li>
-       <Link to="/contact"> צור קשר </Link>
+       <Link to="/contactPage"> צור קשר </Link>
 
     </Navbar.Link>
     <Navbar.Link href="/navbars">
