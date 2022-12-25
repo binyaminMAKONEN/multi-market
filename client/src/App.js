@@ -1,6 +1,6 @@
 // import './App.css';
-import {Route,Routes} from 'react-router-dom';
-import ThirdNavbar from '../src/components/firstnavbarLogin';
+import {Route,Routes} from 'react-router-dom'
+import ThirdNavbar from '../src/components/ThirdNavbar';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -20,17 +20,16 @@ import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 function App() {
-  const selector = useSelector(state =>state.cart.cartItem)
-  console.log(selector);
-  
   return (
-    <>
-    
-    <ThirdNavbar/>
+  <>
+    <FirstNavbar/>
+    {/* <ThirdNavbar/> */}
+{/* <StoreHeader/> */}
+<PopUpProduct/>
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
-    <Route path='/InStore' element={<InStore />}/> 
+    <Route path='/InStore' element={<InStore />}/>
     <Route path='/CheckOut' element={<CheckOut />}/>
     <Route path='/InfoPage' element={<InfoPage />}>
       <Route index path='AboutInfo' element={<AboutInfo />}/>
@@ -48,7 +47,7 @@ function App() {
 
   </Routes>
   <BottomBar/>
-  <Footer/> 
+  <Footer/>
     </>
    
   );
