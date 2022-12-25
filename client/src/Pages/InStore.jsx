@@ -7,7 +7,8 @@ import ShoppingCard from '../components/ShoppingCard';
 import SortOptions from '../components/SortOptions';
 import ProductCard from '../components/ProductCard';
 import Spinner from '../Features/Spinner';
-import PlusBtn from "../Features/PlusBtn"
+import PlusBtn from "../Features/PlusBtn";
+import Toolbar from '../Features/Toolbar';
 import { useState } from 'react';
 const InStore = () => {
   const [load,setLoad]=useState(6)
@@ -33,6 +34,7 @@ if(isFetching){
 
     return (
     <div>
+      <Toolbar/>
     { store && <StoreHeader data={store[0]}  />}
       <div className='flex justify-center gap-3 mx-6 mb-10 sm:mx-2 md:w-["80%"]'>
      <ShoppingCard/>
@@ -41,7 +43,10 @@ if(isFetching){
         <div className='h-full flex flex-wrap justify-evenly'>
 {list}
             </div>
-{data && data.length > load && <PlusBtn setLoad={setLoad} load={load}/>}
+            <div className="text-center  mt-3">
+            {data && data.length > load && <PlusBtn setLoad={setLoad} load={load}/>}
+
+            </div>
      </div>
      </div>
    

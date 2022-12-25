@@ -10,7 +10,6 @@ function ProductCard({data}) {
 
   const addProductToCart = ()=>{
       dispatch(addToCart(data))
-      console.log("hhhhhh");
 
   }
   const [productToCart,setProductToCart]=useState()
@@ -42,7 +41,7 @@ const sendBoolian = ()=>{
           <button className="rounded border-2 border-lime-600 w-7 h-7 text-center" onClick={()=>{if(qty>0)setQty(qty-1)}}>-</button>
         </div>}
         <p className="text-right ">סה"כ <span className="italic"> {data?.price} </span></p>
-      <button onClick={addProductToCart} type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">הוסף לעגלה</button>
+      <button onClick={addProductToCart} type="button" class=" inline-block px-6 py-2.5 bg-lime-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-lime-700 hover:shadow-lg focus:bg-lime-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lime-800 active:shadow-lg transition duration-150 ease-in-out">הוסף לעגלה</button>
 
     </div>
   </div>
