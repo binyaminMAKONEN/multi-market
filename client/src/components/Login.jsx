@@ -110,15 +110,15 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const { data } = await loginUser(user);
+      const { dataUser} = await loginUser(user);
 
-      const token = data.token;
-      console.log(data.name);
+      const token = dataUser.token;
+      console.log(dataUser.name);
       const userStorage = {
-        firstName: data.user.name.firstName,
-        lastName: data.user.name.lastName,
-        userName: data.user.username,
-        email: data.user.email,
+        firstName: dataUser.user.name.firstName,
+        lastName: dataUser.user.name.lastName,
+        userName: dataUser.user.username,
+        email: dataUser.user.email,
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
@@ -158,9 +158,7 @@ function Login(props) {
                 onClick={() => {
                   setActive(false);
                 }}
-                onClick={() => {
-                  setActive(false);
-                }}
+                
               >
                 X
               </p>
