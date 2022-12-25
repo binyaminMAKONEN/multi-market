@@ -28,13 +28,7 @@ function Login(props) {
   const [loginUser] = useLoginUserMutation();
 
   useEffect(() => {
-    const login = async () => {
-      const { data: token } = await loginUser({
-        email: "avivadga64@gmail.com",
-        password: "123456",
-      });
-    };
-    login();
+  
   }, []);
 
   const handleInput = (e) => {
