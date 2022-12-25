@@ -13,6 +13,7 @@ import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
 import { useSelector } from 'react-redux';
+import ContactPage from './Pages/ContactPage';
 
 function App() {
   const selector = useSelector(state =>state.cart.cartItem)
@@ -33,6 +34,8 @@ function App() {
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}/>
     <Route path='/About' element={<About />}/> 
+    <Route path='/ContactPage' element={<ContactPage />}/> 
+
   </Routes>
   <BottomBar/>
   <Footer/> 

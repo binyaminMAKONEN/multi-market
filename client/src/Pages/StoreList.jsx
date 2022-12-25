@@ -5,8 +5,6 @@ import SortOptions from '../components/SortOptions';
 import {
   useGetStoreQuery
 } from '../store/apiSlice'
-
-
 const StoreList = () => {
     const { data ,isFetching,isSuccess,isError } = useGetStoreQuery()
   
@@ -14,13 +12,12 @@ const StoreList = () => {
     const storeData = data?.filter(val=>val.storeType === myStorage.getItem('category'))
 
     let list;
-
+   let listMobile;
     if(isFetching){
       list = <div>Fetching</div>;
   }else if(isSuccess){
 
       list =  storeData.map((store)=>( <Stores store={store}/>))
-      
   }else if(isError){
       list = <div>Error</div>
   }
@@ -36,10 +33,9 @@ const StoreList = () => {
      <div className='flex justify-center  gap-3 mx-12 mb-10 sm:mx-2 md:mx-28'>
      <ShoppingCard/>
      <div className='flex flex-col grow w-8/12'>
-        <div className='h-[30%]'><SortOptions/></div>
+        <div className=' mb-4 '><SortOptions/></div>
         <div className=''>
         {list}
-
             </div>
      </div>
      </div>
