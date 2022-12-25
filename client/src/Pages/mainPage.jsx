@@ -14,6 +14,7 @@ setStores(filteList);
  }
 useEffect(() => {
     if (data) setStores(data)
+    console.log(data);
   }, [JSON.stringify(data)])
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
@@ -25,7 +26,7 @@ useEffect(() => {
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
-          {stores.map((category)=>( <CategoryCard data={category}/>))}
+          {stores.map((category)=>( <CategoryCard key={category._id} data={category}/>))}
         </div>
 {/* brand section  */}
     <div className='brandSection gap-x-4  items-center flex flex-wrap mt-9  justify-center'>

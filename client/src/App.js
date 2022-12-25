@@ -13,6 +13,8 @@ import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
 import { useSelector } from 'react-redux';
+import ContactPage from './Pages/ContactPage';
+
 import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
@@ -42,6 +44,8 @@ function App() {
     </Route>
     
     <Route path='/About' element={<About />}/> 
+    <Route path='/ContactPage' element={<ContactPage />}/> 
+
   </Routes>
   <BottomBar/>
   <Footer/> 
