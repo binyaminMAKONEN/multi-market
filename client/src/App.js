@@ -1,6 +1,6 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import ThirdNavbar from '../src/components/ThirdNavbar';
+import FirstNavbar from '../src/components/firstnavbarLogin';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -25,7 +25,7 @@ function App() {
     <FirstNavbar/>
     {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
-<PopUpProduct/>
+{/* <PopUpProduct/> */}
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
