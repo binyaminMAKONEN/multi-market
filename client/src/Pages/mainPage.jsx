@@ -7,19 +7,26 @@ import { useGetStoreQuery} from '../store/apiSlice'
  const [stores,setStores]=useState([])
  const { data } = useGetStoreQuery();
 
+
+ const filterCategory =(e)=>{
+const filteList = data?.filter((val)=>val.storeType.includes(e.target.value))
+setStores(filteList);
+ }
 useEffect(() => {
     if (data) setStores(data)
+    console.log(data);
   }, [JSON.stringify(data)])
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
         <div className='text-center mb-4'>
         <h1 className=' text-6xl'>ברוך הבא לעולם החנויות<br/> שלך</h1>
-        <input className='mt-12 w-3/5 rounded-md h-12'  type="text" />
+        <input className='mt-12 w-3/5 rounded-md h-12'  type="text" 
+        onChange={(e)=>filterCategory(e)}/>
         <p className='text-2xl mt-20 mb-8'>קטגרויות שונות</p>
     </div>
     {/* categories section */}
         <div className='storesSection flex flex-wrap   justify-center gap-x-3 gap-y-3'>
-          {stores.map((category)=>( <CategoryCard data={category}/>))}
+          {stores.map((category)=>( <CategoryCard key={category._id} data={category}/>))}
         </div>
 {/* brand section  */}
     <div className='brandSection gap-x-4  items-center flex flex-wrap mt-9  justify-center'>

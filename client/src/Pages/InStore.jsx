@@ -10,7 +10,7 @@ import Spinner from '../Features/Spinner';
 import PlusBtn from "../Features/PlusBtn"
 import { useState } from 'react';
 const InStore = () => {
-  const [load,setLoad]=useState(5)
+  const [load,setLoad]=useState(6)
   const myStorage = window.localStorage;
   const id =JSON.parse(myStorage.getItem('storeId'));
   const {data:storData}=useGetStoreQuery()
