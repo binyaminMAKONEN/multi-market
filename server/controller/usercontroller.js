@@ -8,11 +8,10 @@ const getUsers = async (req,res)=>{
   return res.json(user)
 }
 const getByEmail = async (req,res)=>{
-  const{email}=req.params
-  let user = await  userModel.findOne({email})
-  return res.json(user).status(500)
-}
-
+  const email = req.body
+  let user = await userModel.findOne({email})
+  return res.json(user).status(200)
+}   
 
 const createUser = async (req,res)=>{
     try {
@@ -44,7 +43,7 @@ const login =async (req,res)=>{
     const user = await userModel.findOne({email:req.body.email});
     if(!user) return res.status(400).json('Wrong username or password')
     
-    const validPassword =  await bcrypt.compare(
+    const validPassword = await bcrypt.compare(
         req.body.password,
         user.password
     )
@@ -54,13 +53,11 @@ const login =async (req,res)=>{
     const token =generateAccessToken({role:user.permissions,userId:user._id})
 
     res.status(200).json({token,refreshToken})
-    
+  
   } catch (err) {
     res.status(500).json({err})
-    
   }
 }
-
 module.exports = {
     createUser,
     login,
