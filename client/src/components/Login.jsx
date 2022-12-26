@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../store/apiSlice";
 import { setCredentials } from "../store/userSlice";
+import SingUp from "./SingUp";
 
 function Login(props) {
   const navigate = useNavigate();
@@ -12,24 +13,10 @@ function Login(props) {
   const dispatch = useDispatch();
   const [seePass, setSeePass] = useState(false);
   const [error, setError] = useState("");
-  const [verifiUser, setVerifiUser] = useState(false);
   const [active, setActive] = useState(false);
   const [signUp, setSingUP] = useState(false);
-  const [newUser, setNewUser] = useState({
-    name: { firstName: "", lastName: "" },
-    email: "",
-    userName: "",
-    phone: "",
-    password: "",
-    passwordConfirm: "",
-    passwordConfirm: "",
-  });
-
   const [loginUser] = useLoginUserMutation();
 
-  useEffect(() => {
-  
-  }, []);
 
   const handleInput = (e) => {
     if (e.target.name === "firstName" || e.target.name === "lastName") {
@@ -37,45 +24,7 @@ function Login(props) {
       setNewUser({ ...newUser, name: x });
     } else {
       setNewUser({ ...newUser, [e.target.name]: e.target.value });
-      setNewUser({ ...newUser, [e.target.name]: e.target.value });
     }
-  };
-  const singUp = async (obj) => {
- 
-      const { data } = await axios.get("http://localhost:8080/api/users");
-      const checkIfEmailExist = data.filter(({ email }) => email === obj.email);
-      console.log(checkIfEmailExist);
-      console.log(obj);
-      if (
-        obj.name.firstName === "" ||
-        obj.name.lastName === "" ||
-        obj.email == "" ||
-        obj.password === "" ||
-        obj.passwordConfirm === "" 
-        // newUser.phone === ""
-      )
-        setError("כל השדות חייבים להיות מלאים");
-      else if (obj.password != obj.passwordConfirm){
-        setError("הסיסמאות חייבות להיות זהות");
-        return 
-      }
-      else if (obj.password.length < 6){
-        setError("עליך להזין לפחות 6 תווים")
-        return
-      }
-      // else if (obj.phone.length >= 11 || obj.phone.length < 10)
-      //   setError("מספר טלפון לא תקין");
-      else if (!obj.email.includes("@") && !obj.email.includes(".com")){
-        setError("אימייל לא תקין");
-        return
-      }
-      else if (checkIfEmailExist.length > 0) {
-        setError("האימייל קיים");
-        return
-      } 
-      setVerifiUser(true)
-      setSingUP(false)
-      console.log(verifiUser,newUser);
   };
 
   const dataUser = async () => {
@@ -101,13 +50,15 @@ function Login(props) {
     try {
       const { dataUser} = await loginUser(user);
 
-      const token = dataUser.token;
-      console.log(dataUser.name);
+
+      const token = data.token;
       const userStorage = {
-        firstName: dataUser.user.name.firstName,
-        lastName: dataUser.user.name.lastName,
-        userName: dataUser.user.username,
-        email: dataUser.user.email,
+        firstName: data.user.name.firstName,
+        lastName: data.user.name.lastName,
+        userName: data.user.username,
+        email: data.user.email,
+        id:data.user._id
+
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
@@ -135,6 +86,7 @@ function Login(props) {
     dataUser();
     setActive(props.active);
   }, [props.active]);
+
   return (
     active && (
       <>
@@ -145,83 +97,15 @@ function Login(props) {
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
                 onClick={() => {
-                  setActive(false);
+                  {setActive(false); setSingUP(false);}
                 }}
-                
               >
                 X
               </p>
               {signUp ? (
-                <div className="bg-white w-96 text-center p-2 h-fit">
-                  <input
-                    onChange={handleInput}
-                    name="firstName"
-                    type="text"
-                    placeholder="שם פרטי"
-                    className="m-3"
-                    required={"reqaiede"}
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="lastName"
-                    type="text"
-                    placeholder="שם משפחה"
-                    className="m-3"
-                    required
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="email"
-                    type="email"
-                    placeholder='הזן כתובת דוא"ל'
-                    className="m-3"
-                    required
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="userName"
-                    type="text"
-                    placeholder="שם משתמש"
-                    className="m-3"
-                  />
-                  <br />
-                  {/* <input
-                    onChange={handleInput}
-                    name="phone"
-                    type="tel"
-                    placeholder="טלפון "
-                    className="m-3"
-                  />
-                  <br /> */}
-                  <input
-                    onChange={handleInput}
-                    name="password"
-                    type="text"
-                    placeholder="הזן סיסמא"
-                    className="m-3"
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="passwordConfirm"
-                    type="text"
-                    placeholder="אימות סיסמא"
-                    className="m-3"
-                  />
-                  <br />
-                  <p className="text-red-600">{error}</p>
-                  <button
-                    onClick={()=>singUp(newUser)}
-                    className="border-teal-200 border-2 w-3/5 h-10"
-                  >
-                    submit
-                  </button>
+                <div className="bg-white w-96 text-center p-2 h-fit"> 
+                  <SingUp />
                 </div>
-              ):(verifiUser?(
-              <div>fghj</div>
               ):(
                 <>
                   <h1>
@@ -270,7 +154,7 @@ function Login(props) {
                   <div className="flex justify-center items-center">
                     <GoogleButton onClick={() => loginGoogle()} />
                   </div>
-                  <br />
+                  <br/>
                   <p className="text-red-600">{error}</p>
                   <button
                     className="border-teal-200 border-2 w-3/5 h-10"
@@ -287,9 +171,7 @@ function Login(props) {
                     no have account?
                   </p>
                 </>
-              ))}
-            
-              
+              )}
             </div>
           </div>
         </div>

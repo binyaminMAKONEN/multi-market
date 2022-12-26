@@ -4,7 +4,8 @@ import firebase from '../firebase-config';
 import {authentication} from '../firebase-config';
 import {RecaptchaVerifier,signInWithPhoneNumber} from 'firebase/auth'
 import { configureStore } from '@reduxjs/toolkit';
-function PhoneVerf() {
+import axios from 'axios';
+function PhoneVerf({obj}) {
    const countryCode = '+972';
    const [phoneNumber,setPhoneNumber] = useState(countryCode);
    const [expandForm,setExpandForm] = useState(false);
@@ -31,21 +32,29 @@ function PhoneVerf() {
             window.confirmationResult = confirmationResult;
         }).catch((error)=>{
             console.log(error);
-
         })
         }
-        
     }
-
+    const addUser =async(obj)=>{
+    const {data} = axios.post('http://localhost:8080/api/users/register',obj)
+    return data
+    }
     const verifyOTP = (e)=>{
-        let otp = e.target.value
-        setOTP(otp)
-        if (otp.length === 6) {
-            console.log(otp);
-            
-        }
-    }
-
+      let otp = e.target.value
+      setOTP(otp)
+      if (otp.length === 6) {
+          console.log(otp);
+          let confirmationResult = window.confirmationResult;
+          confirmationResult.confirm(otp).then((result)=>{
+            const user = result.user
+            console.log(user);
+            addUser(obj)
+            alert("user verifed")
+          }).catch((error)=>{
+            console.log(error);
+          })
+      }
+  }
 
     return (
         <div >
@@ -60,6 +69,7 @@ function PhoneVerf() {
                   type="tel"
                   placeholder="הזן מספר טלפון"
                   className="m-3"
+                  maxLength={15}
                 />
             {/* <input    /> */}
             <div id="phoneNumberHelp"> plaese enter phone number</div>
@@ -75,12 +85,12 @@ function PhoneVerf() {
                   placeholder="הזן קוד"
                   className="m-3"
                 />
-                {/* <input   /> */}
+                {/*<input /> */}
                 <div id="otpHelp">please enter the one time pin sent to your phone</div>
             </div>
             </>:null}{expandForm === false ?
             <button type="submit" class="bg-lime-600 hover:bg-lime-500 text-white font-bold py-2 px-4 rounded">
-                   שלח קוד 
+             שלח קוד 
           </button>
            :null}
             <div id="recaptcha-container"></div>
@@ -88,9 +98,5 @@ function PhoneVerf() {
         </div>
       )
    }
-
-  
-
-
 
 export default PhoneVerf
