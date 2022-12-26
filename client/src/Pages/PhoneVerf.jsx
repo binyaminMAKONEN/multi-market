@@ -31,21 +31,26 @@ function PhoneVerf() {
             window.confirmationResult = confirmationResult;
         }).catch((error)=>{
             console.log(error);
-
         })
         }
-        
     }
 
     const verifyOTP = (e)=>{
-        let otp = e.target.value
-        setOTP(otp)
-        if (otp.length === 6) {
-            console.log(otp);
-            
-        }
-    }
-
+      let otp = e.target.value
+      setOTP(otp)
+      if (otp.length === 6) {
+          console.log(otp);
+          let confirmationResult = window.confirmationResult;
+          confirmationResult.confirm(otp).then((result)=>{
+            const user = result.user
+            console.log(user);
+            alert("user verifed")
+          }).catch((error)=>{
+            console.log(error);
+          })
+          
+      }
+  }
 
     return (
         <div >

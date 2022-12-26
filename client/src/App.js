@@ -17,12 +17,11 @@ import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
-import FirstNavbar from './components/firstnavbarLogin';
 import AddProductStore from './components/AddProductStore';
 function App() {
   return (
   <>
-    <FirstNavbar/>
+    {/* <FirstNavbar/> */}
  
     <Routes>
     <Route path='/' element={<MainPage/>}/>
