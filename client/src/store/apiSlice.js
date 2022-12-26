@@ -39,6 +39,13 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["products"],
     }),
+    addProduct: builder.mutation({
+      query: (obj) => ({
+        url: `/api/products`,
+        method: "POST",
+      }),
+      invalidatesTags: ["products"],
+    }),
     //createUser
     createUser: builder.mutation({
       query: (newUser) => ({
@@ -71,6 +78,11 @@ export const apiSlice = createApi({
         body: newStore,
       }),
       invalidatesTags: ["stores"],
+    }),
+    // 
+    getStoreUser: builder.query({
+      query: (id) =>`/api/stores/userId/${id}`, 
+      providesTags: ["stores"],
     }),
     //add permission
     deleteStore: builder.mutation({
@@ -112,6 +124,7 @@ export const {
   useGetProductsQuery,
   useCreateProductsMutation,
   //   useUpdateProductMutation,
+  useGetStoreUserQuery,
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,

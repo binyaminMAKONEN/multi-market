@@ -65,6 +65,16 @@ const updateStore = async (req,res)=>{
 }
 
 // get store by id
+const getStoreByUserId = async (req,res)=>{
+  const {userId} = req.params;
+  
+  if (!mongoose.Types.ObjectId.isValid(userId)) {  
+    return res.status(404).send('no store with that id')
+  }
+  const store = await storeModel.findOne({userId})
+  res.json(store)
+  }
+// get store by id
 const getProductsStoreById = async (req,res)=>{
   const id = req.params.id;
   if (!mongoose.Types.ObjectId.isValid(id)) {  
@@ -76,6 +86,7 @@ const getProductsStoreById = async (req,res)=>{
 
 
 module.exports = {
+  getStoreByUserId,
   getStores,
   createStore,
   deleteStore,

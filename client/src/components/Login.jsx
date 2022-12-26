@@ -40,14 +40,15 @@ function Login(props) {
     try {
       const { data:dataUser} = await loginUser(user);
 
-      const token = dataUser.token;
       console.log(dataUser);
+      const token = dataUser.token;
       const userStorage = {
         firstName: dataUser.user.name.firstName,
         lastName: dataUser.user.name.lastName,
         userName: dataUser.user.username,
         email: dataUser.user.email,
-        permission:dataUser.user.permissions
+        permission:dataUser.user.permissions,
+        id:dataUser.user._id
       };
 
       dispatch(setCredentials({ user: userStorage, token }));

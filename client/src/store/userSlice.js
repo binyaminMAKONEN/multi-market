@@ -13,7 +13,6 @@ const authSlice = createSlice({
     setCredentials:(state,action)=>{
       const token=action.payload.token
       const user=action.payload.user
-      console.log(action.payload);
       state.token=token
       state.user=user
     },
