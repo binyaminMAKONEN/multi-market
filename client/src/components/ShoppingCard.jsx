@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
+import PayButton from "../payment/PayButton";
+
 
 const ShoppingCard = () => {
   
@@ -111,12 +113,9 @@ console.log(dispatch(getTotal()));
               Shipping and taxes calculated at checkout.
             </p>
             <div class="mt-6">
-              <a
-                href="#"
-                class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-              >
-                Checkout
-              </a>
+              <PayButton>
+                click hear to pay
+              </PayButton>
             </div>
             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>

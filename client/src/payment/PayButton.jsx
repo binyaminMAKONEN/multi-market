@@ -1,25 +1,25 @@
 import axios  from 'axios'
 import {useSelector} from 'react-redux'
 
-const url =" localhost://8080/api/stripe/"
+const url =" http://localhost:8080/api/stripe/"
 
 
 const PayButton=() => {
-    const user = useSelector((state)=>state.auth)
-
-    const handleCheckout = (cartItems)=>{
-        axios.post(`${url}create-checkout-session`,{
-          cartItems,
-          userId:user._id  
-        }).then((res)=>{
-            if(res.data.url){
+    const {cartItem} = useSelector((state)=>state.cart)
+    console.log(cartItem);
+    
+    const handleCheckout = ()=>{
+      axios.post(`${url}create-checkout-session`,{
+        cartItem,
+      }).then((res)=>{
+        if(res.data.url){
                 window.location.href = res.data.url
             }
         }).catch((err)=>console.log(err.message))
     }
   return (
     <>
-    <button onClick={()=>handleCheckout()}>check out</button></>
+    <button className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700' onClick={()=>handleCheckout()}>click hear to pay</button></>
   )
 }
 
