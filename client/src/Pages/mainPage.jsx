@@ -50,8 +50,8 @@ useEffect(() => {
             </div>
             <div>
               <a
-                href="/"
-                className="inline-flex bg-lime-600 items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition bg-white duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
+                href="#"
+                className="inline-flex bg-lime-600 items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition  duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
               >
                 תתחילו לקנות
               </a>

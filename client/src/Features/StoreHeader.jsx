@@ -5,7 +5,7 @@ function StoreHeader({data}) {
     <div className="h-96 mb-12">
 <div class="z-30  relative bg-cover  w-full h-96 " style={{backgroundImage:`url(${data?.image?.logo})`}}/>
 <div class="z-50 bg-white-600 border-2 border-white relative 	 left-60 bottom-40 h-36 w-36 sm:left-3/4  ">
-  <img src={data?.image?.logo} alt="storeLogo" />
+  <img className="h-full" src={data?.image?.logo} alt="storeLogo" />
 </div>
 <div class="z-40    backdrop-blur-sm bg-white/80  h-28 relative bottom-64 " >
   <div className="invisible  sm:visible text-center  ">
@@ -33,7 +33,7 @@ function StoreHeader({data}) {
               
             
           </span>
-  <p className="text-lg mr-2 w-44 text-right relative bottom-14  left-14  not-italic visible  sm:visible sm:left-56"> {data?.location?.city}{data?.location?.address}{data?.location?.area} <br/>08-2123431</p>
+  <p className="text-lg mr-2 w-44 text-right relative bottom-14  left-14  not-italic visible  sm:visible sm:left-56"> {data?.location?.city}{data?.location?.address} <br/>08-2123431</p>
   </div>
   
 </div>
