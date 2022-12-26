@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
+import PayButton from "../payment/PayButton";
+
 
 const ShoppingCard = () => {
   
@@ -45,8 +47,8 @@ console.log(dispatch(getTotal()));
       <div class="pointer-events-auto w-0 md:w-4/12 invisible md:visible">
         <div class="flex grow h-7/12 flex-col overflow-y-scroll bg-white shadow-xl">
           <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-            <div class="border-b-2 py-2">
-              <h2 class="text-lg font-medium text-gray-900 text-center">
+            <div class="border-b-2 py-2 bg-gray-700">
+              <h2 class="text-lg font-medium text-white  text-center">
                 עגלת קניות
               </h2>
             </div>
@@ -86,7 +88,7 @@ console.log(dispatch(getTotal()));
                               <div class="flex">
                                 <button onClick={()=>{dispatch(removeFromCart(product))}}
                                   type="button"
-                                  class="font-medium text-indigo-600 hover:text-indigo-500"
+                                  class="font-medium text-red-500 hover:text-red-700"
                                 >
                                   Remove
                                 </button>
@@ -111,12 +113,9 @@ console.log(dispatch(getTotal()));
               Shipping and taxes calculated at checkout.
             </p>
             <div class="mt-6">
-              <a
-                href="#"
-                class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-              >
-                Checkout
-              </a>
+              <PayButton>
+                click hear to pay
+              </PayButton>
             </div>
             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>

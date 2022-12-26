@@ -5,23 +5,16 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../store/apiSlice";
 import { setCredentials } from "../store/userSlice";
+import SingUp from "./SingUp";
 
 function Login(props) {
+  const navigate = useNavigate();
   const [user, setUser] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
   const [seePass, setSeePass] = useState(false);
   const [error, setError] = useState("");
   const [active, setActive] = useState(false);
   const [signUp, setSingUP] = useState(false);
-  const [newUser, setNewUser] = useState({
-    name: { firstName: "", lastName: "" },
-    email: "",
-    userName: "",
-    phone: "",
-    password: "",
-    passwordConfirm: "",
-  });
-
   const [loginUser] = useLoginUserMutation();
 
 
@@ -40,6 +33,14 @@ function Login(props) {
         withCredentials: true,
       });
       console.log(data);
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({
+          firstName: data.name.firstName,
+          img: data.img,
+          email: data.email,
+        })
+      );
     } catch (err) {
       if (err.response.status === 401) console.log("you need log in");
     }
@@ -47,7 +48,8 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const { data } = await loginUser(user);
+      const { dataUser} = await loginUser(user);
+
 
       const token = data.token;
       const userStorage = {
@@ -56,10 +58,16 @@ function Login(props) {
         userName: data.user.username,
         email: data.user.email,
         id:data.user._id
+
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
 
+      const { data } = await axios.post(
+        "http://localhost:8080/api/users/login",
+        user
+      );
+      console.log(user);
       sessionStorage.token = data.token;
       sessionStorage.user = JSON.stringify(userStorage);
       setActive(false);
@@ -73,11 +81,12 @@ function Login(props) {
   const loginGoogle = () => {
     window.location.href = "http://localhost:8080/auth/login/google";
   };
+
   useEffect(() => {
     dataUser();
     setActive(props.active);
   }, [props.active]);
-  console.log(active);
+  
   return (
     active && (
       <>
@@ -90,79 +99,15 @@ function Login(props) {
                 onClick={() => {
                   setActive(false);
                 }}
+                
               >
                 X
               </p>
               {signUp ? (
-                <div className="bg-white w-96 text-center p-2 h-fit">
-                  <input
-                    onChange={handleInput}
-                    name="firstName"
-                    type="text"
-                    placeholder="שם פרטי"
-                    className="m-3"
-                    required={"reqaiede"}
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="lastName"
-                    type="text"
-                    placeholder="שם משפחה"
-                    className="m-3"
-                    required
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="email"
-                    type="email"
-                    placeholder='הזן כתובת דוא"ל'
-                    className="m-3"
-                    required
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="userName"
-                    type="text"
-                    placeholder="שם משתמש"
-                    className="m-3"
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="phone"
-                    type="tel"
-                    placeholder="טלפון "
-                    className="m-3"
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="password"
-                    type="text"
-                    placeholder="הזן סיסמא"
-                    className="m-3"
-                  />
-                  <br />
-                  <input
-                    onChange={handleInput}
-                    name="passwordConfirm"
-                    type="text"
-                    placeholder="אימות סיסמא"
-                    className="m-3"
-                  />
-                  <br />
-                  <p className="text-red-600">{error}</p>
-                  <button
-                    // onClick={()=>register(newUser)}
-                    className="border-teal-200 border-2 w-3/5 h-10"
-                  >
-                    submit
-                  </button>
+                <div className="bg-white w-96 text-center p-2 h-fit"> 
+                  <SingUp />
                 </div>
-              ) : (
+              ):(
                 <>
                   <h1>
                     <b>כניסה</b>
@@ -210,7 +155,7 @@ function Login(props) {
                   <div className="flex justify-center items-center">
                     <GoogleButton onClick={() => loginGoogle()} />
                   </div>
-                  <br />
+                  <br/>
                   <p className="text-red-600">{error}</p>
                   <button
                     className="border-teal-200 border-2 w-3/5 h-10"
@@ -237,3 +182,4 @@ function Login(props) {
 }
 
 export default Login;
+
