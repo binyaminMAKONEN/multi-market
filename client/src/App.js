@@ -24,6 +24,10 @@ function App() {
     <FirstNavbar/>
     {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
+<<<<<<< HEAD
+=======
+{/* <PopUpProduct/> */}
+>>>>>>> e8705957e48ea5e63682be24c55e74a0e8ce497b
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
