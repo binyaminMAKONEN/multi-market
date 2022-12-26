@@ -14,19 +14,20 @@ import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
 import { useSelector } from 'react-redux';
 import ContactPage from './Pages/ContactPage';
-
 import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
-import FirstNavbar from './components/firstnavbarLogin';
 function App() {
   return (
   <>
     <FirstNavbar/>
     {/* <ThirdNavbar/> */}
 {/* <StoreHeader/> */}
+<<<<<<< HEAD
+=======
 {/* <PopUpProduct/> */}
+>>>>>>> e8705957e48ea5e63682be24c55e74a0e8ce497b
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
