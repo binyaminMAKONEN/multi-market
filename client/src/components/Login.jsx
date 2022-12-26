@@ -24,15 +24,6 @@ function Login(props) {
 
   const [loginUser] = useLoginUserMutation();
 
-  useEffect(() => {
-    const login = async () => {
-      const { data: token } = await loginUser({
-        email: "avivadga64@gmail.com",
-        password: "123456",
-      });
-    };
-    login();
-  }, []);
 
   const handleInput = (e) => {
     if (e.target.name === "firstName" || e.target.name === "lastName") {
@@ -59,12 +50,12 @@ function Login(props) {
       const { data } = await loginUser(user);
 
       const token = data.token;
-      console.log(data.name);
       const userStorage = {
         firstName: data.user.name.firstName,
         lastName: data.user.name.lastName,
         userName: data.user.username,
         email: data.user.email,
+        id:data.user._id
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
