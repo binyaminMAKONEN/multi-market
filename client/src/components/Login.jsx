@@ -86,7 +86,7 @@ function Login(props) {
     dataUser();
     setActive(props.active);
   }, [props.active]);
-  
+
   return (
     active && (
       <>
@@ -97,9 +97,8 @@ function Login(props) {
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
                 onClick={() => {
-                  setActive(false);
+                  {setActive(false); setSingUP(false);}
                 }}
-                
               >
                 X
               </p>
