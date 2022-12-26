@@ -57,6 +57,14 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["user"],
     }),
+    updateUser: builder.mutation({
+      query: ({id,newPassword}) => ({
+        url: `/api/users/updateUser/${id}`,
+        method: "PUT",
+        body: newPassword,
+      }),
+      invalidatesTags: ["user"],
+    }),
     //storeCRAD
     getStore: builder.query({
       query: () => "/api/stores",
@@ -88,7 +96,7 @@ export const apiSlice = createApi({
     //add permission
     //orderCRUD
     getOrders: builder.query({
-      query: (id) => `/api/orders`,
+      query: () => `/api/orders`,
       providesTags: ["order"],
     }),
 //add permission
@@ -115,6 +123,7 @@ export const {
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,
+  useUpdateUserMutation,
   useGetStoreQuery,
   useCreateStoreMutation,
   useDeleteStoreMutation,

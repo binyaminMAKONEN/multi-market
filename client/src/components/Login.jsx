@@ -17,6 +17,16 @@ function Login(props) {
   const [signUp, setSingUP] = useState(false);
   const [loginUser] = useLoginUserMutation();
 
+
+  const handleInput = (e) => {
+    if (e.target.name === "firstName" || e.target.name === "lastName") {
+      const x = { ...newUser.name, [e.target.name]: e.target.value };
+      setNewUser({ ...newUser, name: x });
+    } else {
+      setNewUser({ ...newUser, [e.target.name]: e.target.value });
+    }
+  };
+
   const dataUser = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
@@ -40,13 +50,15 @@ function Login(props) {
     try {
       const { dataUser} = await loginUser(user);
 
-      const token = dataUser.token;
-      console.log(dataUser.name);
+
+      const token = data.token;
       const userStorage = {
-        firstName: dataUser.user.name.firstName,
-        lastName: dataUser.user.name.lastName,
-        userName: dataUser.user.username,
-        email: dataUser.user.email,
+        firstName: data.user.name.firstName,
+        lastName: data.user.name.lastName,
+        userName: data.user.username,
+        email: data.user.email,
+        id:data.user._id
+
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
