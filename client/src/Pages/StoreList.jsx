@@ -30,7 +30,7 @@ const StoreList = () => {
     <div>
       <Toolbar/>
       <Header categoryDetails={storeData} />
-        <div className=' border-4 text-center mb-4  py-20 shadow-2xl'>
+        <div className='border-4 text-center mb-4  py-20 shadow-2xl'>
         <h1 className=' text-3xl '>רשימת חנויות בקטגורייה</h1>
     </div>
 

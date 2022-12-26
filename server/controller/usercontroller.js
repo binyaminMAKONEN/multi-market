@@ -59,9 +59,34 @@ const login =async (req,res)=>{
     res.status(500).json({err})
   }
 }
+
+const updateUser = async(req,res)=>{
+  const id = req.params.id
+  //generate new password
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  // Find the user by ID and update their name
+  userModel.findById(id, (err, user) => {
+  if (err) return handleError(err);
+  // Update the user's name
+  user.set({ password: hashedPassword });
+  
+  // Save the updated user
+  user.save((err, updatedUser) => {
+    if (err) return handleError(err);
+    res.status(200).json(updatedUser);
+  });
+});
+
+
+
+}
+
+
 module.exports = {
     createUser,
     login,
     getUsers,
-    getByEmail
+    getByEmail,
+    updateUser
 }

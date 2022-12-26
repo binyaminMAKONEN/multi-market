@@ -27,6 +27,7 @@ export default function SingUp() {
       const singUp = async (obj) => {
         const { data } = await axios.get("http://localhost:8080/api/users");
         const checkIfEmailExist = data.filter(({ email }) => email === obj.email);
+        console.log(obj.name.firstName);
         if (
           obj.name.firstName === "" ||
           obj.name.lastName === "" ||
@@ -34,8 +35,10 @@ export default function SingUp() {
           obj.password === "" ||
           obj.passwordConfirm === "" 
           // newUser.phone === ""
-        )
-          setError("כל השדות חייבים להיות מלאים");
+        ){
+            setError("כל השדות חייבים להיות מלאים");
+            return
+        }
         else if (obj.password != obj.passwordConfirm){
           setError("הסיסמאות חייבות להיות זהות");
           return 
@@ -51,7 +54,7 @@ export default function SingUp() {
         else if (checkIfEmailExist.length > 0) {
           setError("האימייל קיים");
           return
-        } 
+        }
         setError(" ");
         setVerify(!verify)
         setSingUPUser(!signUpUser)
@@ -88,7 +91,7 @@ export default function SingUp() {
 />
 <br />
 <input
- onChange={handleInput}
+ onChange={handleInput} 
  name="userName"
  type="text"
  placeholder="שם משתמש"
@@ -119,7 +122,7 @@ className="border-teal-200 border-2 w-3/5 h-10"
 >
  submit
 </button>
-</div>):(verify?(<div><PhoneVerf/></div>):null)}
+</div>):(verify?(<div><PhoneVerf obj={newUser}/></div>):null)}
         
     </div>
   )

@@ -12,12 +12,13 @@ import InfoPage from './Pages/InfoPage';
 import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
-import { useSelector } from 'react-redux';
 import ContactPage from './Pages/ContactPage';
 import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
+import FirstNavbar from './components/firstnavbarLogin';
+import Team from './Pages/Team';
 function App() {
   return (
   <>
@@ -36,14 +37,15 @@ function App() {
       <Route  path='Questions' element={<Questions />}/>
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}>
-      <Route index path='orders' element={<Orders />}/>
+      <Route  path='orders' element={<Orders />}/>
       <Route  path='Address' element={<Address />}/>
-      <Route  path='details' element={<Details />}/>
+      <Route  index path='details' element={<Details />}/>
       <Route  path='Password' element={<Password />}/>
     </Route>
     
     <Route path='/About' element={<About />}/> 
     <Route path='/ContactPage' element={<ContactPage />}/> 
+    <Route path='/Team' element={<Team />}/> 
 
   </Routes>
   <BottomBar/>
