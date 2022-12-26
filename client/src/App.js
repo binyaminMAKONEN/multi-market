@@ -1,6 +1,6 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import FirstNavbar from '../src/components/firstnavbarLogin';
+import ThirdNavbar from '../src/components/ThirdNavbar';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -12,21 +12,18 @@ import InfoPage from './Pages/InfoPage';
 import InStore from './Pages/InStore';
 import PersonalArea from './Pages/PersonalArea';
 import BottomBar from "./components/BottomBar"
-import { useSelector } from 'react-redux';
 import ContactPage from './Pages/ContactPage';
-
 import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import FirstNavbar from './components/firstnavbarLogin';
+import AddProductStore from './components/AddProductStore';
 function App() {
   return (
   <>
     <FirstNavbar/>
-    {/* <ThirdNavbar/> */}
-{/* <StoreHeader/> */}
-{/* <PopUpProduct/> */}
+ 
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
@@ -37,7 +34,9 @@ function App() {
       <Route  path='Questions' element={<Questions />}/>
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}>
+      
       <Route index path='orders' element={<Orders />}/>
+      <Route  path='store' element={<AddProductStore/>}/>
       <Route  path='Address' element={<Address />}/>
       <Route  path='details' element={<Details />}/>
       <Route  path='Password' element={<Password />}/>

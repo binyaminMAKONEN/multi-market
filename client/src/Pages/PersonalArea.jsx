@@ -4,9 +4,13 @@ import { HiInbox, HiArrowSmRight } from "react-icons/hi";
 import { BsFillHouseFill, BsFillCameraFill } from "react-icons/bs";
 import { FaAddressCard } from "react-icons/fa";
 import { AiFillLock } from "react-icons/ai";
+import {BiStore } from "react-icons/bi";
 import { Outlet, Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+
 const PersonalArea = () => {
   const orders = [1,2,3];
+  const user =useSelector(state=>state.auth.user)
   return (
     <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen my-3 p-5 shadow-xl">
     <div className="w-3/4 flex justify-center">
@@ -26,6 +30,11 @@ const PersonalArea = () => {
             </div>
           </Sidebar.ItemGroup>
           <Sidebar.ItemGroup>
+           {user?.permission==="ownerStore"&& <Link to="store">
+              <Sidebar.Item icon={BiStore} >
+               חנות שלי
+              </Sidebar.Item>
+            </Link>}
             <Link to="orders">
               <Sidebar.Item icon={HiInbox} label={orders.length}>
                 ההזמנות שלי

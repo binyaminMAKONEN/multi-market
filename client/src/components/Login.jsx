@@ -99,25 +99,21 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const { dataUser} = await loginUser(user);
+      const { data:dataUser} = await loginUser(user);
 
       const token = dataUser.token;
-      console.log(dataUser.name);
+      console.log(dataUser);
       const userStorage = {
         firstName: dataUser.user.name.firstName,
         lastName: dataUser.user.name.lastName,
         userName: dataUser.user.username,
         email: dataUser.user.email,
+        permission:dataUser.user.permissions
       };
 
       dispatch(setCredentials({ user: userStorage, token }));
 
-      const { data } = await axios.post(
-        "http://localhost:8080/api/users/login",
-        user
-      );
-      console.log(user);
-      sessionStorage.token = data.token;
+      sessionStorage.token = token;
       sessionStorage.user = JSON.stringify(userStorage);
       setActive(false);
     } catch (err) {

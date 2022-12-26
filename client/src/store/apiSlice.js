@@ -6,8 +6,6 @@ const baseUrl = fetchBaseQuery({
   credentials: "include" ,
   prepareHeaders: (headers,{getState})=>{
     const token =getState().auth.token
-    // const user =getState().auth.user 
-    console.log(token);
     if( token){
       headers.set('authorization',`Rocet ${token}`)
     }
