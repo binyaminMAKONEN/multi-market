@@ -76,7 +76,9 @@ const ShoppingCard = ({orderAddress}) => {
 
 
   useEffect(() => {
-    sortCartSelector();
+    sortCartSelector()
+   console.log( sortCartSelector())
+
   }, [JSON.stringify(selector.cartItem)]);
 
   return (
@@ -153,18 +155,7 @@ const ShoppingCard = ({orderAddress}) => {
                 click hear to pay
               </PayButton>
             </div>
-            <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-              <p>
-                or
-                <button
-                  type="button"
-                  class="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Continue Shopping
-                  <span aria-hidden="true"> &rarr;</span>
-                </button>
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>
