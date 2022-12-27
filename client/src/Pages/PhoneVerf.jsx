@@ -31,7 +31,6 @@ function PhoneVerf({obj}) {
         .then(confirmationResult=>{
             window.confirmationResult = confirmationResult;
         }).catch((error)=>{
-            console.log(error);
         })
         }
     }
@@ -43,14 +42,12 @@ function PhoneVerf({obj}) {
       let otp = e.target.value
       setOTP(otp)
       if (otp.length === 6) {
-          console.log(otp);
           let confirmationResult = window.confirmationResult;
           confirmationResult.confirm(otp).then((result)=>{
             const user = result.user
             addUser(obj)
             alert("user verifed")
           }).catch((error)=>{
-            console.log(error);
           })
       }
   }

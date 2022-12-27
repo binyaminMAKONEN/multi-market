@@ -5,15 +5,31 @@ import CategoryCard from '../components/CategoryCard'
 import { useGetStoreQuery} from '../store/apiSlice'
  function MainPage() {
  const [stores,setStores]=useState([])
- const { data } = useGetStoreQuery();
+ const { data,isSuccess } = useGetStoreQuery();
 
+ const filterdata=(arr)=>{
+  const filterArr=[]
+  const arrName=[] 
+  arr.forEach(obj => {
+    if (!arrName.includes(obj.storeType)){
+      arrName.push(obj.storeType)
+      filterArr.push(obj)
+      } 
+
+  });
+ 
+return filterArr;
+ }
 
  const filterCategory =(e)=>{
 const filteList = data?.filter((val)=>val.storeType.includes(e.target.value))
 setStores(filteList);
  }
 useEffect(() => {
-    if (data) setStores(data)
+    if (isSuccess){
+      setStores(filterdata(data))
+    } 
+      
   }, [JSON.stringify(data)])
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
@@ -35,7 +51,7 @@ useEffect(() => {
         <img className='w-30 h-12 pb-2' src="https://assets.stickpng.com/images/58480fd7cef1014c0b5e4943.png" alt="" />
     </div>
 <div className=' mt-16'>
-<div className="text-center bg-no-reapeat  bg-cover " style={{backgroundImage:'url(https://images.pexels.com/photos/952483/pexels-photo-952483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'}}>
+<div className="text-center bg-no-reapeat  bg-cover bg-[url'https://images.pexels.com/photos/952483/pexels-photo-952483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center sm:mb-0">

@@ -1,8 +1,6 @@
-// import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import ThirdNavbar from '../src/components/ThirdNavbar';
+import FirstNavbar from '../src/components/firstnavbarLogin';
 import SecondNavBar from '../src/components/secondNavBar';
-import FirstNavbar from "../src/components/firstnavbarLogin";
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -30,12 +28,7 @@ function App() {
 
   return (
   <>
-{appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
-{/* <StoreHeader/> */}
-{/* <<<<<<< HEAD */}
-{/* <PopUpProduct/> */}
     {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
-
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>

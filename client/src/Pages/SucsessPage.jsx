@@ -6,9 +6,7 @@ function SucsessPage() {
     const myStorage = window.localStorage; 
     useEffect(() => {
      const orderItem = JSON.parse(myStorage.getItem('orderItem'));
-     console.log(orderItem);
      const data = createOrder(orderItem);
-     console.log(data.arg.originalArgs);
     }, [])
 
     const clearFromLocalSotrage = ()=>{

@@ -10,7 +10,6 @@ const StoreList = () => {
   
     const myStorage = window.localStorage;
     const storeData = data?.filter(val=>val.storeType === myStorage.getItem('category'))
-    console.log(storeData);
     
 
     let list;
@@ -28,7 +27,7 @@ const StoreList = () => {
     return(
     <div>
       <Toolbar/>
-      <Header categoryDetails={storeData} />
+      <Header categoryDetails={isFetching?[]:storeData} />
         <div className='border-4 text-center mb-4  py-20 shadow-2xl'>
         <h1 className=' text-3xl '>רשימת חנויות בקטגורייה</h1>
     </div>

@@ -8,8 +8,6 @@ import { setCredentials ,setGoogleUser} from "../store/userSlice";
 import SingUp from "./SingUp";
 
 function Login(props) {
-  const appStore = useSelector(state=>state)
-  const navigate = useNavigate();
   const [user, setUser] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
   const [seePass, setSeePass] = useState(false);
@@ -18,7 +16,6 @@ function Login(props) {
   const [signUp, setSingUP] = useState(false);
   const [loginUser] = useLoginUserMutation();
 
-console.log(appStore);
   const dataUser = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
@@ -32,10 +29,9 @@ console.log(appStore);
         email: data.email,
         id:data._id
       };
-      console.log(userGoogle);
       dispatch(setGoogleUser({ user: userGoogle }));
     } catch (err) {
-      if (err.response.status === 401) console.log("you need log in");
+      if (err.response.status === 401);
     }
   };
 
@@ -54,7 +50,6 @@ console.log(appStore);
         permission:dataUser.user.permissions,
         id:dataUser.user._id
       };
-      console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
 
@@ -63,12 +58,10 @@ console.log(appStore);
         "http://localhost:8080/api/users/login",
         user
       );
-      console.log(user);
       sessionStorage.token = data.token;
       sessionStorage.user = JSON.stringify(userStorage);
       setActive(false);
     } catch (err) {
-      console.log(err);
       if (err.response.status === 400)
         setError("הסיסמא או האיימל שלך לא נכונים");
     }
