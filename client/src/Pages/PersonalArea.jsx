@@ -45,9 +45,7 @@ const PersonalArea = () => {
             <Link to="details">
               <Sidebar.Item icon={FaAddressCard}>מידע אישי</Sidebar.Item>
             </Link>
-            <Link to="Address">
-              <Sidebar.Item icon={BsFillHouseFill}>כתובת שלי</Sidebar.Item>
-            </Link>
+          
             <Link to="Password">
               <Sidebar.Item icon={AiFillLock}>החלפת סיסמא</Sidebar.Item>
             </Link>

@@ -51,7 +51,7 @@ useEffect(() => {
         <img className='w-30 h-12 pb-2' src="https://assets.stickpng.com/images/58480fd7cef1014c0b5e4943.png" alt="" />
     </div>
 <div className=' mt-16'>
-<div className="text-center bg-no-reapeat  bg-cover bg-[url'https://images.pexels.com/photos/952483/pexels-photo-952483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']">
+<div className="text-center bg-no-reapeat  bg-cover bg-[url('https://images.pexels.com/photos/952483/pexels-photo-952483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center sm:mb-0">

@@ -36,7 +36,7 @@ const StoreList = () => {
      <ShoppingCard/>
      <div className='flex flex-col grow w-8/12'>
         <div className=' mb-4 '>
-          <SortOptions/>
+          {/* <SortOptions/> */}
         </div>
         <div className=''>
         {list}
