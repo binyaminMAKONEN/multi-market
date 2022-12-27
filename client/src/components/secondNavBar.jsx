@@ -1,11 +1,23 @@
 import React from 'react'
 import { Navbar,Dropdown,Avatar ,Label,TextInput} from 'flowbite-react'
 import { ImLocation } from 'react-icons/im';
+import { useDispatch, useSelector } from 'react-redux';
+import {logOut,setCredentials,setGoogleUser} from "../store/userSlice";
+import axios from 'axios';
 
 
 function SecondNavBar() {
-  
-  
+  const appStore = useSelector(state=>state)
+  console.log(appStore);
+  const userConnectData = appStore.auth.user
+  console.log(userConnectData);
+  const dispatch = useDispatch()
+
+  const logout =async ()=>{
+    window.location.href = "http://localhost:8080/auth/logout";
+    
+    dispatch(logOut())
+  }
   return (
     <div>
          <Navbar
@@ -24,22 +36,21 @@ function SecondNavBar() {
   </Navbar.Brand>
   <div className="flex md:order-2">
   <p className='self-center'>מודיעין</p>
-    <button>  <ImLocation className='text-2xl ml-1 mr-3 text-lime-500'/></button>
-    <p className='self-center md:mr-1 xl:mr-2'>שלום דנה</p>
-
+    <button> <ImLocation className='text-2xl ml-1 mr-3 text-lime-500'/></button>
+    <p className='self-center md:mr-1 xl:mr-2'>שלום {userConnectData.firstName}</p>
 
     <Dropdown
       arrowIcon={false}
       inline={true}
-      label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
+      label={<Avatar alt="User settings" img={userConnectData.img} rounded={true}/>}
     >
         
       <Dropdown.Header>
         <span className="block text-sm">
-        שלום דנה
+        שלום {userConnectData.firstName}
         </span>
         <span className="block truncate text-sm font-medium">
-          dana@gmail.com
+          {userConnectData.email}
         </span>
       </Dropdown.Header>
       <Dropdown.Item>
@@ -52,7 +63,7 @@ function SecondNavBar() {
         Earnings
       </Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item>
+      <Dropdown.Item onClick={()=>logout()}>
         Sign out
       </Dropdown.Item>
     </Dropdown>
@@ -73,8 +84,6 @@ function SecondNavBar() {
       type="text"
       sizing="sm"
       className='w-64 '
-
-      
     />
     
   </div>
