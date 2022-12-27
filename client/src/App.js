@@ -21,6 +21,7 @@ import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import Team from './Pages/Team';
 import SucsessPage from './Pages/SucsessPage';
+import { useSelector } from 'react-redux';
 function App() {
   const appStore = useSelector(state=>state)
   console.log();
