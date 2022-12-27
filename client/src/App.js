@@ -20,7 +20,7 @@ import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import Team from './Pages/Team';
-import { useSelector } from 'react-redux';
+import SucsessPage from './Pages/SucsessPage';
 function App() {
   const appStore = useSelector(state=>state)
   console.log();
@@ -49,6 +49,7 @@ function App() {
     <Route path='/About' element={<About />}/> 
     <Route path='/ContactPage' element={<ContactPage />}/> 
     <Route path='/Team' element={<Team />}/> 
+    <Route path='/SucsessPage' element={<SucsessPage />}/> 
 
   </Routes>
   <BottomBar/>
