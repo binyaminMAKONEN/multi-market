@@ -1,8 +1,8 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import FirstNavbar from '../src/components/firstnavbarLogin';
 import ThirdNavbar from '../src/components/ThirdNavbar';
 import SecondNavBar from '../src/components/secondNavBar';
+import FirstNavbar from "../src/components/firstnavbarLogin";
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -20,16 +20,22 @@ import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import Team from './Pages/Team';
-import { useSelector } from 'react-redux';
+import SucsessPage from './Pages/SucsessPage';
+import AddProductStore from './components/AddProductStore';
+import MyStore from './components/MyStore';
+import {useSelector} from 'react-redux'
 function App() {
+  const selector=useSelector(state=>state.auth.user)
   const appStore = useSelector(state=>state)
-  console.log();
+
   return (
   <>
 {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
 {/* <StoreHeader/> */}
 {/* <<<<<<< HEAD */}
 {/* <PopUpProduct/> */}
+    {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
+
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
@@ -40,7 +46,9 @@ function App() {
       <Route  path='Questions' element={<Questions />}/>
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}>
-      <Route  path='orders' element={<Orders />}/>
+      
+      <Route index path='orders' element={<Orders />}/>
+      <Route  path='store' element={selector?.permission==="ownerStore"?<MyStore/>:<Orders/>}/>
       <Route  path='Address' element={<Address />}/>
       <Route  index path='details' element={<Details />}/>
       <Route  path='Password' element={<Password />}/>
@@ -49,6 +57,7 @@ function App() {
     <Route path='/About' element={<About />}/> 
     <Route path='/ContactPage' element={<ContactPage />}/> 
     <Route path='/Team' element={<Team />}/> 
+    <Route path='/SucsessPage' element={<SucsessPage />}/> 
 
   </Routes>
   <BottomBar/>

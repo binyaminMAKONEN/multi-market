@@ -41,18 +41,24 @@ console.log(appStore);
 
   const login = async () => {
     try {
-      const {data : dataUser} = await loginUser(user);
-       console.log(dataUser);
+      const { data:dataUser} = await loginUser(user);
+
+
       const token = dataUser.token;
+
       const userStorage = {
         firstName: dataUser.user.name.firstName,
         lastName: dataUser.user.name.lastName,
         userName: dataUser.user.username,
         email: dataUser.user.email,
+        permission:dataUser.user.permissions,
         id:dataUser.user._id
       };
+      console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
+
+      sessionStorage.token = token;
       const { data } = await axios.post(
         "http://localhost:8080/api/users/login",
         user
@@ -73,7 +79,6 @@ console.log(appStore);
   };
 
   useEffect(() => {
-    dataUser();
     setActive(props.active);
   }, [props.active]);
 

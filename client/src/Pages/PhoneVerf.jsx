@@ -47,7 +47,6 @@ function PhoneVerf({obj}) {
           let confirmationResult = window.confirmationResult;
           confirmationResult.confirm(otp).then((result)=>{
             const user = result.user
-            console.log(user);
             addUser(obj)
             alert("user verifed")
           }).catch((error)=>{
