@@ -1,11 +1,16 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
 import ShopingCard from "../components/ShoppingCard.jsx";
+import { useState } from "react";
+// import {useCreateOrdersMutation} from '../store/apiSlice';
+export default function TestCart() {
+  const [address,setAddress] =useState("")
 
-export default function TestCart(cartItem) {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex">
-      <ShopingCard />
+      <ShopingCard orderAddress={address} />
 
       <div className="space-y-4">
         <details
@@ -34,9 +39,9 @@ export default function TestCart(cartItem) {
           <p>שם משפחה</p>
           <input type="text" />
           <p>משלוח אל:</p>
-          <input type="text" />
+          <input onChange={(e)=>setAddress(e.target.value)} type="text" />
           <br />
-          <button className="bg-red-600">שמור</button>
+          <button  className="bg-red-600">שמור</button>
           <br />
           <button className="bg-blue-500">מחק כתובת זו</button>
         </details>

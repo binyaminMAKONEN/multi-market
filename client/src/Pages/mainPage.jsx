@@ -14,7 +14,6 @@ setStores(filteList);
  }
 useEffect(() => {
     if (data) setStores(data)
-    console.log(data);
   }, [JSON.stringify(data)])
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>

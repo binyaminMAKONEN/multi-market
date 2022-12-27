@@ -17,12 +17,12 @@ router.get("/protected", isLoggedIn, (req, res) => {
     else res.redirect("/auth");
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       console.log(err);
     }
-    res.redirect("/auth");
+    res.redirect("http://localhost:3000");
   });
 });
 
