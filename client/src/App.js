@@ -26,7 +26,7 @@ function App() {
   console.log();
   return (
   <>
-    {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
+{appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
 {/* <StoreHeader/> */}
 {/* <<<<<<< HEAD */}
 {/* <PopUpProduct/> */}
