@@ -1,7 +1,5 @@
-// import './App.css';
 import {Route,Routes} from 'react-router-dom'
 import FirstNavbar from '../src/components/firstnavbarLogin';
-import ThirdNavbar from '../src/components/ThirdNavbar';
 import SecondNavBar from '../src/components/secondNavBar';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
@@ -21,15 +19,13 @@ import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import Team from './Pages/Team';
 import SucsessPage from './Pages/SucsessPage';
+import { useSelector } from 'react-redux';
 function App() {
   const appStore = useSelector(state=>state)
   console.log();
   return (
   <>
     {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
-{/* <StoreHeader/> */}
-{/* <<<<<<< HEAD */}
-{/* <PopUpProduct/> */}
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>

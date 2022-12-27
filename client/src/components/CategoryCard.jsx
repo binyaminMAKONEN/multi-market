@@ -5,7 +5,6 @@ function CategoryCard({data}) {
   
   const navigate =useNavigate()
   const myStorage = window.localStorage;
-console.log(data);
   const saveStoreType = (category)=>{
     myStorage.setItem('category', category);
     navigate('/StoreList')

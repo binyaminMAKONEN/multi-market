@@ -12,12 +12,10 @@ const PersonalArea = () => {
   const [updateUser,{isSuccess}]= useUpdateUserMutation()
   const orders = [1,2,3];
   const selector = useSelector((state) => state.auth.user);
-  console.log(selector);
   const id ='6398ba40614bd39c21e810c1'
   const newPass ={password:'123456'}
   const newPassUser =async()=>{
 await updateUser({ id:id, newPassword: newPass })
-console.log(isSuccess);
   }
   useEffect(()=>{
     newPassUser()

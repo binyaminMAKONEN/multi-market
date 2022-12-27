@@ -1,26 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
-import { useEffect,useRef } from 'react'
+import { useRef } from 'react'
 import { useSelector } from "react-redux";
 import {useLoginUserMutation,useUpdateUserMutation} from "../../store/apiSlice"
+
 const Password = () => {
   const [isLog,setIsLog]=useState(false)
   const selector = useSelector((state) => state.auth.user);
   const [loginUser]=useLoginUserMutation()
-  const [updateUser,{isSuccess}]= useUpdateUserMutation()
+  const [updateUser]= useUpdateUserMutation()
   const emailRef = useRef();
   const passwordRef = useRef();
   const newPasswordRef = useRef();
 
 
   const userVerification = async()=>{
-    console.log(emailRef.current.value);
-    console.log(passwordRef);
     const user = {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
-    console.log(user);
     
 const userData=await loginUser(user)
 if (userData.data.user.email===user.email) {
@@ -29,12 +27,9 @@ if (userData.data.user.email===user.email) {
 
   }
   const ChangePassword = async()=>{
-    
     const id =selector.id
     const newPass ={password:newPasswordRef.current.value}
-    const data =await updateUser({ id:id, newPassword: newPass })
-    console.log(data);
-    console.log(isSuccess);
+    await updateUser({ id:id, newPassword: newPass })
   }
 
 

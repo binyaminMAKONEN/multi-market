@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from "react-redux";
 const Details = () => {
     const selector = useSelector((state) => state.auth.user);
-    console.log(selector);
   return (
       <form class="w-full max-w-sm text-right">
         <h1 className='text-xl mb-5'>מידע אישי</h1>

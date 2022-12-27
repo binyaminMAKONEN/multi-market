@@ -6,7 +6,6 @@ const url =" http://localhost:8080/api/stripe/"
 
 const PayButton=() => {
     const {cartItem} = useSelector((state)=>state.cart)
-    console.log(cartItem);
     
     const handleCheckout = ()=>{
       axios.post(`${url}create-checkout-session`,{

@@ -10,7 +10,6 @@ const StoreList = () => {
   
     const myStorage = window.localStorage;
     const storeData = data?.filter(val=>val.storeType === myStorage.getItem('category'))
-    console.log(data);
     
 
     let list;

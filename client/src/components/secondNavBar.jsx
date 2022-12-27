@@ -1,18 +1,15 @@
 import React from 'react'
-import { Navbar,Dropdown,Avatar ,Label,TextInput} from 'flowbite-react'
+import { Navbar,Dropdown,Avatar ,Label} from 'flowbite-react'
 import { ImLocation } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
-import {logOut,setCredentials,setGoogleUser} from "../store/userSlice";
-import axios from 'axios';
+import {logOut} from "../store/userSlice";
 import { Link } from 'react-router-dom';
 
 
 function SecondNavBar() {
   const {cartTotalQuantity} =useSelector(state => state.cart)
   const appStore = useSelector(state=>state)
-  console.log(appStore);
   const userConnectData = appStore.auth.user
-  console.log(userConnectData);
   const dispatch = useDispatch()
 
   const logout =async ()=>{
@@ -21,13 +18,13 @@ function SecondNavBar() {
     dispatch(logOut())
   }
   return (
-    <div>
+    <div className='fixed w-screen'>
          <Navbar
   fluid={true}
   rounded={true}
 >
 
-  <Navbar.Brand href="#">
+  <Navbar.Brand href="/">
     <img
       src="https://i.postimg.cc/D0skf82c/2022-12-08-210836-preview-rev-1.png"
       className="mr-3 h-6 sm:h-9 "
@@ -43,7 +40,7 @@ function SecondNavBar() {
      
     <div>
        <div className="flex md:order-2">
-  <div className="md:flex hidden font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+  <div className="md:flex  font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
 
 <div  className="relative flex">
       <svg className="flex-1 w-7 h-7 fill-current" viewBox="0 0 24 24">
