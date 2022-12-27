@@ -27,6 +27,7 @@ function Login(props) {
         firstName: data.name.firstName,
         lastName: data.name.lastName,
         userName: data.username,
+        img: data.img,
         email: data.email,
         id:data._id
       };
