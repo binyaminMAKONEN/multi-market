@@ -27,7 +27,6 @@ export default function SingUp() {
       const singUp = async (obj) => {
         const { data } = await axios.get("http://localhost:8080/api/users");
         const checkIfEmailExist = data.filter(({ email }) => email === obj.email);
-        console.log(obj.name.firstName);
         if (
           obj.name.firstName === "" ||
           obj.name.lastName === "" ||

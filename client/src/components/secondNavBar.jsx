@@ -54,19 +54,19 @@ function SecondNavBar() {
       </span>
     </div>
     </div>
-  <p className='self-center'>מודיעין</p>
+  <p className='self-center'>תל אביב</p>
   
     <button> <ImLocation className='text-2xl ml-1 mr-3 text-lime-500'/></button>
     <p className='self-center md:mr-1 xl:mr-2'>{userConnectData.firstName} שלום</p>
 
-    <Dropdown
+    <Dropdown className=''
       arrowIcon={false}
       inline={true}
       label={<Avatar alt="User settings" img={userConnectData.img} rounded={true}/>}
     >
         
       <Dropdown.Header>
-        <span className="block text-sm">
+        <span className="block text-sm ">
         שלום {userConnectData.firstName}
         </span>
         <span className="block truncate text-sm font-medium">

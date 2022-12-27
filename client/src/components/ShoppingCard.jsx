@@ -14,9 +14,7 @@ const ShoppingCard = ({orderAddress}) => {
   console.log(order);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
-console.log(dispatch(getTotal()));
   const selector = useSelector((state) => state.cart);
-  console.log(selector);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
     currency: 'ILS',
@@ -93,7 +91,6 @@ console.log(dispatch(getTotal()));
                 עגלת קניות
               </h2>
             </div>
-
             <div class="mt-8">
               <div class="flow-root">
                 <ul role="list" class="-my-6 divide-y divide-gray-200">

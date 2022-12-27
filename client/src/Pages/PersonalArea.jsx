@@ -4,6 +4,7 @@ import { HiInbox, HiArrowSmRight } from "react-icons/hi";
 import { BsFillHouseFill, BsFillCameraFill } from "react-icons/bs";
 import { FaAddressCard } from "react-icons/fa";
 import { AiFillLock } from "react-icons/ai";
+import {BiStore } from "react-icons/bi";
 import { Outlet, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {useUpdateUserMutation} from '../store/apiSlice'
@@ -11,17 +12,7 @@ import { useEffect } from 'react';
 const PersonalArea = () => {
   const [updateUser,{isSuccess}]= useUpdateUserMutation()
   const orders = [1,2,3];
-  const selector = useSelector((state) => state.auth.user);
-  console.log(selector);
-  const id ='6398ba40614bd39c21e810c1'
-  const newPass ={password:'123456'}
-  const newPassUser =async()=>{
-await updateUser({ id:id, newPassword: newPass })
-console.log(isSuccess);
-  }
-  useEffect(()=>{
-    newPassUser()
-  },[])
+  const user =useSelector(state=>state.auth.user)
   return (
     <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-fit my-3 p-5 shadow-xl">
     <div className="w-3/4 flex justify-center">
@@ -41,6 +32,11 @@ console.log(isSuccess);
             </div>
           </Sidebar.ItemGroup>
           <Sidebar.ItemGroup>
+           {user?.permission==="ownerStore"&& <Link to="store">
+              <Sidebar.Item icon={BiStore} >
+               חנות שלי
+              </Sidebar.Item>
+            </Link>}
             <Link to="orders">
               <Sidebar.Item icon={HiInbox}>
                 ההזמנות שלי
