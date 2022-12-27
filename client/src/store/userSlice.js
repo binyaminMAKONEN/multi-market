@@ -3,7 +3,7 @@ console.log(sessionStorage.getItem("token"));
 const initialState = {
   user:sessionStorage.getItem("user")?JSON.parse(sessionStorage.getItem("user")): null,
   token:sessionStorage.getItem("token")?sessionStorage.getItem("token"):null,
-  googleUser: null
+  // googleUser: null
 };
 
 const authSlice = createSlice({
@@ -25,7 +25,7 @@ const authSlice = createSlice({
     logOut:(state,action)=>{ 
       sessionStorage.clear()
       state.token = null
-      state.user = action.payload
+      state.user = null
     }
   }
 });
