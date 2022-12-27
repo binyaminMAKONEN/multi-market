@@ -18,14 +18,7 @@ function Login(props) {
   const [loginUser] = useLoginUserMutation();
 
 
-  const handleInput = (e) => {
-    if (e.target.name === "firstName" || e.target.name === "lastName") {
-      const x = { ...newUser.name, [e.target.name]: e.target.value };
-      setNewUser({ ...newUser, name: x });
-    } else {
-      setNewUser({ ...newUser, [e.target.name]: e.target.value });
-    }
-  };
+
 
   const dataUser = async () => {
     try {
@@ -48,18 +41,20 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const { dataUser} = await loginUser(user);
+      const { data:dataUser} = await loginUser(user);
 
 
-      const token = data.token;
+      const token = dataUser.token;
+
       const userStorage = {
-        firstName: data.user.name.firstName,
-        lastName: data.user.name.lastName,
-        userName: data.user.username,
-        email: data.user.email,
-        id:data.user._id
+        firstName: dataUser.user.name.firstName,
+        lastName: dataUser.user.name.lastName,
+        userName: dataUser.user.username,
+        email: dataUser.user.email,
+        id:dataUser.user._id
 
       };
+      console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
 
@@ -83,7 +78,6 @@ function Login(props) {
   };
 
   useEffect(() => {
-    dataUser();
     setActive(props.active);
   }, [props.active]);
 

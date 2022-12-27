@@ -17,8 +17,8 @@ import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
-import FirstNavbar from './components/firstnavbarLogin';
 import Team from './Pages/Team';
+import SucsessPage from './Pages/SucsessPage';
 function App() {
   return (
   <>
@@ -46,6 +46,7 @@ function App() {
     <Route path='/About' element={<About />}/> 
     <Route path='/ContactPage' element={<ContactPage />}/> 
     <Route path='/Team' element={<Team />}/> 
+    <Route path='/SucsessPage' element={<SucsessPage />}/> 
 
   </Routes>
   <BottomBar/>

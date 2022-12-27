@@ -2,23 +2,40 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
+import {addToOrder} from '../store/orderSlice'
 import PayButton from "../payment/PayButton";
 
 
-const ShoppingCard = () => {
+const ShoppingCard = ({orderAddress}) => {
   
+  const user = useSelector((state) => state.auth);
+  console.log(user);
+  const order = useSelector((state) => state.order);
+  console.log(order);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
 console.log(dispatch(getTotal()));
   const selector = useSelector((state) => state.cart);
-  console.log(selector.cartItem);
+  console.log(selector);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
     currency: 'ILS',
   })
-
+  // //////////////
+  const x = ()=>{
+   const newUser = {
+    stores:sortCartOrder(),
+    address:orderAddress,
+    price:selector.cartItem.cartTotalAmount,
+    clientId:user.user.id
+  }
+  dispatch(addToOrder(newUser))
+  console.log(newUser);
+  }
+  
   const sortCartSelector = () => {
     const sortCart = [];
+
     for (let i = 0; i < selector.cartItem.length; i++) {
       const obj = selector.cartItem[i];
       let storesNames = sortCart.map((n) => n.storeName);
@@ -37,8 +54,30 @@ console.log(dispatch(getTotal()));
     setCart(sortCart);
   };
 
+
+  const sortCartOrder = () => {
+    const sortOrder = [];
+
+    for (let i = 0; i < selector.cartItem.length; i++) {
+      const obj = selector.cartItem[i];
+      let storesId = sortOrder.map((n) => n.storeId);
+
+      const iProduct = sortOrder.findIndex(
+        (product) => product.storeId === obj.storeId
+      );
+      if (iProduct >= 0) {
+        sortOrder[iProduct].products.push(obj._id);
+      }
+
+      if (!storesId.includes(obj.storeId)) {
+        sortOrder.push({ storeId: obj.storeId, products: [obj._id] });
+      }
+    }
+    return sortOrder;
+  };
+
+
   useEffect(() => {
-    console.log(selector.cartTotalAmount);
     sortCartSelector();
   }, [JSON.stringify(selector.cartItem)]);
 
@@ -112,7 +151,7 @@ console.log(dispatch(getTotal()));
             <p class="mt-0.5 text-sm text-gray-500">
               Shipping and taxes calculated at checkout.
             </p>
-            <div class="mt-6">
+            <div class="mt-6 cursor-pointer" onClick={()=>{x()}}>
               <PayButton>
                 click hear to pay
               </PayButton>
