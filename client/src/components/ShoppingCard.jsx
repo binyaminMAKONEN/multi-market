@@ -1,21 +1,24 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
+import {
+  addToCart,
+  decreaseCart,
+  getTotal,
+  removeFromCart,
+} from "../store/cartSlice";
 import PayButton from "../payment/PayButton";
 
-
 const ShoppingCard = () => {
-  
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [cart, setCart] = useState([]);
-console.log(dispatch(getTotal()));
+  console.log(dispatch(getTotal()));
   const selector = useSelector((state) => state.cart);
   console.log(selector.cartItem);
-  const formatter = new Intl.NumberFormat('il-IL', {
-    style: 'currency',
-    currency: 'ILS',
-  })
+  const formatter = new Intl.NumberFormat("il-IL", {
+    style: "currency",
+    currency: "ILS",
+  });
 
   const sortCartSelector = () => {
     const sortCart = [];
@@ -62,43 +65,70 @@ console.log(dispatch(getTotal()));
                         <h2 className="p-5 text-right shadow-lg mt-4">
                           {store.storeName}
                         </h2>
-                        {store?.products.map(product=>
-                        <li class="flex py-6">
-                          <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                            <img
-                              src={product.img}
-                              alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                              class="h-full w-full object-cover object-center"
-                            />
-                          </div>
-
-                          <div class="ml-4 flex flex-1 flex-col">
-                            <div>
-                              <div class="flex justify-between text-base font-medium text-gray-900">
-                                <h3>
-                                  <a href="#">Throwback Hip Bag</a>
-                                </h3>
-                                <p class="ml-4">{formatter.format(product.price)}</p>
-                              </div>
-                              <p class="mt-1 text-sm text-gray-500">{product.description}</p>
+                        {store?.products.map((product) => (
+                          <li class="flex py-6">
+                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                              <img
+                                src={product.img}
+                                alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+                                class="h-full w-full object-cover object-center"
+                              />
                             </div>
-                            <div class="flex flex-1 items-end justify-between text-sm">
-                              <p class="text-gray-500"> Qty   <span className="text-red-400 cursor-pointer " onClick={()=>{dispatch(decreaseCart(product))}}>-</span>  {product.cartQuantity} <span className="text-lime-400 cursor-pointer " onClick={()=>{dispatch(addToCart(product))}}>+</span> </p>
 
-                              <div class="flex">
-                                <button onClick={()=>{dispatch(removeFromCart(product))}}
-                                  type="button"
-                                  class="font-medium text-red-500 hover:text-red-700"
-                                >
-                                  Remove
-                                </button>
+                            <div class="ml-4 flex flex-1 flex-col">
+                              <div>
+                                <div class="flex justify-between text-base font-medium text-gray-900">
+                                  <h3>
+                                    <a href="#">Throwback Hip Bag</a>
+                                  </h3>
+                                  <p class="ml-4">
+                                    {formatter.format(product.price)}
+                                  </p>
+                                </div>
+                                <p class="mt-1 text-sm text-gray-500">
+                                  {product.description}
+                                </p>
+                              </div>
+                              <div class="flex flex-1 items-end justify-between text-sm">
+                                <p class="text-gray-500">
+                                  {" "}
+                                  Qty{" "}
+                                  <span
+                                    className="text-red-400 cursor-pointer "
+                                    onClick={() => {
+                                      dispatch(decreaseCart(product));
+                                    }}
+                                  >
+                                    -
+                                  </span>{" "}
+                                  {product.cartQuantity}{" "}
+                                  <span
+                                    className="text-lime-400 cursor-pointer "
+                                    onClick={() => {
+                                      dispatch(addToCart(product));
+                                    }}
+                                  >
+                                    +
+                                  </span>{" "}
+                                </p>
+
+                                <div class="flex">
+                                  <button
+                                    onClick={() => {
+                                      dispatch(removeFromCart(product));
+                                    }}
+                                    type="button"
+                                    class="font-medium text-red-500 hover:text-red-700"
+                                  >
+                                    Remove
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </li>)}
+                          </li>
+                        ))}
                       </>
                     ))}
-               
                 </ul>
               </div>
             </div>
@@ -113,9 +143,7 @@ console.log(dispatch(getTotal()));
               Shipping and taxes calculated at checkout.
             </p>
             <div class="mt-6">
-              <PayButton>
-                click hear to pay
-              </PayButton>
+              <PayButton>click hear to pay</PayButton>
             </div>
             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>

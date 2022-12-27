@@ -18,14 +18,6 @@ function Login(props) {
   const [loginUser] = useLoginUserMutation();
 
 
-  const handleInput = (e) => {
-    if (e.target.name === "firstName" || e.target.name === "lastName") {
-      const x = { ...newUser.name, [e.target.name]: e.target.value };
-      setNewUser({ ...newUser, name: x });
-    } else {
-      setNewUser({ ...newUser, [e.target.name]: e.target.value });
-    }
-  };
 
   const dataUser = async () => {
     try {
