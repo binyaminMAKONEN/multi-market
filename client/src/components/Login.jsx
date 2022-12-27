@@ -16,7 +16,6 @@ function Login(props) {
   const [signUp, setSingUP] = useState(false);
   const [loginUser] = useLoginUserMutation();
 
-console.log(appStore);
   const dataUser = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/auth/data", {

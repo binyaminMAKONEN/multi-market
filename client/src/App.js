@@ -1,7 +1,6 @@
 import {Route,Routes} from 'react-router-dom'
 import FirstNavbar from '../src/components/firstnavbarLogin';
 import SecondNavBar from '../src/components/secondNavBar';
-import FirstNavbar from "../src/components/firstnavbarLogin";
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
