@@ -18,6 +18,7 @@ function Login(props) {
   const [signUp, setSingUP] = useState(false);
   const [loginUser] = useLoginUserMutation();
 
+console.log(appStore);
   const dataUser = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
@@ -40,9 +41,11 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const {data : dataUser} = await loginUser(user);
-       console.log(dataUser);
+      const { data:dataUser} = await loginUser(user);
+
+
       const token = dataUser.token;
+
       const userStorage = {
         firstName: dataUser.user.name.firstName,
         lastName: dataUser.user.name.lastName,
@@ -51,6 +54,7 @@ function Login(props) {
         permission:dataUser.user.permissions,
         id:dataUser.user._id
       };
+      console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
 
@@ -75,7 +79,6 @@ function Login(props) {
   };
 
   useEffect(() => {
-    dataUser();
     setActive(props.active);
   }, [props.active]);
 

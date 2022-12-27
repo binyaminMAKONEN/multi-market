@@ -2,11 +2,16 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, decreaseCart, getTotal, removeFromCart } from "../store/cartSlice";
+import {addToOrder} from '../store/orderSlice'
 import PayButton from "../payment/PayButton";
 
 
-const ShoppingCard = () => {
+const ShoppingCard = ({orderAddress}) => {
   
+  const user = useSelector((state) => state.auth);
+  console.log(user);
+  const order = useSelector((state) => state.order);
+  console.log(order);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
   const selector = useSelector((state) => state.cart);
@@ -14,9 +19,21 @@ const ShoppingCard = () => {
     style: 'currency',
     currency: 'ILS',
   })
-
+  // //////////////
+  const x = ()=>{
+   const newUser = {
+    stores:sortCartOrder(),
+    address:orderAddress,
+    price:selector.cartItem.cartTotalAmount,
+    clientId:user.user.id
+  }
+  dispatch(addToOrder(newUser))
+  console.log(newUser);
+  }
+  
   const sortCartSelector = () => {
     const sortCart = [];
+
     for (let i = 0; i < selector.cartItem.length; i++) {
       const obj = selector.cartItem[i];
       let storesNames = sortCart.map((n) => n.storeName);
@@ -34,6 +51,29 @@ const ShoppingCard = () => {
     }
     setCart(sortCart);
   };
+
+
+  const sortCartOrder = () => {
+    const sortOrder = [];
+
+    for (let i = 0; i < selector.cartItem.length; i++) {
+      const obj = selector.cartItem[i];
+      let storesId = sortOrder.map((n) => n.storeId);
+
+      const iProduct = sortOrder.findIndex(
+        (product) => product.storeId === obj.storeId
+      );
+      if (iProduct >= 0) {
+        sortOrder[iProduct].products.push(obj._id);
+      }
+
+      if (!storesId.includes(obj.storeId)) {
+        sortOrder.push({ storeId: obj.storeId, products: [obj._id] });
+      }
+    }
+    return sortOrder;
+  };
+
 
   useEffect(() => {
     sortCartSelector();
@@ -109,7 +149,7 @@ const ShoppingCard = () => {
             <p class="mt-0.5 text-sm text-gray-500">
               Shipping and taxes calculated at checkout.
             </p>
-            <div class="mt-6">
+            <div class="mt-6 cursor-pointer" onClick={()=>{x()}}>
               <PayButton>
                 click hear to pay
               </PayButton>
