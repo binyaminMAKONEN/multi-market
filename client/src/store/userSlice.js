@@ -17,16 +17,21 @@ const authSlice = createSlice({
       state.token=token
       state.user=user
     },
-    logOut:(state,action)=>{    
-      state.token=null
-      state.user=null
+    setGoogleUser:(state,action)=>{
+      const user=action.payload.user
+      console.log(action.payload);
+      state.user=user
+    },
+    logOut:(state,action)=>{ 
+      sessionStorage.clear()
+      state.token = null
+      state.user = action.payload
     }
   }
-    
 });
 
-export const { setCredentials,logOut } = authSlice.actions;
-export default authSlice.reducer;
+export const { setCredentials,logOut,setGoogleUser} = authSlice.actions;
+export default authSlice.reducer  ;
 
 export const selectCurrentUser=(state)=>state.auth.user
 export const selectCurrentToken=(state)=>state.auth.token
