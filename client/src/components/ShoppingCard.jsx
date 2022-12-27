@@ -11,7 +11,6 @@ const ShoppingCard = ({orderAddress}) => {
   const user = useSelector((state) => state.auth);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
-  dispatch(getTotal());
   const selector = useSelector((state) => state.cart);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
@@ -73,7 +72,9 @@ const ShoppingCard = ({orderAddress}) => {
 
 
   useEffect(() => {
-    sortCartSelector();
+    sortCartSelector()
+   console.log( sortCartSelector())
+
   }, [JSON.stringify(selector.cartItem)]);
 
   return (

@@ -18,13 +18,12 @@ const StoreList = () => {
       list = <div>Fetching</div>;
   }else if(isSuccess){
 
-      list =  storeData.map((store)=>( <Stores store={store}/>))
+      list = storeData.map((store)=>( <Stores store={store}/>))
   }else if(isError){
       list = <div>Error</div>
   }
 
 
-    
     return(
     <div>
       <Toolbar/>

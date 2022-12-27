@@ -1,4 +1,6 @@
 const order = require('../models/orderModel')
+const mongoose = require('mongoose')
+
 
 const createOrders = async (req,res)=>{
     if(!req.body)return res.status(400).json('Post HTTP Data not Provided')
@@ -31,12 +33,19 @@ const getStoreOrCustomerOrderById = async(req,res)=>{
      })
     return res.json(filterData)
 }
-
+const getOrderByClientId = async (req,res)=>{
+    const {id} = req.params
+    if (!mongoose.Types.ObjectId.isValid(id)) {  
+        return res.status(404).send('no orders with that id')
+      }
+      const storeId = await order.find({clientId:id})
+      res.json(storeId).status(200)
+      }
 
 module.exports = {
    createOrders,
    getOrders,
-   getStoreOrCustomerOrderById
+   getStoreOrCustomerOrderById,getOrderByClientId
  
 
 }
