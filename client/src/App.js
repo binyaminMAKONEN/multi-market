@@ -30,6 +30,10 @@ function App() {
 
   return (
   <>
+{appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
+{/* <StoreHeader/> */}
+{/* <<<<<<< HEAD */}
+{/* <PopUpProduct/> */}
     {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
 
     <Routes>

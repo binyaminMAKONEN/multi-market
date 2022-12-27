@@ -89,7 +89,6 @@ const ShoppingCard = ({orderAddress}) => {
                 עגלת קניות
               </h2>
             </div>
-
             <div class="mt-8">
               <div class="flow-root">
                 <ul role="list" class="-my-6 divide-y divide-gray-200">
