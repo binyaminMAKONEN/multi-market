@@ -14,9 +14,7 @@ const ShoppingCard = ({orderAddress}) => {
   console.log(order);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
-console.log(dispatch(getTotal()));
   const selector = useSelector((state) => state.cart);
-  console.log(selector);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
     currency: 'ILS',

@@ -29,7 +29,7 @@ function SecondNavBar() {
 
   <Navbar.Brand href="#">
     <img
-      src="https://i.postimg.cc/D0skf82c/2022-12-08-210836-preview-rev-1.png"
+      src="https://i.postimg.cc/3N22WDJz/Multi-Market-Logo-preview-rev-1.png"
       className="mr-3 h-6 sm:h-9 "
       alt="Flowbite Logo"
     />
@@ -54,7 +54,7 @@ function SecondNavBar() {
       </span>
     </div>
     </div>
-  <p className='self-center'>מודיעין</p>
+  <p className='self-center'>תל אביב</p>
   
     <button> <ImLocation className='text-2xl ml-1 mr-3 text-lime-500'/></button>
     <p className='self-center md:mr-1 xl:mr-2'>שלום {userConnectData.firstName}</p>
@@ -73,18 +73,14 @@ function SecondNavBar() {
           {userConnectData.email}
         </span>
       </Dropdown.Header>
+      <Link to={"PersonalArea"}>
       <Dropdown.Item>
-        Dashboard
+        אזור אישי
       </Dropdown.Item>
-      <Dropdown.Item>
-        Settings
-      </Dropdown.Item>
-      <Dropdown.Item>
-        Earnings
-      </Dropdown.Item>
+      </Link>
       <Dropdown.Divider />
       <Dropdown.Item onClick={()=>logout()}>
-        Sign out
+        התנקנות
       </Dropdown.Item>
     </Dropdown>
   </div>

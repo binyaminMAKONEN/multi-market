@@ -22,11 +22,11 @@ const sendBoolian = ()=>{
 }
   return (
   <>
-    <div class="flex justify-center">
+    <div class="flex justify-center h-fit">
   <div class="rounded-lg shadow-lg  border-red  border bg-white max-w-sm ">
     <div>
 
-      <img class="rounded-t-lg object-fill h-70 w-96 ... cursor-pointer" onClick={()=>setOpen(!open)} src={data?.img} alt=""/>
+      <img class="rounded-t-lg object-fill h-70 w-96 cursor-pointer" onClick={()=>setOpen(!open)} src={data?.img} alt=""/>
     </div>
     
     <div class="p-6">

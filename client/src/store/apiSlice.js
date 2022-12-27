@@ -38,6 +38,13 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["products"],
     }),
+    addProduct: builder.mutation({
+      query: (obj) => ({
+        url: `/api/products`,
+        method: "POST",
+      }),
+      invalidatesTags: ["products"],
+    }),
     //createUser
     createUser: builder.mutation({
       query: (newUser) => ({
@@ -79,6 +86,11 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["stores"],
     }),
+    // 
+    getStoreUser: builder.query({
+      query: (id) =>`/api/stores/userId/${id}`, 
+      providesTags: ["stores"],
+    }),
     //add permission
     deleteStore: builder.mutation({
       query: (id) => ({
@@ -90,6 +102,13 @@ export const apiSlice = createApi({
     //add permission
     getProductsStoreById: builder.query({
       query: (id) => `/api/stores/${id}`,
+      providesTags: ["stores"],
+    }),
+    getProductsStoreByUserId: builder.query({
+      query: (id) =>{
+        console.log(id);
+         return`/api/stores/user/${id}`
+        },
       providesTags: ["stores"],
     }),
     //add permission
@@ -119,6 +138,8 @@ export const {
   useGetProductsQuery,
   useCreateProductsMutation,
   //   useUpdateProductMutation,
+  useGetStoreUserQuery,
+  useGetProductsStoreByUserIdQuery,
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,
