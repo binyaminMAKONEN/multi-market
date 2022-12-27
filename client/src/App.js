@@ -21,6 +21,7 @@ import Details from './components/profile/Details';
 import Password from './components/profile/Password';
 import Team from './Pages/Team';
 import SucsessPage from './Pages/SucsessPage';
+import { useSelector } from 'react-redux';
 function App() {
   const appStore = useSelector(state=>state)
   console.log();
@@ -40,7 +41,7 @@ function App() {
       <Route  path='Questions' element={<Questions />}/>
     </Route>
     <Route path='/PersonalArea' element={<PersonalArea />}>
-      <Route  path='orders' element={<Orders />}/>
+      <Route index  path='orders' element={<Orders />}/>
       <Route  path='Address' element={<Address />}/>
       <Route  index path='details' element={<Details />}/>
       <Route  path='Password' element={<Password />}/>

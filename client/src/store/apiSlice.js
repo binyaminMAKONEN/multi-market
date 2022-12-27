@@ -110,8 +110,13 @@ export const apiSlice = createApi({
     
     getStoreOrCustomerOrderById: builder.query({
       query: (id) => `/api/orders/${id}`,
-      providesTags: ["stores"],
+      providesTags: ["order"],
     }),
+    
+    getOrderByClientId: builder.query({
+      query: (id) => `/api/orders/user/${id}`,
+      providesTags: ["orders"],
+    })
   }),
 });
 
@@ -119,6 +124,7 @@ export const {
   useGetProductsQuery,
   useCreateProductsMutation,
   //   useUpdateProductMutation,
+  useGetOrderByClientIdQuery,
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,

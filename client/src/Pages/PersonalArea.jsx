@@ -23,12 +23,12 @@ console.log(isSuccess);
     newPassUser()
   },[])
   return (
-    <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen my-3 p-5 shadow-xl">
+    <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-fit my-3 p-5 shadow-xl">
     <div className="w-3/4 flex justify-center">
 <Outlet />
       
     </div>
-    <div className="">
+    <div>
       <Sidebar className="text-right" aria-label="Default sidebar example">
         <Sidebar.Items>
           <Sidebar.ItemGroup>
@@ -42,7 +42,7 @@ console.log(isSuccess);
           </Sidebar.ItemGroup>
           <Sidebar.ItemGroup>
             <Link to="orders">
-              <Sidebar.Item icon={HiInbox} label={orders.length}>
+              <Sidebar.Item icon={HiInbox}>
                 ההזמנות שלי
               </Sidebar.Item>
             </Link>
