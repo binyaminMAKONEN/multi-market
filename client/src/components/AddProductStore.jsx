@@ -25,7 +25,6 @@ function AddProductStore() {
 
   
   const setImage = (img) => {
-    console.log(img);
     setProduct({...product,img:img});
   };
   useEffect(()=>{
@@ -36,11 +35,10 @@ function AddProductStore() {
       setProduct(productStore)
       }
   },[store])
-console.log(product);
 
   return (
-    <div className="overflow">
-      <div className="w-full max-w-sm text-right overflow-auto">
+    <div className="overflow-x-hidden">
+      <div className="w-full max-w-sm text-right">
         <h1 className="text-xl mb-5">הוספת מוצר </h1>
         <div class="flex flex-col outline-none items-center  border-b border-teal-500 py-2">
           <label  className="text-right w-full ">

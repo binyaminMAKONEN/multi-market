@@ -83,6 +83,16 @@ const getProductsStoreById = async (req,res)=>{
   const storeId = await storeModel.findById(id).populate({path:"products.productId"});
   res.json(storeId.products)
   }
+const getProductsStoreUserById = async (req,res)=>{
+  const id = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(id)) {  
+    return res.status(404).send('no store with that id')
+  }
+  const store = await storeModel.findOne({userId:id})
+
+  const storeId = await storeModel.findById(store._id).populate({path:"products.productId"});
+  res.json(storeId.products)
+  }
 
 
 module.exports = {
@@ -91,5 +101,6 @@ module.exports = {
   createStore,
   deleteStore,
   updateStore,
+  getProductsStoreUserById,
   getProductsStoreById
 }

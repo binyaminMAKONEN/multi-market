@@ -1,6 +1,7 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
 import ThirdNavbar from '../src/components/ThirdNavbar';
+import SecondNavBar from '../src/components/secondNavBar';
 import FirstNavbar from "../src/components/firstnavbarLogin";
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
@@ -18,14 +19,18 @@ import Orders from './components/profile/Orders';
 import Address from './components/profile/Address';
 import Details from './components/profile/Details';
 import Password from './components/profile/Password';
-import AddProductStore from './components/AddProductStore';
+import Team from './Pages/Team';
 import { useSelector } from 'react-redux';
+import AddProductStore from './components/AddProductStore';
+import MyStore from './components/MyStore';
 function App() {
   const selector=useSelector(state=>state.auth.user)
+  const appStore = useSelector(state=>state)
+
   return (
   <>
-    <FirstNavbar/>
- 
+    {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
+
     <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='/StoreList' element={<StoreList />}/>
@@ -38,14 +43,15 @@ function App() {
     <Route path='/PersonalArea' element={<PersonalArea />}>
       
       <Route index path='orders' element={<Orders />}/>
-      <Route  path='store' element={selector?.permission==="ownerStore"?<AddProductStore/>:<Orders/>}/>
+      <Route  path='store' element={selector?.permission==="ownerStore"?<MyStore/>:<Orders/>}/>
       <Route  path='Address' element={<Address />}/>
-      <Route  path='details' element={<Details />}/>
+      <Route  index path='details' element={<Details />}/>
       <Route  path='Password' element={<Password />}/>
     </Route>
     
     <Route path='/About' element={<About />}/> 
     <Route path='/ContactPage' element={<ContactPage />}/> 
+    <Route path='/Team' element={<Team />}/> 
 
   </Routes>
   <BottomBar/>

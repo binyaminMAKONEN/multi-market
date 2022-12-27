@@ -14,7 +14,6 @@ setStores(filteList);
  }
 useEffect(() => {
     if (data) setStores(data)
-    console.log(data);
   }, [JSON.stringify(data)])
   return (
     <div className=' bg-reapeat  bg-cover' style={{backgroundImage:'url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
@@ -50,8 +49,8 @@ useEffect(() => {
             </div>
             <div>
               <a
-                href="/"
-                className="inline-flex bg-lime-600 items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition bg-white duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
+                href="#"
+                className="inline-flex bg-lime-600 items-center justify-center h-12 px-6 font-semibold tracking-wide text-white transition  duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
               >
                 תתחילו לקנות
               </a>

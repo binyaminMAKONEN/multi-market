@@ -9,48 +9,31 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 const router = express.Router();
 
 router.post("/create-checkout-session", async (req, res) => {
-  const customer = await stripe.customers.create({
-    metadata: {
-      userId: req.body.userId,
-      cart: JSON.stringify(req.body.cartItems),
-    },
-  });
-
-  const line_items = req.body.map((item) => {
-    
-    return {
+  console.log(req.body.cartItem);
+  const line_items = req.body.cartItem.map(item=>{
+    return{
       price_data: {
-        currency: "ils",
-
+        currency: 'usd',
         product_data: {
           name: item.name,
-          // img: item.img,
+          images: [item.img],
           description: item.description,
-          metadata: {
-            id: req.body.userId,
+          metadata:{
+            id:item.id,
           },
         },
         unit_amount: item.price * 100,
       },
-      quantity: 1,
-      adjustable_quantity:{
-        enabled:true,
-        maximum:10,
-        minimum: 1
-      }
-    };
-
-  });
-
+      quantity: item.cartQuantity,
+    }
+  })
   const session = await stripe.checkout.sessions.create({
-    line_items,
-    mode: "payment",
-    customer: customer.id,
-    success_url: `${process.env.CLIENT_URL}/checkout-success`,
-    cancel_url: `${process.env.CLIENT_URL}/cart`,
-  });
 
-  
+ line_items,
+    mode: 'payment',
+    success_url: `${process.env.CLIENT_URL}/checkout-success`,
+    cancel_url: `${process.env.CLIENT_URL}/InStore`,
+  });  
   res.send({ url: session.url });
 
 

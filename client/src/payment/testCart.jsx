@@ -1,48 +1,71 @@
-import React from 'react'
-import {useSelector,useDispatch} from 'react-redux'
-import { addToCart,removeFromCart,decreaseCart, clearCart } from '../store/cartSlice'
+import React from "react";
 
- 
+import ShopingCard from "../components/ShoppingCard.jsx";
 
-export default function TestCart() { 
-    
-
-    const handleAddToCart = () =>{
-        dispatch(addToCart())
-    }
-    const removeFromCarts = (cartItem)=>{
-        dispatch(removeFromCart(cartItem))
-    }
-    const minus = (cartItem)=>{
-        dispatch(decreaseCart(cartItem))
-    }
-    const clear = ()=>{
-        dispatch(clearCart())
-    }
-    const dispatch = useDispatch()
-    const selector = useSelector(state => state.cart.cartItem)
-   
+export default function TestCart(cartItem) {
   return (
-    <div>
-        <ul>
+    <div className="flex">
+      <ShopingCard />
 
-        {selector.map(item=>{
-            
-            return(<div>
-                <li>{item.name}</li>
-            <button onClick={()=>{removeFromCarts(item)}}>remove</button>
-            <button  onClick={()=>{minus(item)}}>-</button>
-            <button  onClick={()=>{clear()}}>clear cart</button>
-            </div>
-      )  })}  
-        </ul>
-       <button onClick={handleAddToCart}>add</button>
-       
+      <div className="space-y-4">
+        <details
+          className="group [&_summary::-webkit-details-marker]:hidden"
+          open
+        >
+          <summary className="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-gray-50">
+            <h2 className="font-medium text-gray-900">פרטי משלוח</h2>
+            <svg
+              className="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <p>שם פרטי</p>
+          <input type="text" />
+          <p>שם משפחה</p>
+          <input type="text" />
+          <p>משלוח אל:</p>
+          <input type="text" />
+          <br />
+          <button className="bg-red-600">שמור</button>
+          <br />
+          <button className="bg-blue-500">מחק כתובת זו</button>
+        </details>
+        <details className="group [&_summary::-webkit-details-marker]:hidden">
+          <summary className="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-gray-50">
+            <h2 className="font-medium text-gray-900">בחירת זמן אספקה</h2>
+            <svg
+              className="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <p className="px-4 mt-4 leading-relaxed text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
+            veritatis molestias culpa in, recusandae laboriosam neque aliquid
+            libero nesciunt voluptate dicta quo officiis explicabo consequuntur
+            distinctio corporis earum similique!
+          </p>
+        </details>
+      </div>
     </div>
-  )
-
-  
+  );
 }
-
-
-

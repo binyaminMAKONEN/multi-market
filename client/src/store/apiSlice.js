@@ -7,7 +7,6 @@ const baseUrl = fetchBaseQuery({
   prepareHeaders: (headers,{getState})=>{
     const token =getState().auth.token
     // const user =getState().auth.user 
-    console.log(token);
     if( token){
       headers.set('authorization',`Rocet ${token}`)
     }
@@ -64,6 +63,14 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["user"],
     }),
+    updateUser: builder.mutation({
+      query: ({id,newPassword}) => ({
+        url: `/api/users/updateUser/${id}`,
+        method: "PUT",
+        body: newPassword,
+      }),
+      invalidatesTags: ["user"],
+    }),
     //storeCRAD
     getStore: builder.query({
       query: () => "/api/stores",
@@ -97,10 +104,17 @@ export const apiSlice = createApi({
       query: (id) => `/api/stores/${id}`,
       providesTags: ["stores"],
     }),
+    getProductsStoreByUserId: builder.query({
+      query: (id) =>{
+        console.log(id);
+         return`/api/stores/user/${id}`
+        },
+      providesTags: ["stores"],
+    }),
     //add permission
     //orderCRUD
     getOrders: builder.query({
-      query: (id) => `/api/orders`,
+      query: () => `/api/orders`,
       providesTags: ["order"],
     }),
 //add permission
@@ -125,9 +139,11 @@ export const {
   useCreateProductsMutation,
   //   useUpdateProductMutation,
   useGetStoreUserQuery,
+  useGetProductsStoreByUserIdQuery,
   useDeleteProductMutation,
   useCreateUserMutation,
   useLoginUserMutation,
+  useUpdateUserMutation,
   useGetStoreQuery,
   useCreateStoreMutation,
   useDeleteStoreMutation,

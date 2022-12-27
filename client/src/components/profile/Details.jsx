@@ -1,19 +1,21 @@
 import React from 'react'
-
+import { useSelector } from "react-redux";
 const Details = () => {
+    const selector = useSelector((state) => state.auth.user);
+    console.log(selector);
   return (
       <form class="w-full max-w-sm text-right">
         <h1 className='text-xl mb-5'>מידע אישי</h1>
   <div class="flex flex-col outline-none items-center  border-b border-teal-500 py-2">
     <label  className='text-right w-full '>שם פרטי
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text" id='שם פרטי' placeholder="Jane Doe" value='בנימין' aria-label="Full name"/>
+    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.firstName} />
     </label>
     <label  className='text-right w-full '>
         שם משפחה
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text" id='שם פרטי' placeholder="Jane Doe" value='מקונן' aria-label="Full name"/>
+    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.lastName} />
     </label>
     <label  className='text-right w-full '>אימייל
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text" id='שם פרטי' placeholder="Jane Doe" value='banMkonen@gmail.com' aria-label="Full name"/>
+    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="email"  value={selector.email} />
     </label>
     <label  className='text-right w-full '>תאריך לידה
     <input type="date"

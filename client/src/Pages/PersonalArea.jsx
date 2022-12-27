@@ -6,9 +6,11 @@ import { FaAddressCard } from "react-icons/fa";
 import { AiFillLock } from "react-icons/ai";
 import {BiStore } from "react-icons/bi";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
-
+import { useSelector } from "react-redux";
+import {useUpdateUserMutation} from '../store/apiSlice'
+import { useEffect } from 'react';
 const PersonalArea = () => {
+  const [updateUser,{isSuccess}]= useUpdateUserMutation()
   const orders = [1,2,3];
   const user =useSelector(state=>state.auth.user)
   return (

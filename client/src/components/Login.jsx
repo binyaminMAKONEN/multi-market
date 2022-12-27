@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import GoogleButton from "react-google-button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../store/apiSlice";
-import { setCredentials } from "../store/userSlice";
+import { setCredentials ,setGoogleUser} from "../store/userSlice";
 import SingUp from "./SingUp";
 
 function Login(props) {
+  const appStore = useSelector(state=>state)
   const navigate = useNavigate();
   const [user, setUser] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
@@ -22,15 +23,15 @@ function Login(props) {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
         withCredentials: true,
       });
-      console.log(data);
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({
-          firstName: data.name.firstName,
-          img: data.img,
-          email: data.email,
-        })
-      );
+      const userGoogle = {
+        firstName: data.name.firstName,
+        lastName: data.name.lastName,
+        userName: data.username,
+        email: data.email,
+        id:data._id
+      };
+      console.log(userGoogle);
+      dispatch(setGoogleUser({ user: userGoogle }));
     } catch (err) {
       if (err.response.status === 401) console.log("you need log in");
     }
@@ -38,9 +39,8 @@ function Login(props) {
 
   const login = async () => {
     try {
-      const { data:dataUser} = await loginUser(user);
-
-      console.log(dataUser);
+      const {data : dataUser} = await loginUser(user);
+       console.log(dataUser);
       const token = dataUser.token;
       const userStorage = {
         firstName: dataUser.user.name.firstName,
@@ -54,6 +54,12 @@ function Login(props) {
       dispatch(setCredentials({ user: userStorage, token }));
 
       sessionStorage.token = token;
+      const { data } = await axios.post(
+        "http://localhost:8080/api/users/login",
+        user
+      );
+      console.log(user);
+      sessionStorage.token = data.token;
       sessionStorage.user = JSON.stringify(userStorage);
       setActive(false);
     } catch (err) {
@@ -71,7 +77,7 @@ function Login(props) {
     dataUser();
     setActive(props.active);
   }, [props.active]);
-  
+
   return (
     active && (
       <>
@@ -82,9 +88,8 @@ function Login(props) {
               <p
                 className="text-end m-1 cursor-pointer font-semibold hidden md:block"
                 onClick={() => {
-                  setActive(false);
+                  {setActive(false); setSingUP(false);}
                 }}
-                
               >
                 X
               </p>
@@ -138,7 +143,7 @@ function Login(props) {
                   </button>
                   <br />
                   <div className="flex justify-center items-center">
-                    <GoogleButton onClick={() => loginGoogle()} />
+                  <GoogleButton onClick={() => loginGoogle()} />
                   </div>
                   <br/>
                   <p className="text-red-600">{error}</p>
