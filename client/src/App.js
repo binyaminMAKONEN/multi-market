@@ -1,6 +1,8 @@
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
 import FirstNavbar from '../src/components/firstnavbarLogin';
+import ThirdNavbar from '../src/components/ThirdNavbar';
+import SecondNavBar from '../src/components/secondNavBar';
 import Footer from './components/Footer';
 import MainPage from './Pages/mainPage';
 import StoreList from './Pages/StoreList';
@@ -20,10 +22,11 @@ import Password from './components/profile/Password';
 import Team from './Pages/Team';
 import SucsessPage from './Pages/SucsessPage';
 function App() {
+  const appStore = useSelector(state=>state)
+  console.log();
   return (
   <>
-    <FirstNavbar/>
-    {/* <ThirdNavbar/> */}
+    {appStore.auth.user == null || appStore.auth.user == undefined ?<FirstNavbar/>:<SecondNavBar/>}
 {/* <StoreHeader/> */}
 {/* <<<<<<< HEAD */}
 {/* <PopUpProduct/> */}

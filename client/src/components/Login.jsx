@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import GoogleButton from "react-google-button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../store/apiSlice";
-import { setCredentials } from "../store/userSlice";
+import { setCredentials ,setGoogleUser} from "../store/userSlice";
 import SingUp from "./SingUp";
 
 function Login(props) {
+  const appStore = useSelector(state=>state)
   const navigate = useNavigate();
   const [user, setUser] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
@@ -25,15 +26,16 @@ function Login(props) {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
         withCredentials: true,
       });
-      console.log(data);
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({
-          firstName: data.name.firstName,
-          img: data.img,
-          email: data.email,
-        })
-      );
+      const userGoogle = {
+        firstName: data.name.firstName,
+        lastName: data.name.lastName,
+        userName: data.username,
+        img: data.img,
+        email: data.email,
+        id:data._id
+      };
+      console.log(userGoogle);
+      dispatch(setGoogleUser({ user: userGoogle }));
     } catch (err) {
       if (err.response.status === 401) console.log("you need log in");
     }
@@ -52,12 +54,10 @@ function Login(props) {
         userName: dataUser.user.username,
         email: dataUser.user.email,
         id:dataUser.user._id
-
       };
       console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
-
       const { data } = await axios.post(
         "http://localhost:8080/api/users/login",
         user
@@ -146,7 +146,7 @@ function Login(props) {
                   </button>
                   <br />
                   <div className="flex justify-center items-center">
-                    <GoogleButton onClick={() => loginGoogle()} />
+                  <GoogleButton onClick={() => loginGoogle()} />
                   </div>
                   <br/>
                   <p className="text-red-600">{error}</p>
