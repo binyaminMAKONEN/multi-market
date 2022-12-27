@@ -14,9 +14,7 @@ const ShoppingCard = ({orderAddress}) => {
   console.log(order);
   const dispatch = useDispatch()
   const [cart, setCart] = useState([]);
-console.log(dispatch(getTotal()));
   const selector = useSelector((state) => state.cart);
-  console.log(selector);
   const formatter = new Intl.NumberFormat('il-IL', {
     style: 'currency',
     currency: 'ILS',
@@ -78,7 +76,9 @@ console.log(dispatch(getTotal()));
 
 
   useEffect(() => {
-    sortCartSelector();
+    sortCartSelector()
+   console.log( sortCartSelector())
+
   }, [JSON.stringify(selector.cartItem)]);
 
   return (
@@ -91,7 +91,6 @@ console.log(dispatch(getTotal()));
                 עגלת קניות
               </h2>
             </div>
-
             <div class="mt-8">
               <div class="flow-root">
                 <ul role="list" class="-my-6 divide-y divide-gray-200">
@@ -156,18 +155,7 @@ console.log(dispatch(getTotal()));
                 click hear to pay
               </PayButton>
             </div>
-            <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-              <p>
-                or
-                <button
-                  type="button"
-                  class="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Continue Shopping
-                  <span aria-hidden="true"> &rarr;</span>
-                </button>
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>

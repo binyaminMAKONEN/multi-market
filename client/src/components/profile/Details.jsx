@@ -5,22 +5,22 @@ const Details = () => {
     console.log(selector);
   return (
       <form class="w-full max-w-sm text-right">
-        <h1 className='text-xl mb-5'>מידע אישי</h1>
+        <h1 className='text-xl mb-5'>  <b> מידע אישי</b></h1>
   <div class="flex flex-col outline-none items-center  border-b border-teal-500 py-2">
     <label  className='text-right w-full '>שם פרטי
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.firstName} />
+    <input class="appearance-none bg-transparent mb-3  text-right border-x-0 border-t-0 border-b-2 border-gray-300 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.firstName} />
     </label>
     <label  className='text-right w-full '>
         שם משפחה
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.lastName} />
+    <input class="appearance-none bg-transparent mb-3  text-right border-x-0 border-t-0 border-b-2 border-gray-300 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="text"  value={selector.lastName} />
     </label>
     <label  className='text-right w-full '>אימייל
-    <input class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="email"  value={selector.email} />
+    <input class="appearance-none bg-transparent mb-3  text-right border-x-0 border-t-0 border-b-2 border-gray-300 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="email"  value={selector.email} />
     </label>
     <label  className='text-right w-full '>תאריך לידה
     <input type="date"
     
-    class="appearance-none bg-transparent mb-3  text-right border-none w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none"
+    class="appearance-none bg-transparent mb-3  text-right border-x-0 border-t-0 border-b-2 border-gray-300 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none"
        value="2022-02-20"
        min="2022-02-20" max="2032-02-20"/>
     </label>

@@ -18,10 +18,7 @@ function Login(props) {
   const [signUp, setSingUP] = useState(false);
   const [loginUser] = useLoginUserMutation();
 
-
-
-
-
+console.log(appStore);
   const dataUser = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/auth/data", {
@@ -54,11 +51,14 @@ function Login(props) {
         lastName: dataUser.user.name.lastName,
         userName: dataUser.user.username,
         email: dataUser.user.email,
+        permission:dataUser.user.permissions,
         id:dataUser.user._id
       };
       console.log(dataUser);
 
       dispatch(setCredentials({ user: userStorage, token }));
+
+      sessionStorage.token = token;
       const { data } = await axios.post(
         "http://localhost:8080/api/users/login",
         user
