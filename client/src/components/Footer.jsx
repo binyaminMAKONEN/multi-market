@@ -7,7 +7,7 @@ function Footer() {
         <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
           <nav className="flex flex-wrap justify-center -mx-5 -my-2">
             <div className="px-5 py-2">
-              <a href="/contact" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+              <a href="/contactPage" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                 צור קשר
               </a>
             </div>
@@ -19,11 +19,6 @@ function Footer() {
             <div className="px-5 py-2">
               <a href="/team" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                 צוות
-              </a>
-            </div>
-            <div className="px-5 py-2">
-              <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                טקסט
               </a>
             </div>
             <div className="px-5 py-2">
