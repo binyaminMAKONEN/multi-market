@@ -1,7 +1,7 @@
 import axios  from 'axios'
 import {useSelector} from 'react-redux'
 
-const url =" http://localhost:8080/api/stripe/"
+const url =" https://drab-rose-frog.cyclic.app/api/stripe/"
 
 
 const PayButton=() => {

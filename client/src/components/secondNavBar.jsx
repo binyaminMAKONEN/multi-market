@@ -13,7 +13,7 @@ function SecondNavBar() {
   const dispatch = useDispatch()
 
   const logout =async ()=>{
-    window.location.href = "http://localhost:8080/auth/logout";
+    window.location.href = "https://drab-rose-frog.cyclic.app/auth/logout";
     
     dispatch(logOut())
   }
