@@ -19,7 +19,7 @@ function SelectCity() {
     <div>
       <select>
         {cites.map((city,i) => {
-          if (city.toLocaleLowerCase().startsWith("a"||"b"||"c"||"d"||"e"||"f"||"g"||"h"||"i"||"j"||"k"||"l"||"m"||"n"||"o"||"p"||"q"||"r"||"s"||"t"||"u"||"v"||"w"||"x"||"y"||"z")){ console.log(city)};
+          if (city.toLocaleLowerCase().startsWith("a"||"b"||"c"||"d"||"e"||"f"||"g"||"h"||"i"||"j"||"k"||"l"||"m"||"n"||"o"||"p"||"q"||"r"||"s"||"t"||"u"||"v"||"w"||"x"||"y"||"z"));
             if (city.startsWith("'" || '"')) {
             city = city.split("")
             city.shift();

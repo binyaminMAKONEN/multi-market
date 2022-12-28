@@ -9,10 +9,7 @@ function ContactPage() {
 
     emailjs.sendForm('service_hnfnslg', 'template_jvjld02', form.current, 'ZInx0dxXWWEPPpLim')
       .then((result) => {
-          console.log(result.text);
-          console.log("message sent");
       }, (error) => {
-          console.log(error.text);
       });
   };
   return (

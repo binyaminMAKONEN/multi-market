@@ -1,18 +1,15 @@
 import React from 'react'
-import { Navbar,Dropdown,Avatar ,Label,TextInput} from 'flowbite-react'
+import { Navbar,Dropdown,Avatar ,Label} from 'flowbite-react'
 import { ImLocation } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
-import {logOut,setCredentials,setGoogleUser} from "../store/userSlice";
-import axios from 'axios';
-import { Link, useNavigate} from 'react-router-dom';
+import {logOut} from "../store/userSlice";
+import {  useNavigate} from 'react-router-dom';
 function SecondNavBar() {
   const navigate = useNavigate()
 
   const {cartTotalQuantity} =useSelector(state => state.cart)
   const appStore = useSelector(state=>state)
-  console.log(appStore);
   const userConnectData = appStore.auth.user
-  console.log(userConnectData);
   const dispatch = useDispatch()
 
   const logout =async ()=>{
@@ -21,7 +18,7 @@ function SecondNavBar() {
     dispatch(logOut())
   }
   return (
-    <div>
+    <div className=' w-screen'>
          <Navbar
   fluid={true}
   rounded={true}
@@ -43,7 +40,7 @@ function SecondNavBar() {
      
     <div className="">
        <div className="flex items-center md:order-2">
-  <div className="md:flex hidden font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+  <div className="md:flex  font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
 
 <div  className="relative flex cursor-pointer mr-2" onClick={()=>navigate("/checkout")}>
       <svg className="flex-1 w-7 h-7 fill-current cursor-pointer" viewBox="0 0 24 24">

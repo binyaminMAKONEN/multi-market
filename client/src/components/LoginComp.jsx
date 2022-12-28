@@ -1,17 +1,11 @@
 import React from 'react'
-// import axios from 'axios'
 export default function LoginComp() {
 
   return (
        <div > 
-        {/* <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" /> */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" /> */}
-        {/* <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /> */}
-        {/* <style dangerouslySetInnerHTML={{__html: "\n      body {\n        font-family: \"Inter\", sans-serif;\n      }\n    " }} /> */}
         <div className="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
           <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <div className='bg-red-100'>
-            {/* <img src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png" className="w-32 mx-auto" /> */}
             </div>
             <div className="mt-12 flex flex-col items-center">
               <h1 className="text-2xl xl:text-3xl font-extrabold">
@@ -79,7 +73,7 @@ export default function LoginComp() {
             <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style={{backgroundImage: 'url("https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg")'}} />
           </div>
         </div>
-        <div className="REMOVE-THIS-ELEMENT-IF-YOU-ARE-USING-THIS-PAGE hidden treact-popup fixed inset-0 flex items-center justify-center" style={{backgroundColor: 'rgba(0,0,0,0.3)'}}>
+        <div className="REMOVE-THIS-ELEMENT-IF-YOU-ARE-USING-THIS-PAGE treact-popup fixed inset-0 flex items-center justify-center" style={{backgroundColor: 'rgba(0,0,0,0.3)'}}>
           <div className="max-w-lg p-8 sm:pb-4 bg-white rounded shadow-lg text-center sm:text-left">
             <h3 className="text-xl sm:text-2xl font-semibold mb-6 flex flex-col sm:flex-row items-center">
               <div className="bg-green-200 p-2 rounded-full flex items-center mb-4 sm:mb-0 sm:mr-2">
