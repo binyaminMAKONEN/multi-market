@@ -35,7 +35,7 @@ function PhoneVerf({obj}) {
         }
     }
     const addUser =async(obj)=>{
-    const {data} = axios.post('http://localhost:8080/api/users/register',obj)
+    const {data} = axios.post('https://drab-rose-frog.cyclic.app/users/register',obj)
     return data
     }
     const verifyOTP = (e)=>{

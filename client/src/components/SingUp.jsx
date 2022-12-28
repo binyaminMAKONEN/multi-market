@@ -24,7 +24,7 @@ export default function SingUp() {
         }
       };
       const singUp = async (obj) => {
-        const { data } = await axios.get("http://localhost:8080/api/users");
+        const { data } = await axios.get("https://drab-rose-frog.cyclic.app/api/users");
         const checkIfEmailExist = data.filter(({ email }) => email === obj.email);
         if (
           obj.name.firstName === "" ||

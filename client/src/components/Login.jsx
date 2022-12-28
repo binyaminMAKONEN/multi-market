@@ -18,7 +18,7 @@ function Login(props) {
 
   const dataUser = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/auth/data", {
+      const { data } = await axios.get("https://drab-rose-frog.cyclic.app/auth/data", {
         withCredentials: true,
       });
       const userGoogle = {
@@ -55,7 +55,7 @@ function Login(props) {
 
       sessionStorage.token = token;
       const { data } = await axios.post(
-        "http://localhost:8080/api/users/login",
+        "https://drab-rose-frog.cyclic.app/api/users/login",
         user
       );
       sessionStorage.token = data.token;
@@ -68,7 +68,7 @@ function Login(props) {
   };
 
   const loginGoogle = () => {
-    window.location.href = "http://localhost:8080/auth/login/google";
+    window.location.href = "https://drab-rose-frog.cyclic.app/auth/login/google";
   };
 
   useEffect(() => {
